@@ -1,0 +1,35 @@
+.table-controls {
+	display: flex;
+	align-items: center;
+	gap: 12px;
+}
+.biometric-access-btn-col{
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+.biometric-access-btn {
+	background: transparent !important;
+	color: var(--accent);
+	border: 1px solid var(--muted);
+	display: flex;
+	align-items: center;
+	gap: 6px;
+	font-weight: 500;
+	transition: background 0.2s, color 0.2s;
+	box-shadow: none;
+	height: 40px;
+	padding: 0 16px;
+	font-size: 15px;
+	border-radius: 6px;
+	margin-left: 0;
+	&:hover, &:focus {
+		color: #fff;
+	border: 1px solid var(--accent) !important;
+	}
+
+	.anticon {
+		font-size: 16px;
+		margin-right: 4px;
+	}
+}

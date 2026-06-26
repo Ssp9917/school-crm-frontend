@@ -1,0 +1,72 @@
+@use '../../styles/breakpoints.scss' as *;
+
+.add-director-page {
+  min-height: 100vh;
+  color: var(--sider-text);
+  font-family: 'Inter', sans-serif;
+
+  .title {
+    font-size: 18px;
+    margin-bottom: 25px;
+    letter-spacing: 0.5px;
+  }
+
+  .add-director-form {
+    .row {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 22px;
+      row-gap: 0px;
+
+      @include mobile {
+        grid-template-columns: 1fr;
+      }
+
+      .ant-select{
+        align-items: center;
+        height: 48px !important;
+        background: var(--transparent) !important;
+        border: 1px solid var(--muted) !important;
+        color: var(--sider-text) !important;
+        input{
+          background-color: var(--transparent) !important;
+        }
+      }
+      .ant-input,
+      .ant-select-selector {
+        // height: 48px !important;
+        padding-block: 12px;
+        background: var(--transparent) !important;
+        border: 1px solid var(--muted) !important;
+        color: var(--sider-text) !important;
+      }
+      .ant-select .ant-select-selector {
+        background: var(--card-bg) !important;
+      }
+      .ant-input::placeholder {
+        color: var(--placeholder) !important;
+      }
+    }
+    .footer-buttons {
+      margin-top: 25px;
+      display: flex;
+      gap: 15px;
+
+      @include mobile {
+        flex-wrap: wrap;
+        .save-btn, .delete-btn, button {
+          flex: 1;
+          min-width: 120px;
+        }
+      }
+
+      .save-btn {
+        background: var(--accent);
+        color: var(--card-bg);
+        border: none;
+        height: 48px;
+        padding: 0 28px;
+      }
+    }
+  }
+}

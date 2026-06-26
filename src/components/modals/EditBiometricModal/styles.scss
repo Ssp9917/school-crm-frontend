@@ -1,0 +1,171 @@
+.edit-biometric-modal {
+  .edit-biometric-form {
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 22px;
+      row-gap: 0px;
+      margin-bottom: 0;
+
+      @media (max-width: 768px) {
+        grid-template-columns: 1fr;
+        gap: 0;
+      }
+    }
+
+    .form-item {
+      margin-bottom: 16px;
+    }
+
+    .ant-form-item-label > label {
+      color: var(--sider-text);
+      font-weight: 500;
+    }
+
+    .ant-input,
+    .ant-select-selector {
+      height: 48px !important;
+      padding-block: 12px;
+      background: var(--transparent) !important;
+      border: 1px solid var(--muted) !important;
+      color: var(--sider-text) !important;
+
+      &:hover {
+        border-color: var(--accent) !important;
+      }
+
+      &:focus,
+      &.ant-select-focused .ant-select-selector {
+        border-color: var(--accent) !important;
+        box-shadow: 0 0 0 2px rgba(24, 144, 255, 0.2);
+      }
+    }
+
+    .ant-select {
+      height: 48px !important;
+      
+      .ant-select-selector {
+        align-items: center;
+        background: var(--transparent) !important;
+        
+        input {
+          background-color: var(--transparent) !important;
+        }
+      }
+    }
+
+    .ant-input[type="text"],
+    .ant-input[type="password"] {
+      background-color: var(--transparent) !important;
+    }
+
+    textarea.ant-input {
+      height: auto !important;
+      padding: 12px;
+      background: var(--transparent) !important;
+      border: 1px solid var(--muted) !important;
+      color: var(--sider-text) !important;
+
+      &:hover {
+        border-color: var(--accent) !important;
+      }
+
+      &:focus {
+        border-color: var(--accent) !important;
+        box-shadow: 0 0 0 2px rgba(24, 144, 255, 0.2);
+      }
+    }
+
+    .ant-select-dropdown {
+      background: var(--card-bg);
+      border-color: var(--muted);
+
+      .ant-select-item {
+        color: var(--sider-text);
+
+        &:hover {
+          background: var(--table-row-hover, rgba(24, 144, 255, 0.05));
+        }
+
+        &.ant-select-item-option-selected {
+          background: var(--accent);
+          color: white;
+        }
+      }
+    }
+
+    .form-actions {
+      display: flex;
+      justify-content: flex-end;
+      gap: 15px;
+      margin-top: 25px;
+      padding-top: 16px;
+      border-top: 1px solid var(--muted);
+
+      .cancel-btn {
+        background: transparent !important;
+        border: 1px solid var(--muted) !important;
+        color: var(--sider-text);
+        height: 48px;
+        padding: 0 14px;
+        font-weight: 500;
+
+        &:hover {
+          border-color: var(--accent) !important;
+          color: var(--accent);
+        }
+      }
+
+      .submit-btn {
+        background: var(--accent) !important;
+        border: none !important;
+        color: white;
+        height: 48px;
+        padding: 0 14px;
+        font-weight: 500;
+
+        &:hover:not(:disabled) {
+          background: var(--accent-hover, #1677ff) !important;
+          border-color: var(--accent-hover, #1677ff) !important;
+        }
+
+        &:disabled {
+          opacity: 0.6;
+          cursor: not-allowed;
+        }
+      }
+    }
+  }
+
+  .ant-modal-header {
+    background: var(--card-bg);
+    border-bottom-color: var(--muted);
+
+    .ant-modal-title {
+      color: var(--sider-text);
+      font-size: 18px;
+      font-weight: 600;
+    }
+  }
+
+  .ant-modal-content {
+    background: var(--card-bg);
+  }
+
+  .ant-modal-close {
+    color: var(--sider-text);
+
+    &:hover {
+      color: var(--accent);
+    }
+  }
+
+  @media (max-width: 768px) {
+    .edit-biometric-form {
+      .form-row {
+        grid-template-columns: 1fr;
+        gap: 0;
+      }
+    }
+  }
+}

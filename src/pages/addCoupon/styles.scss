@@ -1,0 +1,90 @@
+@use '../../styles/breakpoints.scss' as *;
+
+  .custom-form {
+    .ant-select {
+      height: 48px !important;
+      background: var(--transparent) !important;
+      border: 1px solid var(--muted) !important;
+      color: var(--sider-text) !important;
+      input {
+        background-color: var(--transparent) !important;
+      }
+    }
+    .ant-select .ant-select-selector {
+      background: var(--card-bg) !important;
+    }
+    .ant-input,
+    .ant-select-selector {
+      padding-block: 12px;
+      background: var(--transparent) !important;
+      border: 1px solid var(--muted) !important;
+      color: var(--sider-text) !important;
+    }
+    .ant-input::placeholder {
+      color: var(--placeholder) !important;
+    }
+  }
+.add-coupon-page {
+  color: var(--sider-text);
+  font-family: 'Inter', sans-serif;
+
+  .form-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+    flex-wrap: wrap;
+    h2 {
+      margin: 0;
+      font-size: 18px;
+      font-weight: 600;
+      margin-bottom: 0;
+      color: var(--sider-text);
+
+      @include mobile {
+        font-size: 16px;
+        // margin-bottom: 16px;
+      }
+    }
+  }
+
+  .custom-form {
+    margin: 0 auto;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+    .row {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 22px;
+      margin-bottom: 0;
+      .ant-form-item {
+        margin-bottom: 24px;
+      }
+
+      @include mobile {
+        grid-template-columns: 1fr;
+      }
+    }
+    .footer-buttons {
+      margin-top: 25px;
+      display: flex;
+      gap: 15px;
+
+      @include mobile {
+        flex-wrap: wrap;
+        .save-btn, .delete-btn, button {
+          flex: 1;
+          min-width: 120px;
+        }
+      }
+
+      .save-btn {
+        background: var(--accent);
+        color: var(--card-bg);
+        border: none;
+        height: 40px;
+        padding: 0 20px;
+      }
+    }
+  }
+}

@@ -1,0 +1,62 @@
+@use '../../styles/breakpoints.scss' as *;
+
+.add-branch-page {
+	min-height: 100vh;
+	color: var(--sider-text);
+	font-family: 'Inter', sans-serif;
+
+	h2 {
+		font-size: 18px;
+		margin-bottom: 25px;
+		letter-spacing: 0.5px;
+
+		@include mobile {
+			font-size: 16px;
+			margin-bottom: 16px;
+		}
+	}
+
+	.add-branch-form {
+		.row {
+			display: grid;
+			grid-template-columns: repeat(3, 1fr);
+			gap: 22px;
+			row-gap: 0px;
+			input{
+				padding-block: 12px;
+			}
+			.ant-select{
+				padding-block: 12px;
+			}
+
+			@include mobile {
+				grid-template-columns: 1fr;
+			}
+		}
+		.full-width-item {
+			grid-column: 1 / -1;
+		}
+		.footer-buttons {
+			margin-top: 25px;
+			display: flex;
+			gap: 15px;
+            justify-content: end;
+
+			@include mobile {
+				flex-wrap: wrap;
+				.save-btn, .delete-btn, button {
+					flex: 1;
+					min-width: 120px;
+				}
+			}
+
+			.save-btn {
+				background: var(--accent);
+				color: var(--card-bg);
+				border: none;
+				height: 48px;
+				padding: 0 14px;
+			}
+		}
+	}
+}

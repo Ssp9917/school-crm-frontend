@@ -1,0 +1,29 @@
+.page-breadcrumb {
+  /* Strongly scope breadcrumb text and links to theme variables */
+  .ant-breadcrumb,
+  & .ant-breadcrumb {
+    color: var(--sider-text) !important;
+  }
+
+  /* links, plain text and breadcrumb-link wrappers */
+  .ant-breadcrumb a,
+  .ant-breadcrumb span,
+  .ant-breadcrumb .ant-breadcrumb-link,
+  .ant-breadcrumb .ant-breadcrumb-item > a,
+  .ant-breadcrumb .ant-breadcrumb-item > span {
+    color: var(--sider-text) !important;
+  }
+
+  .ant-breadcrumb .ant-breadcrumb-separator {
+    color: var(--muted) !important;
+  }
+
+  .ant-breadcrumb a:hover,
+  .ant-breadcrumb .ant-breadcrumb-link:hover {
+    color: var(--accent) !important;
+  }
+
+  .ant-breadcrumb .anticon {
+    color: var(--sider-text) !important;
+  }
+}

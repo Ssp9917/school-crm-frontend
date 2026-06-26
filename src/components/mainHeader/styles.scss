@@ -1,0 +1,219 @@
+@use '../../styles/breakpoints.scss' as *;
+
+.main-header {
+  background: var(--header-bg);
+  color: var(--sider-text);
+  // border-bottom: 1px solid var(--muted);
+  padding: 20px 32px;
+  height: 64px;
+  display: flex;
+  align-items: center;
+  padding-left: 17px;
+  justify-content: space-between;
+  box-shadow: var(--boxShadow);
+   @include phone {
+    padding: 20px 10px;
+  }
+}
+
+.left-section {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+
+  @include phone {
+    gap: 8px;
+  }
+}
+
+.menu-btn {
+  background: var(--sider-bg);
+  border: 1px solid var(--muted);
+  color: var(--sider-text);
+  width: 36px;
+  height: 36px;
+  border-radius: 6px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+
+  &:hover {
+    border-color: var(--muted);
+  }
+  svg{
+    color: var(--sider-text);
+  }
+}
+
+.theme-toggle-btn{
+  background: transparent;
+  border: 1px solid var(--muted);
+  color: var(--sider-text);
+  width: 36px;
+  height: 36px;
+  border-radius: 6px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+/* DARK SELECT */
+.dark-select {
+  width: 220px !important;
+  background-color: var(--card-bg);
+  color: var(--sider-text) !important;
+  padding-block: 8px;
+  border-color:var(--inputBg) ;
+
+  @include phone {
+    width: 120px !important;
+  }
+
+   &:focus {
+    border: none !important;
+
+  }
+// .ant-select{
+// }
+  .ant-select-selector {
+    background: var(--sider-bg) !important;
+    border: 1px solid var(--muted) !important;
+    height: 40px !important;
+    display: flex;
+    align-items: center;
+    color: var(--sider-text) !important;
+  }
+
+  // FIX: Search input white background
+  .ant-select-selection-search-input {
+    background: var(--sider-bg) !important;
+    color: var(--sider-text) !important;
+  }
+
+  // Placeholder color
+  .ant-select-selection-placeholder {
+    color: var(--placeholder) !important;
+  }
+
+  .ant-select-arrow {
+    color: var(--sider-text) !important;
+  }
+}
+
+
+/* DROPDOWN DARK THEMING */
+  .dark-select-dropdown {
+  background: var(--sider-bg) !important;
+  color: var(--sider-text) !important;
+
+  .ant-select-item {
+    background: var(--sider-bg) !important;
+    color: var(--sider-text) !important;
+
+    &:hover {
+      background: var(--card-bg) !important;
+    }
+  }
+}
+
+.profile-avatar {
+  background-color: var(--accent) !important;
+  cursor: pointer;
+}
+
+.profile-name {
+  font-weight: 600;
+}
+
+.logout-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.change-password-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+}
+
+// Change Password Modal Styles
+.change-password-modal {
+  .ant-modal-title {
+    margin-bottom: 20px !important;
+    font-size: 25px !important;
+    color: var(--sider-text);
+  }
+
+  .password-form {
+    .ant-form-item-label > label {
+      color: var(--sider-text);
+      font-weight: 500;
+    }
+
+    .ant-input, .ant-input-password {
+      padding-block: 6px;
+      background: var(--transparent) !important;
+      color: var(--sider-text) !important;
+      border-radius: 6px;
+
+      &:focus, &:hover {
+        border-color: var(--accent) !important;
+        box-shadow: 0 0 0 2px rgba(24, 144, 255, 0.1);
+      }
+
+      &::placeholder {
+        color: var(--muted) !important;
+      }
+    }
+
+    .ant-input-suffix {
+      span {
+        color: var(--muted);
+        
+        &:hover {
+          color: var(--accent) !important;
+        }
+      }
+    }
+  }
+
+  .modal-actions {
+    justify-content: flex-end;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 24px;
+
+    .cancel-btn {
+      border-color: var(--muted);
+      background-color: transparent !important;
+      color: var(--sider-text);
+      height: 40px;
+      padding: 0 20px;
+      border-radius: 6px;
+
+      &:hover {
+        border-color: var(--accent);
+        color: var(--accent);
+      }
+    }
+
+    .submit-btn {
+      background: var(--accent);
+      border: none;
+      color: white;
+      height: 40px;
+      padding: 0 20px;
+      border-radius: 6px;
+
+      &:hover {
+        background: var(--accent-dark);
+      }
+    }
+  }
+}

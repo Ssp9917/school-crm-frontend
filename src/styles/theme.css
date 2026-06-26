@@ -1,0 +1,90 @@
+/* Default Dark Theme */
+:root {
+  --bg: #2c2c2c;
+  --sider-bg: #252324;
+  --sider-text: #ffffff;
+  --white: #ffffff;
+  --red:#ff4d4f;
+  --danger:#fa0004;
+  /* --header-bg: #181a20; */
+  --header-bg: #3a3a3a;
+  --content-bg: #1c1c1c;
+  --card-bg: #252528;
+  --muted: #888888;
+  --accent: #82e12f;
+  --accent-dark: #374f22;
+  --menu-active-border: var(--accent);
+  --inputBg: #3d3d3d;
+  --placeholder: #aaa;
+  --hover-bg: #3a3a3c;
+  --transparent: transparent;
+  --boxShadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+    rgba(0, 0, 0, 0.12) 0px -12px 30px,
+    rgba(0, 0, 0, 0.12) 0px 4px 6px,
+    rgba(0, 0, 0, 0.17) 0px 12px 13px,
+    rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+
+/* Light Theme */
+.theme-light {
+  --bg: #f5f6f8;
+  --sider-bg: #ffffff;
+  --sider-text: #1f2933;
+  --header-bg: #ffffff;
+  --content-bg: #f7f9fb;
+  --card-bg: #ffffff;
+  --muted: #e5e7eb;
+  --accent: #10b981;
+  --accent-dark: #059669;
+  --menu-active-border: var(--accent);
+  --inputBg: #ffffff;
+  --placeholder: #6b7280;
+  --hover-bg: #f3f4f6;
+  --transparent: transparent;
+}
+.ant-menu-inline-collapsed{
+  background-color: transparent !important;
+}
+/* Match antd menu background */
+.app-sider-menu .ant-menu-dark {
+  background: var(--sider-bg) !important;
+}
+
+/* Ensure menu text follows theme colors for light and dark modes */
+.app-sider-menu .ant-menu-dark,
+.app-sider-menu .ant-menu-light {
+  background: var(--sider-bg) !important;
+  color: var(--sider-text) !important;
+}
+
+.app-sider-menu .ant-menu-item,
+.app-sider-menu .ant-menu-item > a,
+.app-sider-menu .ant-menu-submenu-title {
+  color: var(--sider-text) !important;
+}
+
+.app-sider-menu .ant-menu-item:hover,
+.app-sider-menu .ant-menu-item-active,
+.app-sider-menu .ant-menu-submenu-open .ant-menu-submenu-title {
+  color: var(--accent) !important;
+}
+
+.fitclub-logo {
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--sider-text);
+  letter-spacing: 2px;
+  text-align: center;
+}
+.ant-select{
+  background-color: transparent !important;
+  color: var(--sider-text);
+  border-color: var(--muted) !important;
+}
+/* .ant-menu-sub, .ant-menu-inline{
+  background-color: transparent !important;
+} */
+.ant-menu-sub, .ant-menu-inline{
+  background-color: var(--sider-bg) !important;
+  /* Use a theme variable for submenu background */
+}

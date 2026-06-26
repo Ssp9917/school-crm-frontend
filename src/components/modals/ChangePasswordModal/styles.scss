@@ -1,0 +1,75 @@
+.change-password-modal {
+  .ant-modal-title {
+    margin-bottom: 20px !important;
+    font-size: 25px !important;
+    color: var(--sider-text);
+  }
+
+  .password-form {
+    .ant-form-item-label > label {
+      color: var(--sider-text);
+      font-weight: 500;
+    }
+
+    .ant-input, .ant-input-password {
+      padding-block: 6px;
+      background: var(--transparent) !important;
+      color: var(--sider-text) !important;
+      border-radius: 6px;
+
+      &:focus, &:hover {
+        border-color: var(--accent) !important;
+        box-shadow: 0 0 0 2px rgba(24, 144, 255, 0.1);
+      }
+
+      &::placeholder {
+        color: var(--muted) !important;
+      }
+    }
+
+    .ant-input-suffix {
+      span {
+        color: var(--muted);
+        
+        &:hover {
+          color: var(--accent) !important;
+        }
+      }
+    }
+  }
+
+  .modal-actions {
+    justify-content: flex-end;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 24px;
+
+    .cancel-btn {
+      border-color: var(--muted);
+      background-color: transparent !important;
+      color: var(--sider-text);
+      height: 40px;
+      padding: 0 20px;
+      border-radius: 6px;
+
+      &:hover {
+        border-color: var(--accent);
+        color: var(--accent);
+      }
+    }
+
+    .submit-btn {
+      background: var(--accent);
+      border: none;
+      color: white;
+      height: 40px;
+      padding: 0 20px;
+      border-radius: 6px;
+
+      &:hover {
+        background: var(--accent-dark);
+      }
+    }
+  }
+}

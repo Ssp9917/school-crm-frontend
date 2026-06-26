@@ -1,0 +1,277 @@
+@use '../../styles/breakpoints.scss' as *;
+.employee-page {
+  min-height: 100vh;
+  color: var(--sider-text);
+  font-family: 'Inter', sans-serif;
+
+  .title {
+    font-size: 18px;
+    margin-bottom: 25px;
+    letter-spacing: 0.5px;
+  }
+
+  .employee-form {
+    .row {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 22px;
+
+      @include mobile {
+        grid-template-columns: 1fr;
+      }
+
+.ant-select{
+     height: 48px !important;
+        background: var(--transparent) !important;
+        border: 1px solid var(--muted) !important;
+        color: var(--sider-text) !important;
+        input{
+          background-color: var(--transparent) !important;
+        }
+}
+      .ant-input,
+      .ant-select-selector {
+        // height: 48px !important;
+        padding-block: 12px;
+        background: var(--transparent) !important;
+        border: 1px solid var(--muted) !important;
+        color: var(--sider-text) !important;
+      }
+
+      .ant-select .ant-select-selector {
+        background: var(--card-bg) !important;
+      }
+
+      .ant-input::placeholder {
+        color: var(--placeholder) !important;
+      }
+    }
+
+    /* ImagePicker used here; keep small wrapper styles if needed */
+    .upload-box {
+      height: 48px;
+      background: var(--card-bg);
+      border: 1px solid var(--muted);
+      border-radius: 6px;
+      display: flex;
+      align-items: center;
+      padding: 0 14px;
+      justify-content: space-between;
+      color: var(--muted);
+
+      .upload-icon {
+        font-size: 20px;
+        color: var(--accent);
+      }
+    }
+
+    .branch-row {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      .ant-form-item{
+        width: 60%;
+      }
+.ant-select{
+    height: 48px !important;
+        background: var(--transparent) !important;
+        border: 1px solid var(--muted) !important;
+        color: var(--sider-text) !important;
+            display: flex;
+    align-items: center;
+    .ant-select-content{
+      gap: 10px;
+      background-color: transparent !important;
+    }
+    .ant-select-content-item{
+      color: var(--sider-text);
+      background-color: var(--card-bg);
+    }
+    .ant-select-selection-item-remove{
+      color: var(--sider-text);
+    }
+        input{
+          background-color: transparent !important;
+          width: 0 !important;
+          display: none ;
+        }
+}
+     
+
+      .branch-buttons {
+        display: flex;
+        gap: 10px;
+
+        .delete-small {
+          background: var(--card-bg);
+          color: var(--sider-text);
+          border: 1px solid var(--muted);
+          height: 40px;
+          display: flex;
+          align-items: center;
+          gap: 5px;
+          padding: 0 12px;
+        }
+
+        .add-small {
+          background: transparent;
+          color: var(--accent);
+          border: 1px solid rgba(0,0,0,0.08);
+          height: 40px;
+          width: 70px;
+        }
+      }
+    }
+
+    .footer-buttons {
+      margin-top: 25px;
+      display: flex;
+      gap: 15px;
+
+      @include mobile {
+        flex-wrap: wrap;
+        .save-btn, .delete-btn, button {
+          flex: 1;
+          min-width: 120px;
+        }
+      }
+
+      .delete-btn {
+        background: var(--danger, #d63c4a);
+        color: #fff;
+        border: none;
+        height: 48px;
+        padding: 0 28px;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+      }
+
+      .save-btn {
+        background: var(--accent);
+        color: var(--card-bg);
+        border: none;
+        height: 48px;
+        padding: 0 28px;
+      }
+    }
+  }
+
+  /* ── combined country-code + phone control (like Add User) ──
+     nested under .employee-form .row so it out-specifies the
+     generic .row .ant-select / .ant-input border rules. */
+  .employee-form .row .country-phone {
+    display: flex;
+    align-items: center;
+    height: 48px;
+    width: 100%;
+    border: 1px solid var(--muted);
+    background: var(--card-bg);
+    border-radius: 6px;
+    overflow: hidden;
+
+    .cc-selected-wrapper {
+      display: inline-flex;
+      align-items: center;
+      height: 100%;
+      padding: 0 10px;
+      gap: 8px;
+      border-right: none;
+    }
+
+    .cc-flag {
+      width: 22px;
+      height: 15px;
+      object-fit: cover;
+      border-radius: 2px;
+      flex-shrink: 0;
+    }
+
+    .cc-flag-placeholder {
+      width: 22px;
+      height: 15px;
+      flex-shrink: 0;
+    }
+
+    /* kill the inner select border/height/bg coming from .row rules */
+    .ant-select,
+    .ant-select:hover,
+    .ant-select.ant-select-focused {
+      height: 100% !important;
+      border: none !important;
+      background: transparent !important;
+      box-shadow: none !important;
+      display: flex;
+      align-items: center;
+      --select-border-size: 0px !important;
+      --select-border-color: transparent !important;
+    }
+
+    .ant-select-selector {
+      height: 100% !important;
+      display: flex !important;
+      align-items: center !important;
+      background: transparent !important;
+      border: none !important;
+      padding: 0 !important;
+      min-width: 0 !important;
+      box-shadow: none !important;
+    }
+
+    .ant-select-selection-item {
+      color: var(--sider-text) !important;
+      font-weight: 500;
+      line-height: normal !important;
+    }
+
+    .ant-select-arrow {
+      color: var(--placeholder) !important;
+      inset-inline-end: 2px !important;
+    }
+
+    /* .cc-input.ant-input → beats .row .ant-input border rule */
+    .cc-input,
+    .cc-input.ant-input {
+      border: none !important;
+      background: transparent !important;
+      color: var(--sider-text) !important;
+      height: 100% !important;
+      padding: 0 14px !important;
+      flex: 1;
+      font-size: 14px;
+      box-shadow: none !important;
+    }
+
+    .cc-input::placeholder {
+      color: var(--placeholder) !important;
+    }
+
+    .cc-input:focus {
+      box-shadow: none !important;
+    }
+  }
+}
+
+/* country code dropdown (renders at body level) */
+.cc-option {
+  display: inline-flex;
+  align-items: center;
+}
+
+.cc-option img {
+  width: 20px;
+  height: 14px;
+  object-fit: cover;
+  margin-right: 8px;
+  vertical-align: middle;
+  border-radius: 2px;
+}
+
+.country-code-dropdown {
+  min-width: 320px !important;
+  max-width: 540px !important;
+}
+
+.country-code-dropdown .ant-select-item-option-content {
+  white-space: normal !important;
+}

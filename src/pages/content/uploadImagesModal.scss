@@ -1,0 +1,76 @@
+.upload-img-modal {
+  :global(.ant-modal-content) {
+    background: var(--card-bg);
+    border-radius: 12px;
+    padding: 32px;
+  }
+
+  :global(.ant-modal-close .anticon) {
+    font-size: 18px;
+    color: var(--sider-text);
+  }
+}
+
+.uim-title {
+  font-size: 26px;
+  font-weight: 800;
+  color: var(--sider-text);
+  margin: 0 0 6px 0;
+}
+
+.uim-subtitle {
+  font-size: 14px;
+  color: var(--placeholder);
+  margin: 0 0 20px 0;
+}
+
+.uim-dropzone {
+  background: var(--bg);
+  border: 1px solid var(--muted);
+  border-radius: 10px;
+  padding: 48px 24px 36px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  transition: border-color 0.15s, background 0.15s;
+
+  &:hover {
+    border-color: #17A2B8;
+    background: var(--hover-bg);
+  }
+}
+
+.uim-drop-icon {
+  font-size: 56px;
+  color: var(--muted);
+}
+
+.uim-drop-text {
+  font-size: 15px;
+  color: var(--placeholder);
+  text-align: center;
+  margin: 0;
+  line-height: 1.6;
+}
+
+.uim-drop-hint {
+  font-size: 13px;
+  color: var(--placeholder);
+  opacity: 0.7;
+}
+
+.uim-browse-btn {
+  background: none;
+  border: none;
+  padding: 0;
+  color: #17A2B8;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  cursor: pointer;
+  margin-top: 4px;
+  transition: opacity 0.15s;
+
+  &:hover { opacity: 0.75; }
+}

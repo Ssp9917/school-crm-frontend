@@ -1,0 +1,82 @@
+.aside{
+    background: var(--sider-bg);
+      color: var(--sider-text);
+      display: flex;
+      flex-direction: column;
+      // justify-content: space-between;
+      padding: 0px 0 16px 0;
+      min-width: 260;
+      height: 100vh;
+      overflow-y: scroll;
+      box-shadow: 2px 0 8px rgba(0,0,0,0.08);
+      padding-bottom: 150px;
+    
+      &::-webkit-scrollbar {
+  width: 0px;
+display: none;
+}
+.logo-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px;
+  position: sticky;
+  top: 0%;
+  z-index: 10;
+      height: 60px;
+    background: var(--sider-bg);
+        padding-left: 34px;
+}
+
+.logo-img {
+  width: 150px;
+  height: auto;
+}
+
+  .collapse-btn {
+  background: var(--card-bg);
+  border: 1px solid var(--muted);
+  color: var(--sider-text);
+  width: 32px;
+  height: 32px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &:hover {
+    background: var(--card-bg);
+  }
+}
+
+
+      .custom-sider-menu, .app-sider-menu {
+        .ant-menu{
+          background-color: transparent !important;
+          border-radius: 0% !important;
+        }
+        .ant-menu-submenu{
+
+          border-radius: 0% !important;
+    //           border-top: 1px solid var(--muted) !important;
+    // border-bottom: 1px solid var(--muted) !important;
+        }
+      
+         .ant-menu-item-selected {
+        background: transparent !important;
+        border-left: 2px solid var(--accent) !important;
+        border-top: 0.1px solid var(--accent-dark) !important;
+        border-bottom: 0.1px solid var(--accent-dark) !important;
+        color: var(--sider-text) !important;
+        font-weight: 600 !important;
+        border-radius: 0%;
+        &::after {
+        display: none !important; /* Remove default AntD blue bar */
+          background: transparent !important;
+      }
+      }
+      }
+}
+

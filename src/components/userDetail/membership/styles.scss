@@ -1,0 +1,25 @@
+/* Themed button group for membership actions */
+.membership-btn-group {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+.themed-btn {
+  background: transparent !important;
+  color: var(--accent);
+  border: 1px solid var(--muted);
+  border-radius: 6px;
+  font-weight: 500;
+  transition: background 0.2s, color 0.2s;
+}
+.themed-btn.primary {
+  background: var(--accent);
+  color: #fff;
+  border: 1px solid var(--accent);
+}
+.themed-btn:hover, .themed-btn:focus {
+  background: var(--accent-dark);
+  color: #fff;
+  border-color: var(--accent-dark);
+  transition: border 0.2s, color 0.2s;
+}

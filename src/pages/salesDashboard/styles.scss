@@ -1,0 +1,231 @@
+@use '../../styles/breakpoints.scss' as *;
+
+.sld-page {
+  padding: 0 0 32px;
+
+  .sld-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-bottom: 20px;
+
+    .sld-header-left {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .sld-title {
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--sider-text);
+      margin: 0;
+    }
+    .sld-header-right {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+    .sld-badge-label {
+      font-size: 12px;
+      color: var(--sider-text);
+      padding: 4px 10px;
+      background: var(--hover-bg);
+      border-radius: 6px;
+    }
+  }
+
+  .sld-stats-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+    margin-bottom: 20px;
+
+    @include laptop { grid-template-columns: repeat(2, 1fr); }
+    @include mobile { grid-template-columns: 1fr; }
+  }
+
+  .sld-target-card {
+    background: var(--card-bg);
+    border: 1px solid var(--muted);
+    border-radius: 12px;
+    padding: 18px;
+    margin-bottom: 20px;
+
+    .sld-target-info {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 10px;
+
+      .sld-target-label {
+        font-size: 14px;
+        font-weight: 600;
+        color: var(--sider-text);
+      }
+      .sld-target-val {
+        font-size: 15px;
+        font-weight: 700;
+        color: var(--sider-text);
+      }
+    }
+
+    .sld-target-sub {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 8px;
+      font-size: 12px;
+      color: var(--muted);
+    }
+  }
+
+  .sld-charts-row {
+    display: grid;
+    grid-template-columns: 1fr 1.6fr 1fr;
+    gap: 16px;
+    margin-bottom: 20px;
+
+    @include laptop { grid-template-columns: 1fr 1fr; }
+    @include mobile { grid-template-columns: 1fr; }
+  }
+
+  .sld-chart-card {
+    background: var(--card-bg);
+    border: 1px solid var(--muted);
+    border-radius: 12px;
+    padding: 16px;
+
+    .sld-chart-head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 14px;
+
+      .sld-chart-title {
+        font-size: 14px;
+        font-weight: 600;
+        color: var(--sider-text);
+      }
+    }
+  }
+
+  /* Lead Funnel */
+  .sld-funnel {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding-top: 4px;
+  }
+
+  .sld-funnel-stage {
+    display: grid;
+    grid-template-columns: 1fr 52px 36px;
+    align-items: center;
+    gap: 8px;
+
+    .sld-funnel-bar {
+      height: 28px;
+      border-radius: 0 4px 4px 0;
+      transition: width 0.4s ease;
+    }
+    .sld-funnel-label {
+      font-size: 12px;
+      color: var(--sider-text);
+    }
+    .sld-funnel-count {
+      font-size: 12px;
+      font-weight: 700;
+      text-align: right;
+    }
+  }
+
+  /* Client Type */
+  .sld-client-type {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding-top: 4px;
+  }
+
+  .sld-ct-row {
+    display: grid;
+    grid-template-columns: 10px 56px 1fr 30px;
+    align-items: center;
+    gap: 8px;
+
+    .sld-ct-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+    }
+    .sld-ct-label {
+      font-size: 12px;
+      color: var(--sider-text);
+    }
+    .sld-ct-count {
+      font-size: 12px;
+      font-weight: 700;
+      text-align: right;
+    }
+  }
+
+  .sld-bottom-row {
+    display: grid;
+    grid-template-columns: 1.4fr 1fr;
+    gap: 16px;
+
+    @include laptop { grid-template-columns: 1fr; }
+  }
+
+  .sld-section {
+    background: var(--card-bg);
+    border: 1px solid var(--muted);
+    border-radius: 12px;
+    padding: 16px;
+
+    .sld-section-head {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--sider-text);
+      margin-bottom: 14px;
+    }
+  }
+
+  .sld-live-dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: #22c55e;
+    animation: pulse 1.5s infinite;
+
+    @keyframes pulse {
+      0%, 100% { opacity: 1; }
+      50%       { opacity: 0.3; }
+    }
+  }
+
+  .sld-table {
+    .ant-table { background: transparent; color: var(--sider-text); }
+    .ant-table-thead > tr > th {
+      background: var(--hover-bg);
+      color: var(--muted);
+      font-size: 11px;
+      text-transform: uppercase;
+      border-bottom: 1px solid var(--muted);
+      padding: 8px 10px;
+    }
+    .ant-table-tbody > tr > td {
+      border-bottom: 1px solid var(--muted);
+      color: var(--sider-text);
+      font-size: 12px;
+      padding: 7px 10px;
+      background: transparent;
+    }
+    .ant-table-tbody > tr:last-child > td { border-bottom: none; }
+    .ant-table-tbody > tr:hover > td { background: var(--hover-bg) !important; }
+  }
+}

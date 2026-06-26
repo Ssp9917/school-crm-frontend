@@ -1,0 +1,187 @@
+.aam-modal {
+  :global(.ant-modal-content) {
+    background: var(--card-bg);
+    border-radius: 12px;
+    padding: 32px;
+  }
+
+  :global(.ant-modal-close .anticon) {
+    font-size: 18px;
+    color: var(--sider-text);
+  }
+}
+
+.aam-title {
+  font-size: 26px;
+  font-weight: 800;
+  color: var(--sider-text);
+  margin: 0 0 20px 0;
+}
+
+/* addDirector-style input overrides */
+.aam-form {
+  .ant-input,
+  .ant-select-selector,
+  .ant-input-affix-wrapper {
+    padding-block: 12px;
+    background: var(--transparent) !important;
+    border: 1px solid var(--muted) !important;
+    color: var(--sider-text) !important;
+    box-shadow: none !important;
+  }
+
+  .ant-input-affix-wrapper .ant-input {
+    border: none !important;
+    padding-block: 0 !important;
+    background: transparent !important;
+  }
+
+  .ant-input::placeholder {
+    color: var(--placeholder) !important;
+  }
+
+  .ant-form-item-label > label {
+    color: var(--sider-text) !important;
+    font-weight: 600;
+    font-size: 14px;
+  }
+
+  .ant-form-item-explain-error {
+    color: #dc2626;
+    font-size: 13px;
+  }
+
+  .ant-input-prefix {
+    margin-right: 0;
+  }
+}
+
+/* Drop zone */
+.aam-dropzone {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  background: var(--bg);
+  border: 1px solid var(--muted);
+  border-radius: 10px;
+  padding: 32px 24px;
+  margin-bottom: 20px;
+  transition: border-color 0.15s;
+
+  &:hover { border-color: #17A2B8; }
+}
+
+.aam-drop-icon {
+  font-size: 52px;
+  color: var(--placeholder);
+  opacity: 0.5;
+}
+
+.aam-drop-text {
+  font-size: 14px;
+  color: var(--placeholder);
+  margin: 0;
+}
+
+.aam-file-name {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--sider-text);
+  margin: 0;
+}
+
+.aam-browse-btn {
+  height: 40px;
+  padding: 0 28px;
+  background: #1e3a5f !important;
+  border: none !important;
+  color: #fff !important;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  border-radius: 6px;
+  margin-top: 4px;
+
+  &:hover { background: #162d4a !important; }
+}
+
+/* Icon prefix trigger */
+.aam-icon-prefix {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding-right: 10px;
+  margin-right: 8px;
+  border-right: 1px solid var(--muted);
+  cursor: pointer;
+  color: var(--placeholder);
+  user-select: none;
+
+  &:hover { color: var(--sider-text); }
+}
+
+.aam-icon-current {
+  font-size: 17px;
+  display: flex;
+  align-items: center;
+}
+
+.aam-icon-chevron {
+  font-size: 11px;
+  transition: transform 0.2s ease;
+
+  &--open { transform: rotate(180deg); }
+}
+
+/* Icon grid — individual card cells */
+.aam-icon-grid {
+  display: grid;
+  grid-template-columns: repeat(9, 1fr);
+  gap: 6px;
+  margin-bottom: 16px;
+}
+
+.aam-icon-cell {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 50px;
+  background: var(--bg);
+  border: 1px solid var(--muted);
+  border-radius: 6px;
+  font-size: 20px;
+  color: var(--placeholder);
+  cursor: pointer;
+  transition: background 0.12s, color 0.12s, border-color 0.12s;
+
+  &:hover {
+    background: var(--hover-bg);
+    color: var(--sider-text);
+  }
+
+  &--active {
+    background: #1e3a5f;
+    color: #fff;
+    border-color: #1e3a5f;
+  }
+}
+
+/* ADD TO PAGE button */
+.aam-add-btn {
+  height: 52px;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  border-radius: 8px;
+  border: none !important;
+  background: var(--hover-bg) !important;
+  color: var(--placeholder) !important;
+  margin-top: 8px;
+
+  &:not(:disabled) {
+    background: #17A2B8 !important;
+    color: #fff !important;
+    &:hover { background: #138496 !important; }
+  }
+}

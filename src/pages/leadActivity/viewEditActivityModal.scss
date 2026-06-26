@@ -1,0 +1,207 @@
+.vea-modal {
+  :global(.ant-modal-content) {
+    background: var(--card-bg);
+    border-radius: 16px;
+    padding: 28px 28px 24px;
+  }
+
+  :global(.ant-modal-close) {
+    top: 20px;
+    right: 20px;
+
+    .anticon {
+      font-size: 16px;
+      color: var(--placeholder);
+    }
+
+    &:hover .anticon { color: var(--sider-text); }
+  }
+}
+
+/* Header */
+.vea-header {
+  margin-bottom: 20px;
+}
+
+.vea-title {
+  font-size: 24px;
+  font-weight: 800;
+  color: var(--sider-text);
+  margin: 0 0 4px;
+}
+
+.vea-subtitle {
+  font-size: 14px;
+  color: var(--placeholder);
+  margin: 0;
+}
+
+.vea-client-name {
+  color: var(--sider-text);
+  font-weight: 600;
+}
+
+/* Type row */
+.vea-type-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 14px;
+  border: 1px solid var(--muted);
+  border-radius: 10px;
+  margin-bottom: 14px;
+}
+
+.vea-type-icon {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  flex-shrink: 0;
+}
+
+.vea-type-select {
+  flex: 1;
+
+  :global(.ant-select-selector) {
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+    padding: 0 !important;
+    height: auto !important;
+  }
+
+  :global(.ant-select-selection-item) {
+    padding: 0 !important;
+    line-height: normal !important;
+  }
+
+  :global(.ant-select-arrow) {
+    color: var(--placeholder) !important;
+  }
+}
+
+.vea-type-label {
+  font-size: 17px;
+  font-weight: 700;
+  color: var(--sider-text);
+}
+
+/* Option items in dropdown */
+.vea-opt-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 13px;
+  color: var(--sider-text);
+}
+
+.vea-opt-icon {
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  flex-shrink: 0;
+}
+
+/* Notes */
+.vea-notes {
+  background: var(--bg) !important;
+  border: 1px solid var(--muted) !important;
+  border-radius: 10px !important;
+  color: var(--sider-text) !important;
+  font-size: 14px;
+  line-height: 1.6;
+  resize: none;
+  box-shadow: none !important;
+  padding: 14px !important;
+  margin-bottom: 14px;
+
+  &::placeholder { color: var(--placeholder) !important; }
+
+  &:focus {
+    border-color: #17A2B8 !important;
+    box-shadow: 0 0 0 2px rgba(23,162,184,0.12) !important;
+  }
+}
+
+/* Date / time row */
+.vea-datetime-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 14px;
+  border: 1px solid var(--muted);
+  border-radius: 10px;
+  margin-bottom: 14px;
+  cursor: pointer;
+  transition: border-color 0.12s;
+
+  &:hover { border-color: #17A2B8; }
+}
+
+.vea-dt-icon {
+  color: var(--placeholder);
+  font-size: 15px;
+  flex-shrink: 0;
+}
+
+.vea-dt-label {
+  flex: 1;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--sider-text);
+}
+
+.vea-dt-arrow {
+  font-size: 12px;
+  color: var(--placeholder);
+}
+
+/* Add Attachment row */
+.vea-attach-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 14px;
+  background: rgba(23, 162, 184, 0.08);
+  border: 1px solid rgba(23, 162, 184, 0.2);
+  border-radius: 10px;
+  margin-bottom: 20px;
+  cursor: pointer;
+  transition: background 0.12s;
+
+  &:hover { background: rgba(23, 162, 184, 0.14); }
+}
+
+.vea-attach-plus,
+.vea-attach-clip {
+  color: #17A2B8;
+  font-size: 14px;
+}
+
+.vea-attach-label {
+  font-size: 14px;
+  color: #17A2B8;
+  font-weight: 500;
+}
+
+/* Save button */
+.vea-save-btn {
+  height: 48px;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  border-radius: 10px;
+  background: #17A2B8 !important;
+  border: none !important;
+  color: #fff !important;
+
+  &:hover { background: #138496 !important; }
+}

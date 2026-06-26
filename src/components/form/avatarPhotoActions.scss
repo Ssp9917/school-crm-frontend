@@ -1,0 +1,52 @@
+@use '../../styles/breakpoints.scss' as *;
+
+.avatar-wrap {
+  .avatar-overlay {
+    position: absolute;
+    inset: 3px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    background: rgba(0, 0, 0, 0.45);
+
+    &.actions {
+      opacity: 0;
+      transition: opacity 0.2s ease;
+    }
+
+    .avatar-action-btn {
+      width: 28px;
+      height: 28px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: none;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.9);
+      color: #333;
+      font-size: 13px;
+      cursor: pointer;
+      transition: transform 0.15s ease, background 0.15s ease;
+
+      &:hover {
+        background: var(--accent);
+        color: #fff;
+        transform: scale(1.1);
+      }
+
+      @include mobile {
+        width: 24px;
+        height: 24px;
+        font-size: 12px;
+      }
+    }
+  }
+
+  &:hover .avatar-overlay.actions { opacity: 1; }
+
+  @media (hover: none) {
+    .avatar-overlay.actions { opacity: 1; background: transparent; }
+  }
+}

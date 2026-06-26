@@ -1,0 +1,190 @@
+{
+  "_readme": [
+    "This file is a handoff document for the backend developer.",
+    "The frontend (fitClub) reads a /sider-menu API response that has two arrays: `menu` and `permissions`.",
+    "The `menu` array controls which sidebar items are VISIBLE — DO NOT add new entries to this array.",
+    "The `permissions` array controls which action BUTTONS are visible inside pages (Edit, Delete, Mark Present, Download, etc.).",
+    "When a role is saved with a permission key, the backend must include that permission object in the `permissions` array of the sider-menu response.",
+    "The frontend checks: permissions.some(p => p.permission === 'PERMISSION_NAME') to show or hide specific action buttons.",
+    "Convention for action-level keys: {menuKey}-{action}, e.g. '8-1-edit', '4-3-mark-present', '24-1-download'."
+  ],
+
+  "howVisibilityWorks": {
+    "menu": "Controls which SIDEBAR items are visible. Backend must filter this array by role — only include menu items the role has access to. If User Management is not in this array, it will NOT appear in the sidebar at all.",
+    "permissions": "Controls which ACTION BUTTONS are visible inside pages (Edit, Delete, Mark Present, Download, etc.). Backend must include only the action-level permission objects the role is allowed to perform.",
+    "example": "Role has no User Management access → backend omits key '9' from `menu` → sidebar hides User Management entirely. Role has User Management but no delete → backend includes key '9' in `menu` but omits '9-1-delete' from `permissions` → sidebar shows the menu but Delete button is hidden inside the page."
+  },
+
+  "currentApiResponseFormat": {
+    "endpoint": "GET /sider-menu",
+    "response": {
+      "success": true,
+      "menu": [
+        {
+          "_comment": "Only include items this role has access to. Missing items = hidden from sidebar.",
+          "key": "9",
+          "label": "User Management",
+          "permission": "USERS_READ",
+          "children": [
+            { "key": "9-1", "label": "All Users", "permission": "USERS_READ" },
+            { "key": "9-2", "label": "User Detail", "permission": "USERS_READ" }
+          ]
+        }
+      ],
+      "permissions": [
+        {
+          "_comment": "Only include action-level permissions this role is allowed to perform.",
+          "key": "9-1",
+          "label": "All Users",
+          "permission": "USERS_READ"
+        }
+      ]
+    }
+  },
+
+  "newPermissionsRequired": {
+    "_note": "All items below must be returned in the `permissions` array when the role has that permission granted. The `menu` array does NOT change.",
+
+    "employeeManagement": {
+      "_menuKey": "8",
+      "permissions": [
+        { "key": "8-1-edit",            "label": "Edit Employee",                  "permission": "EMPLOYEE_UPDATE",      "controls": "Edit button in All Employees action dropdown" },
+        { "key": "8-1-delete",          "label": "Delete Employee",                "permission": "EMPLOYEE_DELETE",      "controls": "Delete button in All Employees action dropdown" },
+        { "key": "8-1-change-password", "label": "Change Password (Employee)",     "permission": "EMPLOYEE_UPDATE",      "controls": "Change Password in employee action dropdown" },
+        { "key": "8-1-status",          "label": "Toggle Employee Status",         "permission": "EMPLOYEE_UPDATE",      "controls": "Active/Inactive status toggle for employees" },
+        { "key": "8-2-verify",          "label": "Verify General Staff",           "permission": "GENERAL_STAFF_UPDATE", "controls": "Verify button in General Staff action dropdown" },
+        { "key": "8-2-edit",            "label": "Edit General Staff",             "permission": "GENERAL_STAFF_UPDATE", "controls": "Edit button in All General Staff action dropdown" },
+        { "key": "8-2-change-password", "label": "Change Password (General Staff)","permission": "GENERAL_STAFF_UPDATE", "controls": "Change Password in General Staff action dropdown" },
+        { "key": "8-2-delete",          "label": "Delete General Staff",           "permission": "GENERAL_STAFF_DELETE", "controls": "Delete button in All General Staff action dropdown" },
+        { "key": "8-2-status",          "label": "Toggle General Staff Status",    "permission": "GENERAL_STAFF_UPDATE", "controls": "Active/Inactive status toggle for General Staff" },
+        { "key": "8-3-verify",          "label": "Verify Trainer",                 "permission": "TRAINER_UPDATE",       "controls": "Verify button in Trainer action dropdown" },
+        { "key": "8-3-edit",            "label": "Edit Trainer",                   "permission": "TRAINER_UPDATE",       "controls": "Edit button in All Trainers action dropdown" },
+        { "key": "8-3-delete",          "label": "Delete Trainer",                 "permission": "TRAINER_DELETE",       "controls": "Delete button in All Trainers action dropdown" },
+        { "key": "8-3-status",          "label": "Toggle Trainer Status",          "permission": "TRAINER_UPDATE",       "controls": "Active/Inactive status toggle for Trainers" }
+      ]
+    },
+
+    "attendanceManagement": {
+      "_menuKey": "4",
+      "permissions": [
+        { "key": "4-1-mark-present", "label": "Mark Director Present",          "permission": "DIRECTOR_UPDATE",      "controls": "Mark Present button on Director Attendance page" },
+        { "key": "4-1-mark-absent",  "label": "Mark Director Absent",           "permission": "DIRECTOR_UPDATE",      "controls": "Mark Absent button on Director Attendance page" },
+        { "key": "4-1-export",       "label": "Export Director Attendance",     "permission": "DIRECTOR_READ",        "controls": "Export/Download button on Director Attendance page" },
+        { "key": "4-2-mark-present", "label": "Mark User Present",              "permission": "USERS_UPDATE",         "controls": "Mark Present button on User Attendance page" },
+        { "key": "4-2-mark-absent",  "label": "Mark User Absent",              "permission": "USERS_UPDATE",         "controls": "Mark Absent button on User Attendance page" },
+        { "key": "4-2-export",       "label": "Export User Attendance",         "permission": "USERS_READ",           "controls": "Export/Download button on User Attendance page" },
+        { "key": "4-3-mark-present", "label": "Mark Employee Present",          "permission": "EMPLOYEE_UPDATE",      "controls": "Mark Present button on Employee Attendance page" },
+        { "key": "4-3-mark-absent",  "label": "Mark Employee Absent",          "permission": "EMPLOYEE_UPDATE",      "controls": "Mark Absent button on Employee Attendance page" },
+        { "key": "4-3-export",       "label": "Export Employee Attendance",     "permission": "EMPLOYEE_READ",        "controls": "Export/Download button on Employee Attendance page" },
+        { "key": "4-4-mark-present", "label": "Mark Trainer Present",           "permission": "TRAINER_UPDATE",       "controls": "Mark Present button on Trainer Attendance page" },
+        { "key": "4-4-mark-absent",  "label": "Mark Trainer Absent",           "permission": "TRAINER_UPDATE",       "controls": "Mark Absent button on Trainer Attendance page" },
+        { "key": "4-4-export",       "label": "Export Trainer Attendance",      "permission": "TRAINER_READ",         "controls": "Export/Download button on Trainer Attendance page" },
+        { "key": "4-5-mark-present", "label": "Mark General Staff Present",     "permission": "GENERAL_STAFF_UPDATE", "controls": "Mark Present button on General Staff Attendance page" },
+        { "key": "4-5-mark-absent",  "label": "Mark General Staff Absent",     "permission": "GENERAL_STAFF_UPDATE", "controls": "Mark Absent button on General Staff Attendance page" },
+        { "key": "4-5-export",       "label": "Export General Staff Attendance","permission": "GENERAL_STAFF_READ",   "controls": "Export/Download button on General Staff Attendance page" }
+      ]
+    },
+
+    "userManagement": {
+      "_menuKey": "9",
+      "permissions": [
+        { "key": "9-1-delete",          "label": "Delete User",                    "permission": "USERS_DELETE",  "controls": "Delete button in All Users action dropdown" },
+        { "key": "9-1-change-password",  "label": "Change Password (User)",         "permission": "USERS_UPDATE",  "controls": "Change Password in All Users action dropdown" },
+        { "key": "9-3-edit",            "label": "Edit Add-On User",               "permission": "USERS_UPDATE",  "controls": "Edit button in All Add-On Users action dropdown" },
+        { "key": "9-3-delete",          "label": "Delete Add-On User",             "permission": "USERS_DELETE",  "controls": "Delete button in All Add-On Users action dropdown" },
+        { "key": "9-3-change-password",  "label": "Change Password (Add-On User)", "permission": "USERS_UPDATE",  "controls": "Change Password in Add-On Users action dropdown" },
+        { "key": "9-6-create",          "label": "Create Assessment",              "permission": "USERS_CREATE",  "controls": "Create/Add Assessment button on User Assessment page" },
+        { "key": "9-6-edit",            "label": "Edit Assessment",                "permission": "USERS_UPDATE",  "controls": "Edit button in User Assessment action dropdown" },
+        { "key": "9-6-delete",          "label": "Delete Assessment",              "permission": "USERS_DELETE",  "controls": "Delete button in User Assessment action dropdown" }
+      ]
+    },
+
+    "membershipManagement": {
+      "_menuKey": "12",
+      "permissions": [
+        { "key": "12-1-delete", "label": "Delete Package",             "permission": "MEMBERSHIP_DELETE", "controls": "Delete button in Packages list action dropdown" },
+        { "key": "12-1-status", "label": "Toggle Package Status",      "permission": "MEMBERSHIP_UPDATE", "controls": "Active/Inactive status toggle for Packages" },
+        { "key": "12-3-delete", "label": "Delete Add-on Package",      "permission": "MEMBERSHIP_DELETE", "controls": "Delete button in Add-on Packages action dropdown" },
+        { "key": "12-3-status", "label": "Toggle Add-on Package Status","permission": "MEMBERSHIP_UPDATE", "controls": "Active/Inactive status toggle for Add-on Packages" }
+      ]
+    },
+
+    "trialBookings": {
+      "_menuKey": "13",
+      "permissions": [
+        { "key": "13-1-add",     "label": "Add Trial Booking",      "permission": "TRIAL_CREATE", "controls": "Add Trial button on Trial Bookings page" },
+        { "key": "13-1-edit",    "label": "Edit Trial Booking",     "permission": "TRIAL_UPDATE", "controls": "Edit button in Trial Bookings action dropdown" },
+        { "key": "13-1-delete",  "label": "Delete Trial Booking",   "permission": "TRIAL_DELETE", "controls": "Delete button in Trial Bookings action dropdown" },
+        { "key": "13-1-convert", "label": "Convert Trial to User",  "permission": "TRIAL_UPDATE", "controls": "Convert to User button in Trial Bookings action dropdown" }
+      ]
+    },
+
+    "branch": {
+      "_menuKey": "14",
+      "permissions": [
+        { "key": "14-1-delete", "label": "Delete Branch",        "permission": "BRANCH_DELETE", "controls": "Delete button in All Branches action dropdown" },
+        { "key": "14-1-status", "label": "Toggle Branch Status", "permission": "BRANCH_UPDATE", "controls": "Active/Inactive status toggle for Branches" }
+      ]
+    },
+
+    "coupon": {
+      "_menuKey": "16",
+      "permissions": [
+        { "key": "16-1-delete", "label": "Delete Coupon",        "permission": "COUPON_DELETE", "controls": "Delete button in Coupons action dropdown" },
+        { "key": "16-1-status", "label": "Toggle Coupon Status", "permission": "COUPON_UPDATE", "controls": "Active/Inactive status toggle for Coupons" }
+      ]
+    },
+
+    "feedbackManagement": {
+      "_menuKey": "21",
+      "permissions": [
+        { "key": "21-1-delete", "label": "Delete Feedback", "permission": "FEEDBACK_DELETE", "controls": "Delete button in Feedback list action dropdown" }
+      ]
+    },
+
+    "invoiceManagement": {
+      "_menuKey": "24",
+      "permissions": [
+        { "key": "24-1-delete",   "label": "Delete Invoice",        "permission": "INVOICE_DELETE", "controls": "Delete button in All Invoices action dropdown" },
+        { "key": "24-1-download", "label": "Download Invoice",       "permission": "INVOICE_READ",   "controls": "Download PDF button in All Invoices / Invoice Detail" },
+        { "key": "24-1-print",    "label": "Print Invoice",          "permission": "INVOICE_READ",   "controls": "Print button in All Invoices / Invoice Detail" },
+        { "key": "24-3-edit",     "label": "Edit Partial Invoice",   "permission": "INVOICE_UPDATE", "controls": "Edit button in Partial Invoices action dropdown" },
+        { "key": "24-3-delete",   "label": "Delete Partial Invoice", "permission": "INVOICE_DELETE", "controls": "Delete button in Partial Invoices action dropdown" }
+      ]
+    },
+
+    "inventoryManagement": {
+      "_menuKey": "18",
+      "permissions": [
+        { "key": "18-1-delete", "label": "Delete Inventory", "permission": "INVENTORY_DELETE", "controls": "Delete button in Inventory list action dropdown" }
+      ]
+    }
+  },
+
+  "frontendIntegrationNotes": {
+    "howFrontendChecksPermission": "const canEdit = siderData?.permissions?.some(p => p.permission === 'EMPLOYEE_UPDATE');",
+    "howFrontendChecksKey": "const canDelete = siderData?.permissions?.some(p => p.key === '8-1-delete');",
+    "keyTakeaways": [
+      "The `menu` array in the API response does NOT need any new entries.",
+      "Only add new objects to the `permissions` array based on what the role has access to.",
+      "Each permission object must have: key (string), label (string), permission (string).",
+      "The frontend uses BOTH `p.key` and `p.permission` checks — send both fields.",
+      "If a role does not have a permission, simply omit that object from the permissions array."
+    ]
+  },
+
+  "exampleFullResponse": {
+    "_description": "Example: A role that can view All Employees, edit employees, but NOT delete them.",
+    "menu": [
+      { "key": "8", "label": "Employee Management", "permission": "EMPLOYEE_READ",
+        "children": [
+          { "key": "8-1", "label": "All Employees", "permission": "EMPLOYEE_READ" }
+        ]
+      }
+    ],
+    "permissions": [
+      { "key": "8-1",      "label": "All Employees",  "permission": "EMPLOYEE_READ" },
+      { "key": "8-1-edit", "label": "Edit Employee",   "permission": "EMPLOYEE_UPDATE" }
+    ]
+  }
+}

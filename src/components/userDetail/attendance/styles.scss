@@ -1,0 +1,21 @@
+@use '../../../styles/breakpoints.scss' as *;
+
+.attendance-container {
+  // padding: 16px;
+}
+
+.table-controls {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 16px;
+  align-items: center;
+
+  justify-content: space-between;
+  
+ 
+}
+
+.ant-table-row-selected,
+.ant-table-row.active {
+  background: #e6f7ff !important;
+}

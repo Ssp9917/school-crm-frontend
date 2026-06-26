@@ -1,0 +1,59 @@
+@use '../../styles/breakpoints.scss' as *;
+
+.edit-invoice-page {
+  padding: 24px;
+
+  .edit-invoice-card {
+    max-width: 800px;
+    margin: 0 auto;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+
+    .search-section {
+      .search-label {
+        margin-bottom: 24px;
+      }
+
+      .search-form-container {
+        display: flex;
+        gap: 16px;
+        align-items: flex-start;
+
+        .ant-form-item {
+          flex: 1;
+          margin-bottom: 0;
+        }
+
+        .button-container {
+          display: flex;
+          gap: 12px;
+
+          .delete-button,
+          .search-button {
+            min-width: 120px;
+          }
+        }
+      }
+
+      .search-result {
+        margin-top: 24px;
+
+        .user-details {
+          padding: 16px;
+          background: var(--hover-bg);
+          border-radius: 6px;
+
+          p {
+            margin: 8px 0;
+            font-size: 14px;
+
+            strong {
+              display: inline-block;
+              min-width: 100px;
+            }
+          }
+        }
+      }
+    }
+  }
+}

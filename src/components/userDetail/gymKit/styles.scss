@@ -1,0 +1,35 @@
+.gym-kit-container {
+  padding: 0;
+
+  .table-controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .status-badge {
+    padding: 4px 12px;
+    border-radius: 4px;
+    font-size: 12px;
+    font-weight: 500;
+    text-transform: uppercase;
+
+    &.delivered {
+      background: #d4edda;
+      color: #155724;
+    }
+
+    &.partial {
+      background: #fff3cd;
+      color: #856404;
+    }
+
+    &.pending {
+      background: #f8d7da;
+      color: #721c24;
+    }
+  }
+}

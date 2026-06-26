@@ -1,0 +1,105 @@
+.rv-name {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--sider-text);
+  cursor: pointer;
+
+  &:hover {
+    color: #17A2B8;
+  }
+}
+
+/* Details row */
+.rv-details-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: nowrap;
+  overflow: hidden;
+}
+
+/* Assignee badge */
+.rv-assignee-badge {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  background: #4a5568;
+  border-radius: 4px;
+  padding: 3px 8px;
+  font-size: 13px;
+  color: #fff;
+  flex-shrink: 0;
+  max-width: 100px;
+  overflow: hidden;
+
+  span:first-child {
+    font-size: 11px;
+    flex-shrink: 0;
+  }
+}
+
+.rv-assignee-name {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* Stage / group badge */
+.rv-stage-badge {
+  border-radius: 4px;
+  padding: 3px 10px;
+  font-size: 13px;
+  font-weight: 500;
+  white-space: nowrap;
+  flex-shrink: 0;
+  max-width: 110px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* +N more badge */
+.rv-more-badge {
+  border-radius: 4px;
+  padding: 3px 10px;
+  font-size: 13px;
+  font-weight: 500;
+  white-space: nowrap;
+  flex-shrink: 0;
+  color: var(--sider-text);
+  border: 1px solid var(--muted);
+  background: transparent;
+  cursor: pointer;
+
+  &:hover {
+    background: var(--hover-bg);
+  }
+}
+
+/* Notes */
+.rv-notes-text {
+  font-size: 13px;
+  color: var(--placeholder);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  max-width: 200px;
+}
+
+/* Viewed item */
+.rv-viewed-item {
+  font-size: 14px;
+  color: var(--sider-text);
+}
+
+/* Last viewed */
+.rv-last-viewed {
+  font-size: 14px;
+  color: var(--placeholder);
+}
+
+/* Column title with sort icon */
+.rv-col-title {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}

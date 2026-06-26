@@ -1,0 +1,97 @@
+.login-container {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-image: url("../../../assets/img/Login-Screen-Bg.jpg");
+  position: relative;
+  overflow: hidden;
+  background-size: cover;
+
+.login-card {
+  text-align: center;
+  color: #fff;
+}
+
+.title {
+  color: #b9a9ff !important;
+  margin-bottom: 10px !important;
+  letter-spacing: 2px;
+  img{
+    width: 120px;
+  }
+}
+
+.card-box {
+  width: 345px;
+  background: #0e121b;
+  padding-inline: 22px;
+  padding-block: 50px;
+  border-radius: 12px;
+  border: 1px solid rgba(108, 61, 249, 0.4);
+  box-shadow: 0 0 20px rgba(100, 60, 255, 0.2);
+}
+
+.logo-circle {
+  width: 40px;
+  height: 40px;
+  border-radius: 33%;
+  border: 1px solid #676f82;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 10px;
+  font-size: 31px;
+  font-weight: bold;
+  color: #c8b9ff;
+}
+
+.card-box h2 {
+  font-size: 18px;
+  color: #676f82;
+  margin-bottom: 0%;
+}
+
+.card-box p {
+  font-size: 13px;
+  color: #676f82;
+  margin-bottom: 30px;
+  margin-top: 2%;
+}
+.ant-input-affix-wrapper{
+  padding-block: 12px;
+  background: transparent !important;
+  border-color: #8c97b4;
+}
+.ant-form-item label {
+  color: #676f82 !important;
+}
+.ant-form-item{
+  margin-bottom: 1%;
+
+}
+.ant-input, .ant-input-password {
+  background: transparent !important;
+  border-color: #5f4aff !important;
+  color: #fff !important;
+}
+
+.forgot {
+  text-align: right;
+  color: #676f82;
+  margin-bottom: 20px;
+  cursor: pointer;
+  font-size: 12.7px;
+}
+
+.signin-btn {
+  background: #745cfa !important;
+  height: 45px;
+  font-size: 14px;
+  border-radius: 6px;
+  border: none;
+  box-shadow: none;
+}
+}
+

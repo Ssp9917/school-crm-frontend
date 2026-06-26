@@ -1,0 +1,90 @@
+.new-page-modal {
+  :global(.ant-modal-content) {
+    background: var(--card-bg);
+    border-radius: 12px;
+    padding: 32px;
+  }
+
+  :global(.ant-modal-close .anticon) {
+    font-size: 18px;
+    color: var(--sider-text);
+  }
+}
+
+.npm-title {
+  font-size: 26px;
+  font-weight: 800;
+  color: var(--sider-text);
+  margin: 0 0 6px 0;
+}
+
+.npm-subtitle {
+  font-size: 14px;
+  color: var(--placeholder);
+  margin: 0 0 20px 0;
+}
+
+.npm-options {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.npm-option {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 20px;
+  background: var(--bg);
+  border: 1px solid var(--muted);
+  border-radius: 10px;
+  cursor: pointer;
+  transition: border-color 0.15s, background 0.15s;
+
+  &:hover {
+    border-color: #17A2B8;
+    background: var(--hover-bg);
+
+    .npm-option-title {
+      color: #17A2B8;
+    }
+  }
+}
+
+.npm-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 10px;
+  background: rgba(23, 162, 184, 0.12);
+  border: 1px solid rgba(23, 162, 184, 0.25);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  color: #17A2B8;
+  flex-shrink: 0;
+}
+
+.npm-option-text {
+  flex: 1;
+}
+
+.npm-option-title {
+  font-size: 15px;
+  font-weight: 700;
+  color: #17A2B8;
+  margin-bottom: 5px;
+  transition: color 0.15s;
+}
+
+.npm-option-desc {
+  font-size: 13px;
+  color: var(--placeholder);
+  line-height: 1.5;
+}
+
+.npm-arrow {
+  font-size: 14px;
+  color: var(--placeholder);
+  flex-shrink: 0;
+}

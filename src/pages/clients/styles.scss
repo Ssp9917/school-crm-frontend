@@ -1,0 +1,439 @@
+@use '../../styles/breakpoints.scss' as *;
+
+.clients-page {
+  width: 100%;
+//   padding: 24px;
+//   background: var(--bg);
+// position: relative;
+
+  .client-name-cell {
+    transition: color 0.2s ease;
+    
+    &:hover {
+      color: #17A2B8;
+      
+      span:first-child {
+        color: #17A2B8;
+      }
+    }
+  }
+
+  .clients-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    // margin-bottom: 24px;
+
+    h1 {
+      font-size: 32px;
+      font-weight: 700;
+      color: var(--sider-text);
+      margin: 0;
+    }
+
+    .add-client-btn {
+      background: #17A2B8;
+      border: none;
+      height: 48px;
+      padding: 0 32px;
+      font-size: 14px;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+
+      &:hover {
+        background: #138496;
+      }
+    }
+  }
+
+  .clients-tabs {
+    background: var(--card-bg);
+    border-radius: 8px 8px 0 0;
+    // padding: 0 24px;
+    // border-bottom: 2px solid var(--muted);
+.ant-tabs-nav{
+  &::before{
+    border: none;
+  }
+}
+    :global(.ant-tabs-nav) {
+      margin-bottom: 0;
+
+      &::before {
+        border: none;
+      }
+    }
+
+    :global(.ant-tabs-tab) {
+      padding: 16px 24px;
+      font-size: 15px;
+      font-weight: 500;
+      color: #666;
+
+      &:hover {
+        color: var(--sider-text);
+      }
+    }
+
+    :global(.ant-tabs-tab-active) {
+      :global(.ant-tabs-tab-btn) {
+        color: var(--sider-text);
+        font-weight: 600;
+      }
+    }
+
+    :global(.ant-tabs-ink-bar) {
+      background: var(--accent);
+      height: 3px;
+    }
+  }
+
+  .clients-filters {
+    background: var(--card-bg);
+    padding: 10px 0px;
+    display: flex;
+    padding-top: 0%;
+    // justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+
+    .search-section {
+      flex: 1;
+      max-width: 600px;
+      .search-input {
+        background: var(--input-bg);
+        border-radius: 8px;
+        outline: none;
+        border: none;
+        border: 1px solid var(--muted);
+
+
+        :global(.ant-input) {
+          background: transparent;
+          font-size: 15px;
+          color: var(--sider-text);
+
+          &::placeholder {
+            color: var(--placeholder);
+          }
+        }
+
+        :global(.anticon) {
+          color: var(--placeholder);
+        }
+      }
+    }
+
+    .filter-section {
+      display: flex;
+      gap: 12px;
+      align-items: center;
+
+      .team-select,
+      .filter-btn {
+        min-width: 200px;
+        background: var(--input-bg);
+        border-radius: 8px;
+        border: 1px solid var(--muted) !important;
+      }
+
+      .team-select {
+        :global(.ant-select-selector) {
+          background: transparent !important;
+          border: none !important;
+          font-size: 15px;
+          color: var(--sider-text);
+        }
+
+        :global(.ant-select-arrow) {
+          color: var(--placeholder);
+        }
+      }
+
+      .filter-btn {
+        border: none;
+        font-size: 15px;
+        color: var(--sider-text);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+
+        &:hover {
+          color: var(--sider-text);
+          background: var(--hover-bg);
+        }
+      }
+
+      .icon-btn {
+        background: transparent;
+        border: none;
+        color: var(--sider-text);
+        font-size: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 40px;
+        height: 40px;
+
+        &:hover {
+          color: var(--sider-text);
+          background: rgba(0, 0, 0, 0.04);
+        }
+      }
+    }
+  }
+
+  .clients-table {
+    border-radius: 0 0 8px 8px;
+    overflow: hidden;
+        background: var(--card-bg);
+// width: 96%;
+// padding-inline: 20px;
+margin: auto;
+
+    @include mobile {
+      overflow-x: auto;
+      border-radius: 6px;
+    }
+
+    :global(.ant-table) {
+      background: transparent;
+    }
+
+    :global(.ant-table-content) {
+      overflow-x: auto;
+      scrollbar-width: none;
+      -ms-overflow-style: none;
+      &::-webkit-scrollbar { display: none; }
+    }
+
+    :global(.ant-table-thead > tr > th) {
+      background: var(--card-bg);
+      border-bottom: 1px solid var(--muted);
+      color: #666;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      padding: 16px 24px;
+      text-transform: uppercase;
+
+      @include mobile {
+        padding: 10px 8px;
+        font-size: 12px;
+      }
+    }
+
+    :global(.ant-table-tbody > tr > td) {
+      background: var(--card-bg);
+      border-bottom: 1px solid #f0f0f0;
+      color: var(--sider-text);
+      font-size: 15px;
+      padding: 20px 24px;
+
+      @include mobile {
+        padding: 10px 8px;
+        font-size: 12px;
+      }
+    }
+
+    :global(.ant-table-tbody > tr:hover > td) {
+      background: rgba(0, 0, 0, 0.02);
+    }
+
+    :global(.ant-checkbox-wrapper) {
+      :global(.ant-checkbox-inner) {
+        border-radius: 4px;
+        border-color: #d9d9d9;
+      }
+    }
+  }
+
+  .selection-toolbar {
+    position: absolute;
+    bottom: 0;
+      width: 82%;
+    
+    // left: 50%;
+    // transform: translateX(-50%);
+    right: 0;
+    background: #1e293b;
+    padding: 16px 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 999;
+    box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.15);
+
+    .selection-info {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      color: white;
+      font-size: 15px;
+      font-weight: 500;
+
+      span {
+        color: white;
+      }
+
+      :global(.anticon-close) {
+        color: white;
+        font-size: 16px;
+        cursor: pointer;
+        transition: all 0.2s;
+
+        &:hover {
+          color: #cbd5e1;
+        }
+      }
+    }
+
+    .selection-actions {
+      display: flex;
+      gap: 12px;
+      align-items: center;
+
+      :global(.ant-btn) {
+        background: transparent;
+        border: 1px solid #475569;
+        color: white;
+        height: 40px;
+        padding: 0 20px;
+        font-size: 14px;
+        font-weight: 500;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        border-radius: 6px;
+        transition: all 0.2s;
+
+        &:hover {
+          background: #334155;
+          border-color: #64748b;
+          color: white;
+        }
+
+        :global(.anticon) {
+          font-size: 16px;
+        }
+      }
+
+      :global(.ant-btn):last-child {
+        border-color: #dc2626;
+
+        &:hover {
+          background: #dc2626;
+          border-color: #dc2626;
+        }
+      }
+    }
+  }
+
+  .fullscreen-table-modal {
+    :global(.ant-modal-content) {
+      background: var(--card-bg);
+      padding: 0;
+    }
+
+    :global(.ant-modal-body) {
+      padding: 0;
+      max-height: calc(100vh - 100px);
+      overflow: hidden;
+    }
+
+    :global(.ant-modal-close) {
+      top: 16px;
+      right: 16px;
+
+      :global(.anticon) {
+        color: var(--sider-text);
+      }
+    }
+
+    .fullscreen-table-content {
+      padding: 24px;
+
+      .fullscreen-title {
+        font-size: 24px;
+        font-weight: 700;
+        color: var(--sider-text);
+        margin: 0 0 20px 0;
+      }
+
+      :global(.common-table-wrapper) {
+        border: 1px solid var(--muted);
+        border-radius: 8px;
+        overflow: hidden;
+      }
+
+      :global(.ant-table-wrapper) {
+        max-height: calc(100vh - 250px);
+        overflow: auto;
+      }
+    }
+  }
+
+  @include mobile {
+    padding: 16px;
+
+    .clients-header {
+      flex-direction: column;
+      align-items: stretch;
+      gap: 16px;
+
+      h1 {
+        font-size: 24px;
+      }
+
+      .add-client-btn {
+        width: 100%;
+      }
+    }
+
+    .clients-filters {
+      flex-direction: column;
+      align-items: stretch;
+
+      .search-section {
+        max-width: 100%;
+      }
+
+      .filter-section {
+        flex-wrap: wrap;
+
+        .team-select,
+        .filter-select {
+          flex: 1;
+          min-width: 150px;
+        }
+      }
+    }
+
+    .clients-table {
+      :global(.ant-table) {
+        overflow-x: auto;
+      }
+    }
+
+    .selection-toolbar {
+      flex-direction: column;
+      gap: 12px;
+      padding: 12px 16px;
+
+      .selection-info {
+        width: 100%;
+        justify-content: space-between;
+      }
+
+      .selection-actions {
+        width: 100%;
+        justify-content: space-between;
+
+        :global(.ant-btn) {
+          flex: 1;
+        }
+      }
+    }
+  }
+}

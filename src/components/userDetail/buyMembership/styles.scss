@@ -1,0 +1,126 @@
+.buy-membership-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 400px;
+  padding: 20px;
+
+  .membership-card {
+    max-width: 600px;
+    width: 100%;
+    text-align: center;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    background: var(--card-bg);
+
+    h2 {
+      color: var(--sider-text);
+      font-size: 24px;
+      font-weight: 600;
+      margin-bottom: 12px;
+    }
+
+    .description {
+      color: var(--text-secondary);
+      font-size: 14px;
+      margin-bottom: 32px;
+    }
+
+    .action-buttons {
+      display: flex;
+      gap: 20px;
+      justify-content: center;
+      flex-wrap: wrap;
+
+      &.single {
+        .buy-plan-btn {
+          min-width: 200px;
+        }
+      }
+
+      .upgrade-btn,
+      .renew-btn,
+      .buy-plan-btn,
+      .pay-due-btn {
+        min-width: 180px;
+        height: 48px;
+        font-size: 16px;
+        font-weight: 600;
+        border-radius: 8px;
+        transition: all 0.3s ease;
+
+        &:hover {
+          transform: translateY(-2px);
+          box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        }
+      }
+
+      .upgrade-btn {
+        background: var(--accent);
+        border-color: var(--accent);
+      }
+
+      .renew-btn {
+        background: #52c41a;
+        border-color: #52c41a;
+      }
+
+      .buy-plan-btn {
+        background: var(--accent);
+        border-color: var(--accent);
+      }
+    }
+
+    .no-actions-message {
+      padding: 40px 20px;
+      text-align: center;
+
+      .icon {
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+        background: #f0f9ff;
+        color: #52c41a;
+        font-size: 48px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto 24px;
+      }
+
+      h3 {
+        color: var(--sider-text);
+        font-size: 22px;
+        font-weight: 600;
+        margin-bottom: 12px;
+      }
+
+      p {
+        color: var(--text-secondary);
+        font-size: 15px;
+        line-height: 1.6;
+        margin-bottom: 8px;
+
+        &.sub-text {
+          font-size: 13px;
+          color: #999;
+          margin-top: 12px;
+        }
+      }
+    }
+  }
+
+  @media (max-width: 768px) {
+    .membership-card {
+      width: 100%;
+      .action-buttons {
+        flex-direction: column;
+        
+        .upgrade-btn,
+        .renew-btn {
+          width: 100%;
+        }
+      }
+    }
+  }
+}

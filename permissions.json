@@ -1,0 +1,1076 @@
+{
+  "permissions": {
+    "sidebarMenu": {
+      "dashboard": {
+        "key": "1",
+        "label": "Dashboard",
+        "route": "/",
+        "icon": "PieChartOutlined",
+        "permission": "USERS_READ",
+        "permissions": ["view"]
+      },
+      "role": {
+        "key": "2",
+        "label": "Role",
+        "route": "/all-roles",
+        "icon": "UserOutlined",
+        "permission": "ROLE_READ",
+        "permissions": ["view", "create", "edit", "delete"]
+      },
+      "addRole": {
+        "key": "2-add",
+        "label": "Add Role",
+        "route": "/add-role",
+        "permission": "ROLE_CREATE",
+        "permissions": ["create"]
+      },
+      "editRole": {
+        "key": "2-edit",
+        "label": "Edit Role",
+        "route": "/edit-role/:id",
+        "permission": "ROLE_UPDATE",
+        "permissions": ["edit"]
+      },
+      "director": {
+        "key": "3",
+        "label": "Director",
+        "route": "/all-directors",
+        "icon": "TeamOutlined",
+        "permission": "DIRECTOR_READ",
+        "permissions": ["view", "create", "edit", "delete"]
+      },
+      "addDirector": {
+        "key": "3-add",
+        "label": "Add Director",
+        "route": "/add-director",
+        "permission": "DIRECTOR_CREATE",
+        "permissions": ["create"]
+      },
+      "editDirector": {
+        "key": "3-edit",
+        "label": "Edit Director",
+        "route": "/edit-director/:id",
+        "permission": "DIRECTOR_UPDATE",
+        "permissions": ["edit"]
+      },
+      "attendanceManagement": {
+        "key": "4",
+        "label": "Attendance Management",
+        "icon": "CalendarOutlined",
+        "children": {
+          "directorAttendance": {
+            "key": "4-1",
+            "label": "Director Attendance",
+            "route": "/director-attendance",
+            "permission": "DIRECTOR_READ",
+            "permissions": ["view", "export"]
+          },
+          "userAttendance": {
+            "key": "4-2",
+            "label": "User Attendance",
+            "route": "/user-attendance",
+            "permission": "USERS_READ",
+            "permissions": ["view", "export"]
+          },
+          "employeeAttendance": {
+            "key": "4-3",
+            "label": "Employee Attendance",
+            "route": "/employee-attendance",
+            "permission": "EMPLOYEE_READ",
+            "permissions": ["view", "export"]
+          },
+          "trainerAttendance": {
+            "key": "4-4",
+            "label": "Trainer Attendance",
+            "route": "/trainer-attendance",
+            "permission": "TRAINER_READ",
+            "permissions": ["view", "export"]
+          },
+          "generalStaffAttendance": {
+            "key": "4-5",
+            "label": "General Staff Attendance",
+            "route": "/general-staff-attendance",
+            "permission": "GENERAL_STAFF_READ",
+            "permissions": ["view", "export"]
+          }
+        }
+      },
+      "biometric": {
+        "key": "5",
+        "label": "Biometric",
+        "icon": "SolutionOutlined",
+        "children": {
+          "allBiometrics": {
+            "key": "5-1",
+            "label": "All Biometrics",
+            "route": "/all-biometrics",
+            "permission": "USERS_READ",
+            "permissions": ["view", "create", "edit", "delete"]
+          },
+          "addBiometric": {
+            "key": "5-1-add",
+            "label": "Add Biometric",
+            "route": "/add-biometric",
+            "permission": "BIOMETRIC_CREATE",
+            "permissions": ["create"]
+          },
+          "editBiometric": {
+            "key": "5-1-edit",
+            "label": "Edit Biometric",
+            "route": "/edit-biometric/:id",
+            "permission": "BIOMETRIC_UPDATE",
+            "permissions": ["edit"]
+          }
+        }
+      },
+      "employeeManagement": {
+        "key": "8",
+        "label": "Employee Management",
+        "icon": "TeamOutlined",
+        "children": {
+          "allEmployees": {
+            "key": "8-1",
+            "label": "Employees",
+            "route": "/all-employees",
+            "permission": "EMPLOYEE_READ",
+            "permissions": ["view", "create", "edit", "delete", "export"]
+          },
+          "addEmployee": {
+            "key": "8-1-add",
+            "label": "Add Employee",
+            "route": "/add-employee",
+            "permission": "EMPLOYEE_CREATE",
+            "permissions": ["create"]
+          },
+          "editEmployee": {
+            "key": "8-1-edit",
+            "label": "Edit Employee",
+            "route": "/edit-employee/:id",
+            "permission": "EMPLOYEE_UPDATE",
+            "permissions": ["edit"]
+          },
+          "allGeneralStaff": {
+            "key": "8-2",
+            "label": "General Staff",
+            "route": "/all-general-staff",
+            "permission": "GENERAL_STAFF_READ",
+            "permissions": ["view", "create", "edit", "delete", "export"]
+          },
+          "addGeneralStaff": {
+            "key": "8-2-add",
+            "label": "Add General Staff",
+            "route": "/add-general-staff",
+            "permission": "GENERAL_STAFF_CREATE",
+            "permissions": ["create"]
+          },
+          "editGeneralStaff": {
+            "key": "8-2-edit",
+            "label": "Edit General Staff",
+            "route": "/edit-general-staff/:id",
+            "permission": "GENERAL_STAFF_UPDATE",
+            "permissions": ["edit"]
+          },
+          "allTrainers": {
+            "key": "8-3",
+            "label": "Trainer",
+            "route": "/all-trainers",
+            "permission": "TRAINER_READ",
+            "permissions": ["view", "create", "edit", "delete", "export"]
+          },
+          "addTrainer": {
+            "key": "8-3-add",
+            "label": "Add Trainer",
+            "route": "/add-trainer",
+            "permission": "TRAINER_CREATE",
+            "permissions": ["create"]
+          },
+          "editTrainer": {
+            "key": "8-3-edit",
+            "label": "Edit Trainer",
+            "route": "/edit-trainer/:id",
+            "permission": "TRAINER_UPDATE",
+            "permissions": ["edit"]
+          }
+        }
+      },
+      "userManagement": {
+        "key": "9",
+        "label": "User Management",
+        "icon": "UserOutlined",
+        "children": {
+          "allUsers": {
+            "key": "9-1",
+            "label": "All Users",
+            "route": "/all-users",
+            "permission": "USERS_READ",
+            "permissions": ["view", "create", "edit", "delete", "export"]
+          },
+          "addUser": {
+            "key": "9-2",
+            "label": "Add User",
+            "route": "/add-user",
+            "permission": "USERS_CREATE",
+            "permissions": ["create"]
+          },
+          "changeSalesperson": {
+            "key": "9-2-1",
+            "label": "Change Salesperson",
+            "route": "/change-salesperson",
+            "permission": "USERS_UPDATE",
+            "permissions": ["edit"]
+          },
+          "addOnUser": {
+            "key": "9-2-2",
+            "label": "Add On User",
+            "route": "/add-on-user",
+            "permission": "USERS_CREATE",
+            "permissions": ["create"]
+          },
+          "editUser": {
+            "key": "9-2-3",
+            "label": "Edit User",
+            "route": "/edit-user/:id",
+            "permission": "USERS_UPDATE",
+            "permissions": ["edit"]
+          },
+          "gymKitDelivered": {
+            "key": "9-2-4",
+            "label": "Gym Kit Delivered",
+            "route": "/gym-kit-delivered",
+            "permission": "USERS_UPDATE",
+            "permissions": ["edit"]
+          },
+          "editProfilePic": {
+            "key": "9-2-5",
+            "label": "Edit Profile Pic",
+            "route": "/edit-profile-pic",
+            "permission": "USERS_UPDATE",
+            "permissions": ["edit"]
+          },
+          "allAddOnsUsers": {
+            "key": "9-3",
+            "label": "All Add-On's Users",
+            "route": "/all-add-ons-users",
+            "permission": "USERS_READ",
+            "permissions": ["view", "export"]
+          },
+          "addOnLiveDashboard": {
+            "key": "9-4",
+            "label": "Add On Live Dashboard",
+            "route": "/add-on-live-dashboard",
+            "permission": "USERS_READ",
+            "permissions": ["view"]
+          },
+          "userAssessment": {
+            "key": "9-6",
+            "label": "user-assissment",
+            "route": "/user-assessment",
+            "permission": "USERS_READ",
+            "permissions": ["view", "create", "edit"]
+          },
+          "activityLog": {
+            "key": "9-7",
+            "label": "Activity Log",
+            "route": "/activity-log",
+            "permission": "USERS_READ",
+            "permissions": ["view"]
+          },
+          "blacklistUser": {
+            "key": "9-8",
+            "label": "Blacklist User",
+            "route": "/blacklist-user",
+            "permission": "USERS_UPDATE",
+            "permissions": ["view", "create", "delete"]
+          }
+        }
+      },
+      "leadManagement": {
+        "key": "10",
+        "label": "Lead Management",
+        "icon": "BarChartOutlined",
+        "children": {
+          "clients": {
+            "key": "10-1",
+            "label": "Clients",
+            "route": "/clients",
+            "permission": "USERS_READ",
+            "permissions": ["view", "create", "edit", "delete", "export"]
+          },
+          "content": {
+            "key": "10-2",
+            "label": "Content",
+            "route": "/content",
+            "permission": "USERS_READ",
+            "permissions": ["view", "create", "edit"]
+          },
+          "activities": {
+            "key": "10-3",
+            "label": "Activities",
+            "route": "/activities",
+            "permission": "USERS_READ",
+            "permissions": ["view"]
+          },
+          "team": {
+            "key": "10-4",
+            "label": "Team",
+            "route": "/team",
+            "permission": "USERS_READ",
+            "permissions": ["view"]
+          },
+          "analytics": {
+            "key": "10-5",
+            "label": "Analytics",
+            "route": "/analytics",
+            "permission": "USERS_READ",
+            "permissions": ["view"]
+          },
+          "automations": {
+            "key": "10-6",
+            "label": "Automations",
+            "route": "/automations",
+            "permission": "USERS_READ",
+            "permissions": ["view", "create", "edit"]
+          }
+        }
+      },
+      "membershipManagement": {
+        "key": "12",
+        "label": "Membership Management",
+        "icon": "ShopOutlined",
+        "children": {
+          "allPackages": {
+            "key": "12-1",
+            "label": "All Packages",
+            "route": "/all-packages",
+            "permission": "MEMBERSHIP_READ",
+            "permissions": ["view", "create", "edit", "delete"]
+          },
+          "addPackage": {
+            "key": "12-1-add",
+            "label": "Add Package",
+            "route": "/add-package",
+            "permission": "MEMBERSHIP_CREATE",
+            "permissions": ["create"]
+          },
+          "editPackage": {
+            "key": "12-1-edit",
+            "label": "Edit Package",
+            "route": "/edit-package/:id",
+            "permission": "MEMBERSHIP_UPDATE",
+            "permissions": ["edit"]
+          },
+          "allAddOnSlots": {
+            "key": "12-2",
+            "label": "All Add-on's Slots",
+            "route": "/all-add-on-slots",
+            "permission": "MEMBERSHIP_READ",
+            "permissions": ["view", "create", "edit", "delete"]
+          },
+          "addAddOnSlot": {
+            "key": "12-2-add",
+            "label": "Add Add-on Slot",
+            "route": "/add-add-on-slot",
+            "permission": "MEMBERSHIP_CREATE",
+            "permissions": ["create"]
+          },
+          "editAddOnSlot": {
+            "key": "12-2-edit",
+            "label": "Edit Add-on Slot",
+            "route": "/edit-add-on-slot/:id",
+            "permission": "MEMBERSHIP_UPDATE",
+            "permissions": ["edit"]
+          },
+          "allAddOnPackages": {
+            "key": "12-3",
+            "label": "All Add On's Package",
+            "route": "/all-add-on-packages",
+            "permission": "MEMBERSHIP_READ",
+            "permissions": ["view", "create", "edit", "delete"]
+          },
+          "addAddOnPackage": {
+            "key": "12-3-add",
+            "label": "Add Add-on Package",
+            "route": "/add-add-on-package",
+            "permission": "MEMBERSHIP_CREATE",
+            "permissions": ["create"]
+          },
+          "editAddOnPackage": {
+            "key": "12-3-edit",
+            "label": "Edit Add-on Package",
+            "route": "/edit-add-on-package/:id",
+            "permission": "MEMBERSHIP_UPDATE",
+            "permissions": ["edit"]
+          }
+        }
+      },
+      "trialBookings": {
+        "key": "13",
+        "label": "Trial Bookings",
+        "icon": "SmileOutlined",
+        "children": {
+          "allTrialBookings": {
+            "key": "13-1",
+            "label": "All Trial Bookings",
+            "route": "/all-trial-bookings",
+            "permission": "USERS_READ",
+            "permissions": ["view", "create", "edit", "delete"]
+          }
+        }
+      },
+      "branch": {
+        "key": "14",
+        "label": "Branch",
+        "icon": "ShopOutlined",
+        "children": {
+          "allBranches": {
+            "key": "14-1",
+            "label": "All Branches",
+            "route": "/all-branches",
+            "permission": "BRANCH_READ",
+            "permissions": ["view", "create", "edit", "delete"]
+          },
+          "addBranch": {
+            "key": "14-2",
+            "label": "Add Branch",
+            "route": "/add-branch",
+            "permission": "BRANCH_CREATE",
+            "permissions": ["create"]
+          },
+          "editBranch": {
+            "key": "14-2-edit",
+            "label": "Edit Branch",
+            "route": "/edit-branch/:id",
+            "permission": "BRANCH_UPDATE",
+            "permissions": ["edit"]
+          }
+        }
+      },
+      "coupon": {
+        "key": "16",
+        "label": "Coupon",
+        "icon": "GiftOutlined",
+        "children": {
+          "allCoupons": {
+            "key": "16-1",
+            "label": "All Coupons",
+            "route": "/all-coupons",
+            "permission": "COUPON_READ",
+            "permissions": ["view", "create", "edit", "delete"]
+          },
+          "addCoupon": {
+            "key": "16-2",
+            "label": "Add Coupon",
+            "route": "/add-coupon",
+            "permission": "COUPON_CREATE",
+            "permissions": ["create"]
+          },
+          "editCoupon": {
+            "key": "16-2-edit",
+            "label": "Edit Coupon",
+            "route": "/edit-coupon/:id",
+            "permission": "COUPON_UPDATE",
+            "permissions": ["edit"]
+          }
+        }
+      },
+      "feedbackManagement": {
+        "key": "21",
+        "label": "Feedback Management",
+        "icon": "MessageOutlined",
+        "children": {
+          "allFeedbacks": {
+            "key": "21-1",
+            "label": "All Feedbacks",
+            "route": "/all-feedbacks",
+            "permission": "FEEDBACK_READ",
+            "permissions": ["view", "delete"]
+          },
+          "assignFeedback": {
+            "key": "21-2",
+            "label": "Assign Feedback",
+            "route": "/assign-feedback",
+            "permission": "FEEDBACK_UPDATE",
+            "permissions": ["edit"]
+          },
+          "updateFeedbackStatus": {
+            "key": "21-3",
+            "label": "Update Feedback Status",
+            "route": "/update-feedback-status",
+            "permission": "FEEDBACK_UPDATE",
+            "permissions": ["edit"]
+          },
+          "createDepartment": {
+            "key": "21-4",
+            "label": "Create Department",
+            "route": "/create-department",
+            "permission": "DEPARTMENT_CREATE",
+            "permissions": ["create"]
+          },
+          "createQR": {
+            "key": "21-5",
+            "label": "Create QR",
+            "route": "/create-qr",
+            "permission": "FEEDBACK_CREATE",
+            "permissions": ["create"]
+          }
+        }
+      },
+      "invoiceManagement": {
+        "key": "24",
+        "label": "Invoice Management",
+        "icon": "CreditCardOutlined",
+        "children": {
+          "allInvoices": {
+            "key": "24-1",
+            "label": "All Invoices",
+            "route": "/all-invoice",
+            "permission": "INVOICE_READ",
+            "permissions": ["view", "create", "edit", "delete", "export"]
+          },
+          "addInvoice": {
+            "key": "24-1-add",
+            "label": "Add Invoice",
+            "route": "/add-invoice",
+            "permission": "INVOICE_CREATE",
+            "permissions": ["create"]
+          },
+          "editInvoice": {
+            "key": "24-1-edit",
+            "label": "Edit Invoice",
+            "route": "/edit-invoice/:id",
+            "permission": "INVOICE_UPDATE",
+            "permissions": ["edit"]
+          },
+          "viewInvoice": {
+            "key": "24-1-view",
+            "label": "View Invoice Details",
+            "route": "/invoice-detail/:id",
+            "permission": "INVOICE_READ",
+            "permissions": ["view"]
+          },
+          "partialInvoices": {
+            "key": "24-3",
+            "label": "Partial Invoices",
+            "route": "/partial-invoice",
+            "permission": "INVOICE_READ",
+            "permissions": ["view", "edit"]
+          }
+        }
+      },
+      "inventoryManagement": {
+        "key": "18",
+        "label": "Inventory Management",
+        "icon": "AppstoreOutlined",
+        "children": {
+          "allInventory": {
+            "key": "18-1",
+            "label": "All Inventory",
+            "route": "/all-inventory",
+            "permission": "INVENTORY_READ",
+            "permissions": ["view", "create", "edit", "delete"]
+          },
+          "addInventory": {
+            "key": "18-1-add",
+            "label": "Add Inventory",
+            "route": "/add-inventory",
+            "permission": "INVENTORY_CREATE",
+            "permissions": ["create"]
+          },
+          "editInventory": {
+            "key": "18-1-edit",
+            "label": "Edit Inventory",
+            "route": "/edit-inventory/:id",
+            "permission": "INVENTORY_UPDATE",
+            "permissions": ["edit"]
+          },
+          "addQuantity": {
+            "key": "18-1-quantity",
+            "label": "Add Quantity",
+            "route": "/add-quantity",
+            "permission": "INVENTORY_UPDATE",
+            "permissions": ["edit"]
+          },
+          "toggleStatus": {
+            "key": "18-1-status",
+            "label": "Toggle Status",
+            "route": "/toggle-inventory-status",
+            "permission": "INVENTORY_UPDATE",
+            "permissions": ["edit"]
+          }
+        }
+      }
+    },
+    "userDetailMenu": {
+      "attendance": {
+        "id": "attendance",
+        "name": "Attendance",
+        "route": "attendance",
+        "permissions": ["view", "mark_present", "mark_absent", "export"]
+      },
+      "membershipPlans": {
+        "id": "membership",
+        "name": "Membership Plans",
+        "route": "membership",
+        "permissions": ["view", "buy_plan", "upgrade_plan", "advance_renew", "freeze_membership", "add_days"],
+        "subActions": {
+          "buyPlan": {
+            "name": "Buy Plan",
+            "route": "buy-plan",
+            "permissions": ["create"]
+          },
+          "buyMembership": {
+            "name": "Buy Membership",
+            "route": "buy-membership",
+            "permissions": ["create"]
+          },
+          "upgradePlan": {
+            "name": "Upgrade Plan",
+            "route": "upgrade-plan",
+            "permissions": ["create"]
+          },
+          "advanceRenew": {
+            "name": "Advance Renew",
+            "route": "advance-renew",
+            "permissions": ["create"]
+          },
+          "freezeMembership": {
+            "name": "Freeze Membership",
+            "route": "membership-freezability",
+            "permissions": ["create", "edit"]
+          },
+          "addMembershipDays": {
+            "name": "Add Membership Days",
+            "route": "membership-days",
+            "permissions": ["create"]
+          }
+        }
+      },
+      "membershipInvoice": {
+        "id": "buyMembership",
+        "name": "Membership Invoice",
+        "route": "buy-membership",
+        "permissions": ["view", "create", "edit", "delete"]
+      },
+      "addOnService": {
+        "id": "addOnService",
+        "name": "Add On Service",
+        "route": "addon-service",
+        "permissions": ["view", "create", "book", "cancel"],
+        "subActions": {
+          "selectAddOnService": {
+            "name": "Select Add On Service",
+            "route": "select-addon-service",
+            "permissions": ["view"]
+          },
+          "buyAddOnService": {
+            "name": "Buy Add On Service",
+            "route": "buy-addon-service",
+            "permissions": ["create"]
+          },
+          "addOnSessionDetail": {
+            "name": "Add On Session Detail",
+            "route": "addon-service/add-on-session-detail/:membershipId",
+            "permissions": ["view"]
+          }
+        }
+      },
+      "invoice": {
+        "id": "invoice",
+        "name": "Invoice",
+        "route": "invoice",
+        "permissions": ["view", "create", "edit", "delete", "download", "print"]
+      },
+      "assessment": {
+        "id": "assessment",
+        "name": "Assessment",
+        "route": "assessment",
+        "permissions": ["view", "create", "edit", "delete"]
+      },
+      "gymKit": {
+        "id": "gymKit",
+        "name": "Gym Kit",
+        "route": "gym-kit",
+        "permissions": ["view", "create", "edit", "delete"]
+      },
+      "refundHistory": {
+        "id": "refundHistory",
+        "name": "Refund History",
+        "route": "refund-history",
+        "permissions": ["view", "create", "approve", "reject"]
+      },
+      "parkingHistory": {
+        "id": "parkingHistory",
+        "name": "Parking History",
+        "route": "parking-history",
+        "permissions": ["view", "export"]
+      },
+      "dietsPlan": {
+        "id": "dietsPlan",
+        "name": "Diets Plan",
+        "route": "diets-plan",
+        "permissions": ["view", "create", "edit", "delete"]
+      },
+      "biometricAccess": {
+        "id": "biometricAccess",
+        "name": "Biometric Access",
+        "route": "biometric-access",
+        "permissions": ["view", "create", "edit", "delete"],
+        "subActions": {
+          "addBiometricAccess": {
+            "name": "Add Biometric Access",
+            "route": "add-biometric-access",
+            "permissions": ["create"]
+          }
+        }
+      },
+      "feedback": {
+        "id": "feedback",
+        "name": "Feedback",
+        "route": "user-feedback",
+        "permissions": ["view", "create"]
+      },
+      "payDueAmount": {
+        "id": "payDueAmount",
+        "name": "Pay Due Amount",
+        "route": "pay-due-amount",
+        "permissions": ["view", "create", "edit"]
+      }
+    },
+    "employeeDetailMenu": {
+      "attendance": {
+        "id": "attendance",
+        "name": "Attendance",
+        "route": "attendance",
+        "permissions": ["view", "mark_present", "mark_absent", "export"]
+      },
+      "employeeId": {
+        "id": "employeeId",
+        "name": "Employee ID",
+        "route": "employee-id",
+        "permissions": ["view", "edit"]
+      },
+      "salary": {
+        "id": "salary",
+        "name": "Salary",
+        "route": "salary",
+        "permissions": ["view", "create", "edit", "delete", "export"]
+      },
+      "salesHistory": {
+        "id": "salesHistory",
+        "name": "Sales History",
+        "route": "sales-history",
+        "permissions": ["view", "export"]
+      },
+      "parkingHistory": {
+        "id": "parkingHistory",
+        "name": "Parking History",
+        "route": "parking-history",
+        "permissions": ["view", "export"]
+      },
+      "biometricAccess": {
+        "id": "biometricAccess",
+        "name": "Biometric Access",
+        "route": "biometric-access",
+        "permissions": ["view", "create", "edit", "delete"],
+        "subActions": {
+          "addBiometricAccess": {
+            "name": "Add Biometric Access",
+            "route": "add-biometric-access",
+            "permissions": ["create"]
+          }
+        }
+      }
+    },
+    "generalStaffDetailMenu": {
+      "attendance": {
+        "id": "attendance",
+        "name": "Attendance",
+        "route": "attendance",
+        "permissions": ["view", "mark_present", "mark_absent", "export"]
+      },
+      "generalStaffId": {
+        "id": "generalStaffId",
+        "name": "General Staff ID",
+        "route": "general-staff-id",
+        "permissions": ["view", "edit"]
+      },
+      "salary": {
+        "id": "salary",
+        "name": "Salary",
+        "route": "salary",
+        "permissions": ["view", "create", "edit", "delete", "export"]
+      },
+      "biometricAccess": {
+        "id": "biometricAccess",
+        "name": "Biometric Access",
+        "route": "biometric-access",
+        "permissions": ["view", "create", "edit", "delete"],
+        "subActions": {
+          "addBiometricAccess": {
+            "name": "Add Biometric Access",
+            "route": "add-biometric-access",
+            "permissions": ["create"]
+          }
+        }
+      }
+    },
+    "trainerDetailMenu": {
+      "attendance": {
+        "id": "attendance",
+        "name": "Attendance",
+        "route": "attendance",
+        "permissions": ["view", "mark_present", "mark_absent", "export"]
+      },
+      "coachId": {
+        "id": "coachId",
+        "name": "Coach ID",
+        "route": "coach-id",
+        "permissions": ["view", "edit"]
+      },
+      "classes": {
+        "id": "classes",
+        "name": "Classes",
+        "route": "classes",
+        "permissions": ["view", "create", "edit", "delete", "assign"]
+      },
+      "transactions": {
+        "id": "transactions",
+        "name": "Transactions",
+        "route": "transactions",
+        "permissions": ["view", "export"]
+      },
+      "parkingHistory": {
+        "id": "parkingHistory",
+        "name": "Parking History",
+        "route": "parking-history",
+        "permissions": ["view", "export"]
+      },
+      "biometricAccess": {
+        "id": "biometricAccess",
+        "name": "Biometric Access",
+        "route": "biometric-access",
+        "permissions": ["view", "create", "edit", "delete"],
+        "subActions": {
+          "addBiometricAccess": {
+            "name": "Add Biometric Access",
+            "route": "add-biometric-access",
+            "permissions": ["create"]
+          }
+        }
+      }
+    },
+    "directorDetailMenu": {
+      "attendance": {
+        "id": "attendance",
+        "name": "Attendance",
+        "route": "attendance",
+        "permissions": ["view", "mark_present", "mark_absent", "export"]
+      },
+      "biometricAccess": {
+        "id": "biometricAccess",
+        "name": "Biometric Access",
+        "route": "biometric-access",
+        "permissions": ["view", "create", "edit", "delete"]
+      }
+    },
+    "additionalFeatures": {
+      "forms": {
+        "viewForm": {
+          "name": "View Form",
+          "route": "/view-form/:id",
+          "permissions": ["view"]
+        }
+      },
+      "walkIn": {
+        "addWalkIn": {
+          "name": "Add Walk In",
+          "route": "/add-walk-in",
+          "permissions": ["create"]
+        }
+      },
+      "clientDetail": {
+        "viewClientDetail": {
+          "name": "View Client Detail",
+          "route": "/client-detail/:id",
+          "permissions": ["view", "edit", "delete"]
+        }
+      },
+      "invoiceDetail": {
+        "viewInvoiceDetail": {
+          "name": "View Invoice Detail",
+          "route": "/invoice-detail/:id",
+          "permissions": ["view", "edit", "delete", "download", "print"]
+        }
+      },
+      "addOnSessionDetail": {
+        "viewAddOnSessionDetail": {
+          "name": "View Add On Session Detail",
+          "route": "/add-on-session-detail/:id",
+          "permissions": ["view"]
+        }
+      }
+    }
+  },
+  "rolesAndPermissions": {
+    "superAdmin": {
+      "name": "Super Admin",
+      "description": "Full access to all features and permissions",
+      "hasAllPermissions": true
+    },
+    "admin": {
+      "name": "Admin",
+      "description": "Admin level access with most permissions",
+      "permissions": [
+        "dashboard.view",
+        "role.view",
+        "role.create",
+        "role.edit",
+        "director.view",
+        "director.create",
+        "director.edit",
+        "biometric.view",
+        "biometric.create",
+        "employeeManagement.view",
+        "employeeManagement.create",
+        "employeeManagement.edit",
+        "userManagement.view",
+        "userManagement.create",
+        "userManagement.edit",
+        "leadManagement.view",
+        "membershipManagement.view",
+        "membershipManagement.create",
+        "membershipManagement.edit",
+        "branch.view",
+        "branch.create",
+        "branch.edit",
+        "coupon.view",
+        "coupon.create",
+        "feedback.view",
+        "invoiceManagement.view",
+        "invoiceManagement.create",
+        "invoiceManagement.edit",
+        "inventory.view",
+        "inventory.create"
+      ]
+    },
+    "salesPerson": {
+      "name": "Sales Person",
+      "description": "Sales focused permissions",
+      "permissions": [
+        "dashboard.view",
+        "userManagement.view",
+        "userManagement.create",
+        "userManagement.edit",
+        "leadManagement.view",
+        "leadManagement.create",
+        "leadManagement.edit",
+        "membershipManagement.view",
+        "invoiceManagement.view",
+        "invoiceManagement.create",
+        "userDetail.attendance.view",
+        "userDetail.membership.view",
+        "userDetail.membership.create",
+        "userDetail.invoice.view",
+        "userDetail.invoice.create"
+      ]
+    },
+    "receptionDesk": {
+      "name": "Reception Desk",
+      "description": "Front desk operations",
+      "permissions": [
+        "dashboard.view",
+        "userManagement.view",
+        "userManagement.create",
+        "walkIn.view",
+        "walkIn.create",
+        "biometric.view",
+        "attendance.view",
+        "attendance.mark",
+        "invoiceManagement.view",
+        "userDetail.attendance.view",
+        "userDetail.membership.view",
+        "userDetail.invoice.view"
+      ]
+    },
+    "trainer": {
+      "name": "Trainer",
+      "description": "Trainer specific permissions",
+      "permissions": [
+        "dashboard.view",
+        "userManagement.view",
+        "attendance.view",
+        "attendance.mark",
+        "userDetail.attendance.view",
+        "userDetail.assessment.view",
+        "userDetail.assessment.create",
+        "userDetail.assessment.edit",
+        "userDetail.dietsPlan.view",
+        "userDetail.dietsPlan.create",
+        "userDetail.dietsPlan.edit",
+        "trainerDetail.classes.view",
+        "trainerDetail.transactions.view"
+      ]
+    },
+    "accountant": {
+      "name": "Accountant",
+      "description": "Financial operations",
+      "permissions": [
+        "dashboard.view",
+        "invoiceManagement.view",
+        "invoiceManagement.create",
+        "invoiceManagement.edit",
+        "invoiceManagement.export",
+        "employeeManagement.salary.view",
+        "employeeManagement.salary.create",
+        "employeeManagement.salary.edit",
+        "refundHistory.view",
+        "refundHistory.approve",
+        "userDetail.invoice.view",
+        "userDetail.invoice.edit",
+        "userDetail.refundHistory.view"
+      ]
+    },
+    "hrManager": {
+      "name": "HR Manager",
+      "description": "Human resource management",
+      "permissions": [
+        "dashboard.view",
+        "employeeManagement.view",
+        "employeeManagement.create",
+        "employeeManagement.edit",
+        "attendance.view",
+        "attendance.export",
+        "biometric.view",
+        "biometric.create",
+        "employeeDetail.attendance.view",
+        "employeeDetail.employeeId.view",
+        "employeeDetail.salary.view",
+        "employeeDetail.biometricAccess.view",
+        "generalStaffDetail.attendance.view",
+        "generalStaffDetail.salary.view",
+        "trainerDetail.attendance.view"
+      ]
+    }
+  },
+  "permissionCategories": {
+    "view": "Can view/read data",
+    "create": "Can create new records",
+    "edit": "Can edit/update existing records",
+    "delete": "Can delete records",
+    "export": "Can export data to files",
+    "approve": "Can approve requests",
+    "reject": "Can reject requests",
+    "mark_present": "Can mark attendance as present",
+    "mark_absent": "Can mark attendance as absent",
+    "assign": "Can assign tasks/classes",
+    "download": "Can download files/documents",
+    "print": "Can print documents",
+    "book": "Can book services",
+    "cancel": "Can cancel bookings",
+    "buy_plan": "Can purchase membership plans",
+    "upgrade_plan": "Can upgrade membership plans",
+    "advance_renew": "Can renew membership in advance",
+    "freeze_membership": "Can freeze membership",
+    "add_days": "Can add days to membership"
+  }
+}

@@ -1,0 +1,63 @@
+@use '../../styles/breakpoints.scss' as *;
+.all-add-on-slots-page {
+//   padding: 24px;
+  background: var(--background-color);
+  border-radius: 8px;
+  
+  .ant-btn-primary {
+    background: var(--accent);
+    border-color: var(--accent);
+    color: var(--card-bg);
+    height: 40px;
+    font-weight: 500;
+
+    &:hover {
+      opacity: 0.9;
+    }
+  }
+
+
+   .header-section {
+     display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+    flex-wrap: wrap;
+    gap: 10px;
+
+   .left-col{
+      gap: 10px;
+      display: flex;
+        align-items: center;
+    flex-wrap: wrap;
+
+    @include mobile {
+         display: grid;
+         grid-template-columns: repeat(2, 1fr);
+         align-items: center;
+         gap: 8px;
+         width: 100%;
+       }
+    }
+
+    .right-col {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      @include mobile {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        width: 100%;
+        justify-content: space-between;
+      }
+    }
+
+    .add-btn {
+      margin-left: 0%;
+      @include laptop {
+        margin-left: auto;
+      }
+    }
+
+  }
+}

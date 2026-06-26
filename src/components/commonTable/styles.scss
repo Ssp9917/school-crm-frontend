@@ -1,0 +1,146 @@
+@use '../../styles/breakpoints.scss' as *;
+
+.common-table-wrapper {
+  background: var(--card-bg);
+  border-radius: 8px;
+  // box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  border: 1px solid var(--muted);
+  overflow: auto;
+  max-height: calc(100vh - 250px);
+  position: relative;
+  .ant-table-cell-fix-end-shadow-show{
+    &::after{
+      box-shadow: none !important;
+    }
+  }
+  .ant-table-expanded-row-fixed::after{
+    border-inline-end: none !important;
+  }
+  .ant-table-container:before {
+  box-shadow: none !important;
+
+}
+.ant-table-cell-fix-start-shadow-show:after{
+    box-shadow: none !important;
+}
+  .ant-table-container {
+    border: none !important;
+    .ant-table-header{
+      overflow: auto !important;
+    }
+    &::before {
+      box-shadow: none;
+    }
+    &::after {
+      box-shadow: none !important;
+    }
+  }
+
+  .ant-table-content {
+    overflow-x: auto;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
+
+  .ant-table {
+    background: var(--card-bg);
+    color: var(--sider-text);
+    border-radius: 0;
+    .ant-table-thead > tr > th {
+      background: var(--card-bg);
+      color: var(--sider-text);
+      border-bottom: 1px solid var(--muted);
+      border-right: none !important;
+      border-inline-end: none !important;
+      font-weight: 600;
+      white-space: nowrap;
+      position: sticky !important;
+      top: 0 !important;
+      z-index: 10 !important;
+      &::before {
+        width: 0px !important;
+      }
+    }
+    .ant-table-tbody > tr {
+      &:hover:not(.ant-table-row-selected) > td {
+        background: var(--hover-bg);
+      }
+      > td {
+        border-bottom: 1px solid var(--muted);
+        border-right: none !important;
+        color: var(--sider-text);
+        white-space: nowrap;
+        background: var(--card-bg);
+      }
+      &:last-child > td {
+        border-bottom: none;
+      }
+      &.ant-table-row-selected > td {
+        background: var(--hover-bg) !important;
+        color: var(--sider-text) !important;
+      }
+      &.ant-table-row-selected:hover > td {
+        background: var(--hover-bg) !important;
+        color: var(--sider-text) !important;
+      }
+    }
+  }
+}
+
+.ant-dropdown {
+  .ant-dropdown-menu {
+    background: var(--card-bg);
+    border: 1px solid var(--muted);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    .ant-dropdown-menu-item {
+      color: var(--sider-text);
+      background: var(--card-bg);
+      .ant-dropdown-menu-title-content {
+        color: var(--sider-text);
+      }
+      &:hover,
+      &.ant-dropdown-menu-item-active {
+        background: var(--hover-bg);
+        color: var(--sider-text);
+      }
+      &.ant-dropdown-menu-item-danger {
+        color: #ff4d4f;
+        background: var(--card-bg);
+        &:hover,
+        &.ant-dropdown-menu-item-active {
+          background: rgba(255, 77, 79, 0.1);
+        }
+      }
+      .anticon {
+        color: var(--sider-text);
+      }
+      &.ant-dropdown-menu-item-danger .anticon {
+        color: #ff4d4f;
+      }
+      .ant-checkbox-wrapper {
+        color: var(--sider-text);
+        width: 100%;
+        .ant-checkbox {
+          .ant-checkbox-inner {
+            background: var(--card-bg);
+            border-color: var(--muted);
+          }
+          &.ant-checkbox-checked {
+            .ant-checkbox-inner {
+              background: var(--accent);
+              border-color: var(--accent);
+            }
+          }
+        }
+        &:hover {
+          .ant-checkbox-inner {
+            border-color: var(--accent);
+          }
+        }
+      }
+    }
+  }
+}

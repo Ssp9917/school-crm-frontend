@@ -1,0 +1,212 @@
+@use '../../styles/breakpoints.scss' as *;
+
+.sad-page {
+  padding: 0 0 32px;
+
+  /* ── Filters ── */
+  .sad-filters {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-bottom: 20px;
+
+    .sad-filters-left {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .sad-page-title {
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--sider-text);
+      margin: 0;
+    }
+
+    .sad-filters-right {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+  }
+
+  /* ── KPI Grid ── */
+  .sad-stats-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+    margin-bottom: 20px;
+
+    @include laptop { grid-template-columns: repeat(2, 1fr); }
+    @include mobile { grid-template-columns: 1fr; }
+  }
+
+  /* ── Charts Row ── */
+  .sad-charts-row {
+    display: grid;
+    grid-template-columns: 1.6fr 1fr;
+    gap: 16px;
+    margin-bottom: 20px;
+
+    @include laptop { grid-template-columns: 1fr; }
+  }
+
+  .sad-chart-card {
+    background: var(--card-bg);
+    border: 1px solid var(--muted);
+    border-radius: 12px;
+    padding: 18px;
+
+    .sad-chart-head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 14px;
+
+      .sad-chart-title {
+        font-size: 14px;
+        font-weight: 600;
+        color: var(--sider-text);
+      }
+    }
+  }
+
+  /* ── Section ── */
+  .sad-section {
+    background: var(--card-bg);
+    border: 1px solid var(--muted);
+    border-radius: 12px;
+    padding: 16px;
+    margin-bottom: 0;
+
+    .sad-section-head {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--sider-text);
+      margin-bottom: 14px;
+    }
+  }
+
+  .sad-section-full {
+    margin-bottom: 20px;
+  }
+
+  /* ── Bottom Row ── */
+  .sad-bottom-row {
+    display: grid;
+    grid-template-columns: 1.6fr 1fr;
+    gap: 16px;
+    margin-top: 20px;
+
+    @include laptop { grid-template-columns: 1fr; }
+  }
+
+  .sad-side-col {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .sad-section-flex {
+    height: 100%;
+  }
+
+  /* ── Table ── */
+  .sad-table {
+    .ant-table {
+      background: transparent;
+      color: var(--sider-text);
+    }
+    .ant-table-thead > tr > th {
+      background: var(--hover-bg);
+      color: var(--muted);
+      font-size: 11px;
+      text-transform: uppercase;
+      border-bottom: 1px solid var(--muted);
+      padding: 8px 10px;
+    }
+    .ant-table-tbody > tr > td {
+      border-bottom: 1px solid var(--muted);
+      color: var(--sider-text);
+      font-size: 13px;
+      padding: 8px 10px;
+      background: transparent;
+    }
+    .ant-table-tbody > tr:last-child > td {
+      border-bottom: none;
+    }
+    .ant-table-tbody > tr:hover > td {
+      background: var(--hover-bg) !important;
+    }
+  }
+
+  /* ── CRM List ── */
+  .sad-crm-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .sad-crm-item {
+    display: grid;
+    grid-template-columns: 68px 1fr 36px;
+    align-items: center;
+    gap: 10px;
+
+    .sad-crm-source {
+      font-size: 12px;
+      color: var(--sider-text);
+    }
+
+    .sad-crm-count {
+      font-size: 12px;
+      font-weight: 700;
+      text-align: right;
+    }
+  }
+
+  /* ── PT Utilization ── */
+  .sad-util-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .sad-util-item {
+    display: grid;
+    grid-template-columns: 60px 1fr;
+    align-items: center;
+    gap: 10px;
+
+    .sad-util-label {
+      font-size: 12px;
+      color: var(--sider-text);
+    }
+  }
+
+  /* ── Tooltip ── */
+  .db-tooltip {
+    background: var(--card-bg);
+    border: 1px solid var(--muted);
+    border-radius: 8px;
+    padding: 8px 12px;
+    font-size: 12px;
+
+    .db-tt-label {
+      color: var(--muted);
+      margin: 0 0 4px;
+      font-size: 11px;
+    }
+
+    p {
+      margin: 2px 0;
+      color: var(--sider-text);
+    }
+  }
+}

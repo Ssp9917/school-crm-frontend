@@ -1,0 +1,22 @@
+.employee-id-section {
+  .id-images-section {
+    margin-bottom: 20px;
+    h3 {
+      color: var(--sider-text);
+      margin: 0;
+      font-size: 16px;
+    }
+  }
+  .id-images {
+    display: flex;
+    gap: 24px;
+  }
+  .image-column {
+    flex: 1;
+  }
+  .image-container {
+    background: var(--card-bg);
+    padding: 12px;
+    border-radius: 8px;
+  }
+}

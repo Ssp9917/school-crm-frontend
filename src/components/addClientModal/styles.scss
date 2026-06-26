@@ -1,0 +1,210 @@
+.add-client-modal {
+  :global(.ant-modal-content) {
+    padding: 0;
+    border-radius: 12px;
+    background: var(--card-bg);
+  }
+.ant-modal-container{
+    padding: 20px;
+}
+  :global(.ant-modal-close) {
+    top: 20px;
+    right: 20px;
+
+    :global(.anticon) {
+      color: var(--sider-text);
+    }
+  }
+
+  .add-client-content {
+
+
+    .modal-title {
+      font-size: 28px;
+      font-weight: 700;
+      color: var(--sider-text);
+      margin: 0 0 10px 0;
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+      position: relative;
+
+      .form-label {
+        display: block;
+        font-size: 16px;
+        font-weight: 600;
+        color: var(--sider-text);
+        margin-bottom: 8px;
+
+        .required {
+          color: #e74c3c;
+          margin-left: 2px;
+        }
+      }
+
+      .required-text {
+        position: absolute;
+        right: 0;
+        top: 0;
+        font-size: 14px;
+        color: var(--placeholder);
+        font-style: italic;
+      }
+
+      .form-input {
+        background: var(--input-bg);
+        border: 1px solid var(--muted);
+        border-radius: 8px;
+        font-size: 15px;
+        color: var(--sider-text);
+        height: 48px;
+
+        &::placeholder {
+          color: var(--placeholder);
+        }
+
+        &:focus,
+        &:hover {
+          background: var(--input-bg);
+          border-color: var(--muted);
+        }
+      }
+
+      .input-with-icon {
+        position: relative;
+
+        .copy-icon {
+          position: absolute;
+          right: 16px;
+          top: 50%;
+          transform: translateY(-50%);
+          font-size: 18px;
+          color: #17A2B8;
+          cursor: pointer;
+          transition: all 0.2s;
+
+          &:hover {
+            color: #138496;
+          }
+        }
+      }
+
+      .helper-text {
+        margin: 8px 0 0 0;
+        font-size: 14px;
+        color: var(--sider-text);
+
+        .learn-more {
+          color: #17A2B8;
+          text-decoration: none;
+          font-weight: 500;
+
+          &:hover {
+            text-decoration: underline;
+          }
+        }
+      }
+
+      .phone-input-wrapper {
+        display: flex;
+        align-items: center;
+        background: var(--input-bg);
+        border: 1px solid var(--muted);
+        border-radius: 8px;
+        overflow: hidden;
+        height: 48px;
+
+        &:focus-within {
+          border-color: var(--muted);
+        }
+
+        .country-code-select {
+          flex-shrink: 0;
+          width: 110px;
+          height: 48px;
+          border-right: 1px solid var(--muted);
+
+          :global(.ant-select-selector) {
+            background: transparent !important;
+            border: none !important;
+            border-radius: 0 !important;
+            box-shadow: none !important;
+            height: 48px !important;
+            padding: 0 8px !important;
+            display: flex;
+            align-items: center;
+          }
+
+          :global(.ant-select-selection-item) {
+            display: flex;
+            align-items: center;
+            padding-right: 0;
+            color: var(--sider-text);
+            font-size: 13px;
+            font-weight: 500;
+          }
+
+          :global(.ant-select-arrow) {
+            color: var(--placeholder);
+            right: 8px;
+          }
+
+          &:global(.ant-select-focused) :global(.ant-select-selector) {
+            box-shadow: none !important;
+          }
+        }
+
+        .phone-input {
+          flex: 1;
+          background: transparent;
+          border: none;
+          border-radius: 0;
+          font-size: 15px;
+          color: var(--sider-text);
+          height: 48px;
+
+          &::placeholder {
+            color: var(--placeholder);
+          }
+
+          &:focus,
+          &:hover {
+            background: transparent;
+            border: none;
+            box-shadow: none;
+          }
+        }
+
+        :global(.ant-input-focused),
+        :global(.ant-input:focus) {
+          box-shadow: none;
+        }
+      }
+    }
+
+    .save-button {
+      width: 100%;
+      height: 56px;
+      background: #17A2B8;
+      border: none;
+      border-radius: 8px;
+      font-size: 16px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      margin-top: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+
+      &:hover {
+        background: #138496;
+      }
+
+      :global(.anticon) {
+        font-size: 18px;
+      }
+    }
+  }
+}

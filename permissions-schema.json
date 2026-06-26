@@ -1,0 +1,2069 @@
+{
+  "mainMenu": [
+    {
+      "id": "dashboard",
+      "key": "1",
+      "name": "Dashboard",
+      "route": "/",
+      "permissions": [
+        {
+          "action": "view",
+          "key": "1",
+          "permission": "DASHBOARD_READ"
+        }
+      ]
+    },
+    {
+      "id": "dashboards",
+      "key": "26",
+      "name": "Dashboards",
+      "icon": "AppstoreOutlined",
+      "children": [
+        {
+          "id": "superAdminDashboard",
+          "key": "26-1",
+          "name": "Super Admin",
+          "icon": "CrownOutlined",
+          "route": "/super-admin-dashboard",
+          "permissions": [
+            {
+              "action": "view",
+              "key": "26-1",
+              "permission": "SUPER_ADMIN_DASHBOARD_READ"
+            }
+          ]
+        },
+        {
+          "id": "franchiseDashboard",
+          "key": "26-2",
+          "name": "Franchise Owner",
+          "icon": "BranchesOutlined",
+          "route": "/franchise-dashboard",
+          "permissions": [
+            {
+              "action": "view",
+              "key": "26-2",
+              "permission": "FRANCHISE_DASHBOARD_READ"
+            }
+          ]
+        },
+        {
+          "id": "clubManagerDashboard",
+          "key": "26-3",
+          "name": "Club Manager",
+          "icon": "HomeOutlined",
+          "route": "/club-manager-dashboard",
+          "permissions": [
+            {
+              "action": "view",
+              "key": "26-3",
+              "permission": "CLUB_MANAGER_DASHBOARD_READ"
+            }
+          ]
+        },
+        {
+          "id": "customerServiceDashboard",
+          "key": "26-4",
+          "name": "Customer Service",
+          "icon": "CustomerServiceOutlined",
+          "route": "/customer-service-dashboard",
+          "permissions": [
+            {
+              "action": "view",
+              "key": "26-4",
+              "permission": "CUSTOMER_SERVICE_DASHBOARD_READ"
+            }
+          ]
+        },
+        {
+          "id": "salesDashboard",
+          "key": "26-5",
+          "name": "Sales Team",
+          "icon": "TrophyOutlined",
+          "route": "/sales-dashboard",
+          "permissions": [
+            {
+              "action": "view",
+              "key": "26-5",
+              "permission": "SALES_DASHBOARD_READ"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "userManagement",
+      "key": "9",
+      "name": "User Management",
+      "children": [
+        {
+          "id": "allUsers",
+          "key": "9-1",
+          "name": "All Users",
+          "route": "/all-users",
+          "permissions": [
+            {
+              "action": "view",
+              "key": "9-1",
+              "permission": "USERS_READ"
+            },
+            {
+              "action": "view_profile",
+              "key": "9-1-view-profile",
+              "permission": "USERS_VIEW_PROFILE"
+            },
+            {
+              "action": "add_user",
+              "key": "9-2",
+              "permission": "USERS_CREATE"
+            },
+            {
+              "action": "edit",
+              "key": "9-2-3",
+              "permission": "USERS_UPDATE"
+            },
+            {
+              "action": "change_salesperson",
+              "key": "9-2-1",
+              "permission": "USERS_CHANGE_SALESPERSON"
+            },
+            {
+              "action": "view_membership_form",
+              "key": "9-1-view-form",
+              "permission": "USERS_VIEW_MEMBERSHIP_FORM"
+            },
+            {
+              "action": "change_password",
+              "key": "9-1-change-password",
+              "permission": "USERS_CHANGE_PASSWORD"
+            },
+            {
+              "action": "delete",
+              "key": "9-1-delete",
+              "permission": "USERS_DELETE"
+            },
+            {
+              "action": "update_photo",
+              "key": "9-1-update-photo",
+              "permission": "UPDATE_USER_PHOTO"
+            }
+          ],
+          "icon": "UnorderedListOutlined"
+        },
+        {
+          "id": "allMembershipUsers",
+          "key": "9-10",
+          "name": "Membership Users",
+          "route": "/all-membership-users",
+          "permissions": [
+            {
+              "action": "view",
+              "key": "9-10",
+              "permission": "MEMBERSHIP_USERS_READ"
+            },
+            {
+              "action": "view_profile",
+              "key": "9-10-view-profile",
+              "permission": "MEMBERSHIP_USERS_VIEW_PROFILE"
+            },
+            {
+              "action": "edit",
+              "key": "9-10-edit",
+              "permission": "MEMBERSHIP_USERS_UPDATE"
+            },
+            {
+              "action": "change_salesperson",
+              "key": "9-10-change-salesperson",
+              "permission": "MEMBERSHIP_USERS_CHANGE_SALESPERSON"
+            },
+            {
+              "action": "view_membership_form",
+              "key": "9-10-view-form",
+              "permission": "MEMBERSHIP_USERS_VIEW_FORM"
+            },
+            {
+              "action": "change_password",
+              "key": "9-10-change-password",
+              "permission": "MEMBERSHIP_USERS_CHANGE_PASSWORD"
+            },
+            {
+              "action": "delete",
+              "key": "9-10-delete",
+              "permission": "MEMBERSHIP_USERS_DELETE"
+            },
+            {
+              "action": "gym_kit",
+              "key": "9-10-gym-kit",
+              "permission": "MEMBERSHIP_USERS_GYM_KIT"
+            },
+            {
+              "action": "update_photo",
+              "key": "9-10-update-photo",
+              "permission": "UPDATE_USER_PHOTO"
+            }
+          ],
+          "icon": "IdcardOutlined"
+        },
+        {
+          "id": "allAddOnsUsers",
+          "key": "9-3",
+          "name": "All Add-On's Users",
+          "route": "/all-add-ons-users",
+          "permissions": [
+            {
+              "action": "view",
+              "key": "9-3",
+              "permission": "ADDON_USERS_READ"
+            },
+            {
+              "action": "view_profile",
+              "key": "9-3-view-profile",
+              "permission": "ADDON_USERS_VIEW_PROFILE"
+            }
+          ],
+          "icon": "UsergroupAddOutlined"
+        },
+        {
+          "id": "addOnLiveDashboard",
+          "key": "25",
+          "name": "Add-On Live Dashboard",
+          "route": "/add-on-live-dashboard",
+          "permissions": [
+            {
+              "action": "view",
+              "key": "25-1",
+              "permission": "ADDON_LIVE_DASHBOARD_READ"
+            }
+          ],
+          "icon": "DashboardOutlined"
+        },
+        {
+          "id": "walkIn",
+          "key": "9-5",
+          "name": "Walk-in / Incoming",
+          "route": "/walk-in-incoming",
+          "permissions": [
+            {
+              "action": "view",
+              "key": "9-5",
+              "permission": "WALK_IN_READ"
+            },
+            {
+              "action": "add_walk_in",
+              "key": "9-5-add",
+              "permission": "WALK_IN_CREATE"
+            },
+            {
+              "action": "convert_to",
+              "key": "9-5-convert",
+              "permission": "WALK_IN_CONVERT"
+            },
+            {
+              "action": "edit",
+              "key": "9-5-edit",
+              "permission": "WALK_IN_UPDATE"
+            },
+            {
+              "action": "delete",
+              "key": "9-5-delete",
+              "permission": "WALK_IN_DELETE"
+            }
+          ],
+          "icon": "LoginOutlined"
+        },
+        {
+          "id": "userAssessment",
+          "key": "9-6",
+          "name": "User Assessment",
+          "route": "/user-assessment",
+          "permissions": [
+            {
+              "action": "view",
+              "key": "9-6",
+              "permission": "USER_ASSESSMENT_READ"
+            }
+          ],
+          "icon": "AuditOutlined"
+        },
+        {
+          "id": "activityLog",
+          "key": "9-7",
+          "name": "Activity Log",
+          "route": "/activity-log",
+          "permissions": [
+            {
+              "action": "view",
+              "key": "9-7",
+              "permission": "ACTIVITY_LOG_READ"
+            }
+          ],
+          "icon": "HistoryOutlined"
+        },
+        {
+          "id": "blacklistUser",
+          "key": "9-8",
+          "name": "Blacklist User",
+          "route": "/blacklist-users",
+          "permissions": [
+            {
+              "action": "view",
+              "key": "9-8",
+              "permission": "BLACKLIST_USER_READ"
+            }
+          ],
+          "icon": "StopOutlined"
+        }
+      ]
+    },
+    {
+      "id": "leadManagement",
+      "key": "10",
+      "name": "Lead Management",
+      "children": [
+        {
+          "id": "clients",
+          "key": "10-1",
+          "name": "Clients",
+          "route": "/clients",
+          "permissions": [
+            {
+              "action": "view",
+              "key": "10-1",
+              "permission": "LEAD_CLIENTS_READ"
+            },
+            {
+              "action": "create",
+              "key": "10-1-add",
+              "permission": "LEAD_CLIENTS_CREATE"
+            },
+            {
+              "action": "edit",
+              "key": "10-1-edit",
+              "permission": "LEAD_CLIENTS_UPDATE"
+            },
+            {
+              "action": "delete",
+              "key": "10-1-delete",
+              "permission": "LEAD_CLIENTS_DELETE"
+            },
+            {
+              "action": "view_profile",
+              "key": "10-1-view-profile",
+              "permission": "LEAD_CLIENTS_VIEW_PROFILE"
+            },
+            {
+              "action": "reassign",
+              "key": "10-1-reassign",
+              "permission": "LEAD_CLIENTS_REASSIGN"
+            },
+            {
+              "action": "custom_fields",
+              "key": "10-1-custom-fields",
+              "permission": "LEAD_CLIENTS_CUSTOM_FIELDS"
+            },
+            {
+              "action": "quick_response",
+              "key": "10-1-quick-response",
+              "permission": "LEAD_CLIENTS_QUICK_RESPONSE"
+            },
+            {
+              "action": "view_on_app",
+              "key": "10-1-view-app",
+              "permission": "LEAD_CLIENTS_VIEW_APP"
+            },
+            {
+              "action": "follow_up",
+              "key": "10-1-follow-up",
+              "permission": "LEAD_CLIENTS_FOLLOW_UP"
+            },
+            {
+              "action": "edit_notes",
+              "key": "10-1-edit-notes",
+              "permission": "LEAD_CLIENTS_UPDATE_NOTES"
+            },
+            {
+              "action": "add_to_sequence",
+              "key": "10-1-add-sequence",
+              "permission": "LEAD_CLIENTS_ADD_TO_SEQUENCE"
+            }
+          ],
+          "icon": "SolutionOutlined"
+        },
+        {
+          "id": "content",
+          "key": "10-2",
+          "name": "Content",
+          "route": "/lead-content",
+          "permissions": [
+            {
+              "action": "view",
+              "key": "10-2",
+              "permission": "LEAD_CONTENT_READ"
+            },
+            {
+              "action": "create",
+              "key": "10-2-add",
+              "permission": "LEAD_CONTENT_CREATE"
+            },
+            {
+              "action": "edit",
+              "key": "10-2-edit",
+              "permission": "LEAD_CONTENT_UPDATE"
+            },
+            {
+              "action": "delete",
+              "key": "10-2-delete",
+              "permission": "LEAD_CONTENT_DELETE"
+            }
+          ],
+          "icon": "FileTextOutlined"
+        },
+        {
+          "id": "activity",
+          "key": "10-3",
+          "name": "Activity",
+          "route": "/lead-activity",
+          "permissions": [
+            {
+              "action": "view",
+              "key": "10-3",
+              "permission": "LEAD_ACTIVITY_READ"
+            },
+            {
+              "action": "create",
+              "key": "10-3-add",
+              "permission": "LEAD_ACTIVITY_CREATE"
+            },
+            {
+              "action": "edit",
+              "key": "10-3-edit",
+              "permission": "LEAD_ACTIVITY_UPDATE"
+            },
+            {
+              "action": "delete",
+              "key": "10-3-delete",
+              "permission": "LEAD_ACTIVITY_DELETE"
+            }
+          ],
+          "icon": "HistoryOutlined"
+        },
+        {
+          "id": "team",
+          "key": "10-4",
+          "name": "Team",
+          "route": "/lead-team",
+          "permissions": [
+            {
+              "action": "view",
+              "key": "10-4",
+              "permission": "LEAD_TEAM_READ"
+            },
+            {
+              "action": "create",
+              "key": "10-4-add",
+              "permission": "LEAD_TEAM_CREATE"
+            },
+            {
+              "action": "edit",
+              "key": "10-4-edit",
+              "permission": "LEAD_TEAM_UPDATE"
+            },
+            {
+              "action": "delete",
+              "key": "10-4-delete",
+              "permission": "LEAD_TEAM_DELETE"
+            },
+            {
+              "action": "assign",
+              "key": "10-4-assign",
+              "permission": "LEAD_TEAM_ASSIGN"
+            }
+          ],
+          "icon": "TeamOutlined"
+        },
+        {
+          "id": "analytics",
+          "key": "10-5",
+          "name": "Analytics",
+          "route": "/lead-analytics",
+          "permissions": [
+            {
+              "action": "view",
+              "key": "10-5",
+              "permission": "LEAD_ANALYTICS_READ"
+            },
+            {
+              "action": "export",
+              "key": "10-5-export",
+              "permission": "LEAD_ANALYTICS_EXPORT"
+            }
+          ],
+          "icon": "LineChartOutlined"
+        },
+        {
+          "id": "automation",
+          "key": "10-6",
+          "name": "Automation",
+          "route": "/lead-automation",
+          "permissions": [
+            {
+              "action": "view",
+              "key": "10-6",
+              "permission": "LEAD_AUTOMATION_READ"
+            },
+            {
+              "action": "create",
+              "key": "10-6-add",
+              "permission": "LEAD_AUTOMATION_CREATE"
+            },
+            {
+              "action": "edit",
+              "key": "10-6-edit",
+              "permission": "LEAD_AUTOMATION_UPDATE"
+            },
+            {
+              "action": "delete",
+              "key": "10-6-delete",
+              "permission": "LEAD_AUTOMATION_DELETE"
+            },
+            {
+              "action": "toggle_enable",
+              "key": "10-6-toggle",
+              "permission": "LEAD_AUTOMATION_TOGGLE"
+            }
+          ],
+          "icon": "ThunderboltOutlined"
+        }
+      ]
+    },
+    {
+      "id": "employeeManagement",
+      "key": "8",
+      "name": "Employee Management",
+      "children": [
+        {
+          "id": "allEmployees",
+          "key": "8-1",
+          "name": "All Employees",
+          "route": "/all-employees",
+          "permissions": [
+            {
+              "action": "view",
+              "key": "8-1",
+              "permission": "EMPLOYEE_READ"
+            },
+            {
+              "action": "view_profile",
+              "key": "8-1-view-profile",
+              "permission": "EMPLOYEE_VIEW_PROFILE"
+            },
+            {
+              "action": "add_employee",
+              "key": "8-1-add",
+              "permission": "EMPLOYEE_CREATE"
+            },
+            {
+              "action": "edit",
+              "key": "8-1-edit",
+              "permission": "EMPLOYEE_UPDATE"
+            },
+            {
+              "action": "delete",
+              "key": "8-1-delete",
+              "permission": "EMPLOYEE_DELETE"
+            },
+            {
+              "action": "change_password",
+              "key": "8-1-change-password",
+              "permission": "EMPLOYEE_CHANGE_PASSWORD"
+            },
+            {
+              "action": "toggle_status",
+              "key": "8-1-status",
+              "permission": "EMPLOYEE_TOGGLE_STATUS"
+            },
+            {
+              "action": "update_photo",
+              "key": "8-1-update-photo",
+              "permission": "UPDATE_EMPLOYEE_PHOTO"
+            },
+            {
+              "action": "verify",
+              "key": "8-1-verify",
+              "permission": "EMPLOYEE_VERIFY"
+            },
+            {
+              "action": "unverify",
+              "key": "8-1-unverify",
+              "permission": "EMPLOYEE_UNVERIFY"
+            }
+          ],
+          "icon": "TeamOutlined"
+        },
+        {
+          "id": "allGeneralStaff",
+          "key": "8-2",
+          "name": "All General Staff",
+          "route": "/all-general-staff",
+          "permissions": [
+            {
+              "action": "view",
+              "key": "8-2",
+              "permission": "GENERAL_STAFF_READ"
+            },
+            {
+              "action": "view_profile",
+              "key": "8-2-view-profile",
+              "permission": "GENERAL_STAFF_VIEW_PROFILE"
+            },
+            {
+              "action": "add_general_staff",
+              "key": "8-2-add",
+              "permission": "GENERAL_STAFF_CREATE"
+            },
+            {
+              "action": "edit",
+              "key": "8-2-edit",
+              "permission": "GENERAL_STAFF_UPDATE"
+            },
+            {
+              "action": "delete",
+              "key": "8-2-delete",
+              "permission": "GENERAL_STAFF_DELETE"
+            },
+            {
+              "action": "verify",
+              "key": "8-2-verify",
+              "permission": "GENERAL_STAFF_VERIFY"
+            },
+            {
+              "action": "unverify",
+              "key": "8-2-unverify",
+              "permission": "GENERAL_STAFF_UNVERIFY"
+            },
+            {
+              "action": "change_password",
+              "key": "8-2-change-password",
+              "permission": "GENERAL_STAFF_CHANGE_PASSWORD"
+            },
+            {
+              "action": "toggle_status",
+              "key": "8-2-status",
+              "permission": "GENERAL_STAFF_TOGGLE_STATUS"
+            },
+            {
+              "action": "update_photo",
+              "key": "8-2-update-photo",
+              "permission": "UPDATE_EMPLOYEE_PHOTO"
+            }
+          ],
+          "icon": "UsergroupAddOutlined"
+        },
+        {
+          "id": "allTrainers",
+          "key": "8-3",
+          "name": "All Trainers",
+          "route": "/all-trainers",
+          "permissions": [
+            {
+              "action": "view",
+              "key": "8-3",
+              "permission": "TRAINER_READ"
+            },
+            {
+              "action": "view_profile",
+              "key": "8-3-view-profile",
+              "permission": "TRAINER_VIEW_PROFILE"
+            },
+            {
+              "action": "add_trainer",
+              "key": "8-3-add",
+              "permission": "TRAINER_CREATE"
+            },
+            {
+              "action": "edit",
+              "key": "8-3-edit",
+              "permission": "TRAINER_UPDATE"
+            },
+            {
+              "action": "delete",
+              "key": "8-3-delete",
+              "permission": "TRAINER_DELETE"
+            },
+            {
+              "action": "verify",
+              "key": "8-3-verify",
+              "permission": "TRAINER_VERIFY"
+            },
+            {
+              "action": "unverify",
+              "key": "8-3-unverify",
+              "permission": "TRAINER_UNVERIFY"
+            },
+            {
+              "action": "change_password",
+              "key": "8-3-change-password",
+              "permission": "TRAINER_CHANGE_PASSWORD"
+            },
+            {
+              "action": "toggle_status",
+              "key": "8-3-status",
+              "permission": "TRAINER_TOGGLE_STATUS"
+            },
+            {
+              "action": "update_photo",
+              "key": "8-3-update-photo",
+              "permission": "UPDATE_TRAINER_PHOTO"
+            }
+          ],
+          "icon": "SolutionOutlined"
+        }
+      ]
+    },
+    {
+      "id": "attendanceManagement",
+      "key": "4",
+      "name": "Attendance Management",
+      "children": [
+        {
+          "id": "directorAttendance",
+          "key": "4-1",
+          "name": "Director Attendance",
+          "route": "/director-attendance",
+          "permissions": [
+            {
+              "action": "view",
+              "key": "4-1",
+              "permission": "DIRECTOR_ATTENDANCE_READ"
+            },
+            {
+              "action": "mark_present",
+              "key": "4-1-mark-present",
+              "permission": "DIRECTOR_ATTENDANCE_MARK_PRESENT"
+            },
+            {
+              "action": "mark_absent",
+              "key": "4-1-mark-absent",
+              "permission": "DIRECTOR_ATTENDANCE_MARK_ABSENT"
+            },
+            {
+              "action": "export",
+              "key": "4-1-export",
+              "permission": "DIRECTOR_ATTENDANCE_EXPORT"
+            },
+            {
+              "action": "edit",
+              "key": "4-1-edit",
+              "permission": "DIRECTOR_ATTENDANCE_UPDATE"
+            },
+            {
+              "action": "delete",
+              "key": "4-1-delete",
+              "permission": "DIRECTOR_ATTENDANCE_DELETE"
+            }
+          ],
+          "icon": "CalendarOutlined"
+        },
+        {
+          "id": "userAttendance",
+          "key": "4-2",
+          "name": "User Attendance",
+          "route": "/user-attendance",
+          "permissions": [
+            {
+              "action": "view",
+              "key": "4-2",
+              "permission": "USER_ATTENDANCE_READ"
+            },
+            {
+              "action": "mark_present",
+              "key": "4-2-mark-present",
+              "permission": "USER_ATTENDANCE_MARK_PRESENT"
+            },
+            {
+              "action": "mark_absent",
+              "key": "4-2-mark-absent",
+              "permission": "USER_ATTENDANCE_MARK_ABSENT"
+            },
+            {
+              "action": "export",
+              "key": "4-2-export",
+              "permission": "USER_ATTENDANCE_EXPORT"
+            },
+            {
+              "action": "edit",
+              "key": "4-2-edit",
+              "permission": "USER_ATTENDANCE_UPDATE"
+            },
+            {
+              "action": "delete",
+              "key": "4-2-delete",
+              "permission": "USER_ATTENDANCE_DELETE"
+            }
+          ],
+          "icon": "CalendarOutlined"
+        },
+        {
+          "id": "employeeAttendance",
+          "key": "4-3",
+          "name": "Employee Attendance",
+          "route": "/employee-attendance",
+          "permissions": [
+            {
+              "action": "view",
+              "key": "4-3",
+              "permission": "EMPLOYEE_ATTENDANCE_READ"
+            },
+            {
+              "action": "mark_present",
+              "key": "4-3-mark-present",
+              "permission": "EMPLOYEE_ATTENDANCE_MARK_PRESENT"
+            },
+            {
+              "action": "mark_absent",
+              "key": "4-3-mark-absent",
+              "permission": "EMPLOYEE_ATTENDANCE_MARK_ABSENT"
+            },
+            {
+              "action": "export",
+              "key": "4-3-export",
+              "permission": "EMPLOYEE_ATTENDANCE_EXPORT"
+            },
+            {
+              "action": "edit",
+              "key": "4-3-edit",
+              "permission": "EMPLOYEE_ATTENDANCE_UPDATE"
+            },
+            {
+              "action": "delete",
+              "key": "4-3-delete",
+              "permission": "EMPLOYEE_ATTENDANCE_DELETE"
+            }
+          ],
+          "icon": "CalendarOutlined"
+        },
+        {
+          "id": "trainerAttendance",
+          "key": "4-4",
+          "name": "Trainer Attendance",
+          "route": "/trainer-attendance",
+          "permissions": [
+            {
+              "action": "view",
+              "key": "4-4",
+              "permission": "TRAINER_ATTENDANCE_READ"
+            },
+            {
+              "action": "mark_present",
+              "key": "4-4-mark-present",
+              "permission": "TRAINER_ATTENDANCE_MARK_PRESENT"
+            },
+            {
+              "action": "mark_absent",
+              "key": "4-4-mark-absent",
+              "permission": "TRAINER_ATTENDANCE_MARK_ABSENT"
+            },
+            {
+              "action": "export",
+              "key": "4-4-export",
+              "permission": "TRAINER_ATTENDANCE_EXPORT"
+            },
+            {
+              "action": "edit",
+              "key": "4-4-edit",
+              "permission": "TRAINER_ATTENDANCE_UPDATE"
+            },
+            {
+              "action": "delete",
+              "key": "4-4-delete",
+              "permission": "TRAINER_ATTENDANCE_DELETE"
+            }
+          ],
+          "icon": "CalendarOutlined"
+        },
+        {
+          "id": "generalStaffAttendance",
+          "key": "4-5",
+          "name": "General Staff Attendance",
+          "route": "/general-staff-attendance",
+          "permissions": [
+            {
+              "action": "view",
+              "key": "4-5",
+              "permission": "GS_ATTENDANCE_READ"
+            },
+            {
+              "action": "mark_present",
+              "key": "4-5-mark-present",
+              "permission": "GS_ATTENDANCE_MARK_PRESENT"
+            },
+            {
+              "action": "mark_absent",
+              "key": "4-5-mark-absent",
+              "permission": "GS_ATTENDANCE_MARK_ABSENT"
+            },
+            {
+              "action": "export",
+              "key": "4-5-export",
+              "permission": "GS_ATTENDANCE_EXPORT"
+            },
+            {
+              "action": "edit",
+              "key": "4-5-edit",
+              "permission": "GS_ATTENDANCE_UPDATE"
+            },
+            {
+              "action": "delete",
+              "key": "4-5-delete",
+              "permission": "GS_ATTENDANCE_DELETE"
+            }
+          ],
+          "icon": "CalendarOutlined"
+        }
+      ]
+    },
+    {
+      "id": "biometric",
+      "key": "5",
+      "name": "Biometric",
+      "children": [
+        {
+          "id": "allBiometrics",
+          "key": "5-1",
+          "name": "All Biometrics",
+          "route": "/all-biometrics",
+          "permissions": [
+            {
+              "action": "view",
+              "key": "5-1",
+              "permission": "BIOMETRIC_READ"
+            },
+            {
+              "action": "add_biometric_machine",
+              "key": "5-1-add",
+              "permission": "BIOMETRIC_CREATE"
+            },
+            {
+              "action": "edit",
+              "key": "5-1-edit",
+              "permission": "BIOMETRIC_UPDATE"
+            },
+            {
+              "action": "delete",
+              "key": "5-1-delete",
+              "permission": "BIOMETRIC_DELETE"
+            }
+          ],
+          "icon": "UnorderedListOutlined"
+        }
+      ]
+    },
+    {
+      "id": "membershipManagement",
+      "key": "12",
+      "name": "Membership Management",
+      "children": [
+        {
+          "id": "allPackages",
+          "key": "12-1",
+          "name": "All Packages",
+          "route": "/all-packages",
+          "permissions": [
+            {
+              "action": "view",
+              "key": "12-1",
+              "permission": "PACKAGE_READ"
+            },
+            {
+              "action": "add_package",
+              "key": "12-1-add",
+              "permission": "PACKAGE_CREATE"
+            },
+            {
+              "action": "edit",
+              "key": "12-1-edit",
+              "permission": "PACKAGE_UPDATE"
+            },
+            {
+              "action": "delete",
+              "key": "12-1-delete",
+              "permission": "PACKAGE_DELETE"
+            }
+          ],
+          "icon": "UnorderedListOutlined"
+        },
+        {
+          "id": "allAddOnSlots",
+          "key": "12-2",
+          "name": "All Add-on Slots",
+          "route": "/all-add-on-slots",
+          "permissions": [
+            {
+              "action": "view",
+              "key": "12-2",
+              "permission": "ADDON_SLOT_READ"
+            },
+            {
+              "action": "add_package",
+              "key": "12-2-add",
+              "permission": "ADDON_SLOT_CREATE"
+            },
+            {
+              "action": "edit",
+              "key": "12-2-edit",
+              "permission": "ADDON_SLOT_UPDATE"
+            },
+            {
+              "action": "delete",
+              "key": "12-2-delete",
+              "permission": "ADDON_SLOT_DELETE"
+            }
+          ],
+          "icon": "AppstoreOutlined"
+        },
+        {
+          "id": "allAddOnPackages",
+          "key": "12-3",
+          "name": "All Add-on Packages",
+          "route": "/all-add-on-packages",
+          "permissions": [
+            {
+              "action": "view",
+              "key": "12-3",
+              "permission": "ADDON_PACKAGE_READ"
+            },
+            {
+              "action": "add_package",
+              "key": "12-3-add",
+              "permission": "ADDON_PACKAGE_CREATE"
+            },
+            {
+              "action": "edit",
+              "key": "12-3-edit",
+              "permission": "ADDON_PACKAGE_UPDATE"
+            },
+            {
+              "action": "delete",
+              "key": "12-3-delete",
+              "permission": "ADDON_PACKAGE_DELETE"
+            }
+          ],
+          "icon": "GiftOutlined"
+        }
+      ]
+    },
+    {
+      "id": "trialBookings",
+      "key": "13",
+      "name": "Trial Bookings",
+      "children": [
+        {
+          "id": "allTrialBookings",
+          "key": "13-1",
+          "name": "All Trial Bookings",
+          "route": "/all-trial-bookings",
+          "permissions": [
+            {
+              "action": "view",
+              "key": "13-1",
+              "permission": "TRIAL_READ"
+            },
+            {
+              "action": "create",
+              "key": "13-1-add",
+              "permission": "TRIAL_CREATE"
+            },
+            {
+              "action": "edit",
+              "key": "13-1-edit",
+              "permission": "TRIAL_UPDATE"
+            },
+            {
+              "action": "delete",
+              "key": "13-1-delete",
+              "permission": "TRIAL_DELETE"
+            },
+            {
+              "action": "convert_to_user",
+              "key": "13-1-convert",
+              "permission": "TRIAL_CONVERT"
+            }
+          ],
+          "icon": "ScheduleOutlined"
+        }
+      ]
+    },
+    {
+      "id": "branch",
+      "key": "14",
+      "name": "Branch",
+      "children": [
+        {
+          "id": "allBranches",
+          "key": "14-1",
+          "name": "All Branches",
+          "route": "/all-branches",
+          "permissions": [
+            {
+              "action": "view",
+              "key": "14-1",
+              "permission": "BRANCH_READ"
+            },
+            {
+              "action": "edit",
+              "key": "14-2-edit",
+              "permission": "BRANCH_UPDATE"
+            },
+            {
+              "action": "delete",
+              "key": "14-1-delete",
+              "permission": "BRANCH_DELETE"
+            },
+            {
+              "action": "toggle_status",
+              "key": "14-1-status",
+              "permission": "BRANCH_TOGGLE_STATUS"
+            }
+          ],
+          "icon": "UnorderedListOutlined"
+        },
+        {
+          "id": "addBranch",
+          "key": "14-2",
+          "name": "Add Branch",
+          "route": "/add-branch",
+          "permissions": [
+            {
+              "action": "create",
+              "key": "14-1-add",
+              "permission": "BRANCH_CREATE"
+            }
+          ],
+          "icon": "PlusCircleOutlined"
+        }
+      ]
+    },
+    {
+      "id": "coupon",
+      "key": "16",
+      "name": "Coupon",
+      "children": [
+        {
+          "id": "allCoupons",
+          "key": "16-1",
+          "name": "All Coupons",
+          "route": "/all-coupons",
+          "permissions": [
+            {
+              "action": "view",
+              "key": "16-1",
+              "permission": "COUPON_READ"
+            },
+            {
+              "action": "edit",
+              "key": "16-2-edit",
+              "permission": "COUPON_UPDATE"
+            },
+            {
+              "action": "delete",
+              "key": "16-1-delete",
+              "permission": "COUPON_DELETE"
+            },
+            {
+              "action": "toggle_status",
+              "key": "16-1-status",
+              "permission": "COUPON_TOGGLE_STATUS"
+            }
+          ],
+          "icon": "UnorderedListOutlined"
+        },
+        {
+          "id": "addCoupon",
+          "key": "16-2",
+          "name": "Add Coupon",
+          "route": "/add-coupon",
+          "permissions": [
+            {
+              "action": "create",
+              "key": "16-1-add",
+              "permission": "COUPON_CREATE"
+            }
+          ],
+          "icon": "PlusCircleOutlined"
+        }
+      ]
+    },
+    {
+      "id": "inventoryManagement",
+      "key": "18",
+      "name": "Inventory Management",
+      "children": [
+        {
+          "id": "allInventory",
+          "key": "18-1",
+          "name": "All Inventory",
+          "route": "/all-inventory",
+          "permissions": [
+            {
+              "action": "view",
+              "key": "18-1",
+              "permission": "INVENTORY_READ"
+            },
+            {
+              "action": "add_inventory",
+              "key": "18-1-add",
+              "permission": "INVENTORY_CREATE"
+            },
+            {
+              "action": "edit",
+              "key": "18-1-edit",
+              "permission": "INVENTORY_UPDATE"
+            },
+            {
+              "action": "delete",
+              "key": "18-1-delete",
+              "permission": "INVENTORY_DELETE"
+            },
+            {
+              "action": "add_quantity",
+              "key": "18-1-quantity",
+              "permission": "INVENTORY_ADD_QUANTITY"
+            },
+            {
+              "action": "toggle_status",
+              "key": "18-1-status",
+              "permission": "INVENTORY_TOGGLE_STATUS"
+            }
+          ],
+          "icon": "UnorderedListOutlined"
+        }
+      ]
+    },
+    {
+      "id": "feedbackManagement",
+      "key": "21",
+      "name": "Feedback Management",
+      "children": [
+        {
+          "id": "allFeedback",
+          "key": "21-1",
+          "name": "All Feedback",
+          "route": "/all-feedback",
+          "permissions": [
+            {
+              "action": "view",
+              "key": "21-1",
+              "permission": "FEEDBACK_READ"
+            },
+            {
+              "action": "select_department",
+              "key": "21-1-select-dep",
+              "permission": "FEEDBACK_SELECT_DEPARTMENT"
+            },
+            {
+              "action": "create_department",
+              "key": "21-1-create-dep",
+              "permission": "FEEDBACK_CREATE_DEPARTMENT"
+            },
+            {
+              "action": "create_qr",
+              "key": "21-1-create-qr",
+              "permission": "FEEDBACK_CREATE_QR"
+            },
+            {
+              "action": "assign_to",
+              "key": "21-1-assign",
+              "permission": "FEEDBACK_ASSIGN"
+            }
+          ],
+          "icon": "UnorderedListOutlined"
+        }
+      ]
+    },
+    {
+      "id": "invoiceManagement",
+      "key": "24",
+      "name": "Invoice Management",
+      "children": [
+        {
+          "id": "allInvoices",
+          "key": "24-1",
+          "name": "All Invoices",
+          "route": "/all-invoice",
+          "permissions": [
+            {
+              "action": "view",
+              "key": "24-1",
+              "permission": "INVOICE_READ"
+            },
+            {
+              "action": "invoice_view",
+              "key": "24-1-view",
+              "permission": "INVOICE_VIEW_DETAIL"
+            },
+            {
+              "action": "edit",
+              "key": "24-1-edit",
+              "permission": "INVOICE_UPDATE"
+            },
+            {
+              "action": "delete",
+              "key": "24-1-delete",
+              "permission": "INVOICE_DELETE"
+            }
+          ],
+          "icon": "UnorderedListOutlined"
+        },
+        {
+          "id": "partialInvoice",
+          "key": "24-3",
+          "name": "Partial Invoice",
+          "route": "/partial-invoice",
+          "permissions": [
+            {
+              "action": "view",
+              "key": "24-3",
+              "permission": "PARTIAL_INVOICE_READ"
+            },
+            {
+              "action": "invoice_view",
+              "key": "24-3-view",
+              "permission": "PARTIAL_INVOICE_VIEW_DETAIL"
+            },
+            {
+              "action": "edit",
+              "key": "24-3-edit",
+              "permission": "PARTIAL_INVOICE_UPDATE"
+            },
+            {
+              "action": "delete",
+              "key": "24-3-delete",
+              "permission": "PARTIAL_INVOICE_DELETE"
+            }
+          ],
+          "icon": "CreditCardOutlined"
+        }
+      ]
+    },
+    {
+      "id": "sessions",
+      "key": "sessions-99",
+      "name": "Sessions",
+      "route": "/all-sessions",
+      "permissions": [
+        {
+          "action": "view",
+          "key": "sessions-99-view",
+          "permission": "SESSIONS_READ"
+        }
+      ]
+    },
+    {
+      "id": "roles",
+      "key": "3",
+      "name": "Roles",
+      "route": "/all-roles",
+      "permissions": [
+        {
+          "action": "view",
+          "key": "3",
+          "permission": "ROLE_READ"
+        },
+        {
+          "action": "create",
+          "key": "3-add",
+          "permission": "ROLE_CREATE"
+        },
+        {
+          "action": "edit",
+          "key": "3-edit",
+          "permission": "ROLE_UPDATE"
+        },
+        {
+          "action": "delete",
+          "key": "3-delete",
+          "permission": "ROLE_DELETE"
+        },
+        {
+          "action": "toggle_status",
+          "key": "3-status",
+          "permission": "ROLE_TOGGLE_STATUS"
+        }
+      ]
+    },
+    {
+      "id": "directors",
+      "key": "6",
+      "name": "Directors",
+      "route": "/all-directors",
+      "permissions": [
+        {
+          "action": "view",
+          "key": "6",
+          "permission": "DIRECTOR_READ"
+        },
+        {
+          "action": "create",
+          "key": "6-add",
+          "permission": "DIRECTOR_CREATE"
+        },
+        {
+          "action": "edit",
+          "key": "6-edit",
+          "permission": "DIRECTOR_UPDATE"
+        },
+        {
+          "action": "delete",
+          "key": "6-delete",
+          "permission": "DIRECTOR_DELETE"
+        },
+        {
+          "action": "change_password",
+          "key": "6-change-password",
+          "permission": "DIRECTOR_CHANGE_PASSWORD"
+        },
+        {
+          "action": "view_profile",
+          "key": "6-view-profile",
+          "permission": "DIRECTOR_VIEW_PROFILE"
+        },
+        {
+          "action": "toggle_status",
+          "key": "6-status",
+          "permission": "DIRECTOR_TOGGLE_STATUS"
+        }
+      ]
+    }
+  ],
+  "userDetailMenu": [
+    {
+      "id": "attendance",
+      "key": "9-ud-tab-attendance",
+      "name": "Attendance",
+      "route": "attendance",
+      "permissions": [
+        {
+          "action": "view",
+          "key": "9-ud-tab-attendance",
+          "permission": "ATTENDANCE_TAB"
+        }
+      ]
+    },
+    {
+      "id": "membership",
+      "key": "9-ud-tab-membership",
+      "name": "Membership Plans",
+      "route": "membership",
+      "permissions": [
+        {
+          "action": "view_plan",
+          "key": "9-ud-tab-membership",
+          "permission": "MEMBERSHIP_TAB"
+        }
+      ],
+      "subActions": [
+        {
+          "id": "freezability",
+          "name": "Freeze Membership",
+          "route": "membership-freezability",
+          "permissions": [
+            {
+              "action": "create",
+              "key": "9-ud-freeze-membership",
+              "permission": "FREEZE_MEMBERSHIP"
+            }
+          ]
+        },
+        {
+          "id": "extendDays",
+          "name": "Extend Membership Days",
+          "route": "membership-days",
+          "permissions": [
+            {
+              "action": "create",
+              "key": "9-ud-extend-days",
+              "permission": "EXTEND_MEMBERSHIP_DAYS"
+            }
+          ]
+        },
+        {
+          "id": "addonSessionDetail",
+          "name": "View Add-On Session Details",
+          "route": "addon-service/add-on-session-detail/:membershipId",
+          "permissions": [
+            {
+              "action": "view",
+              "key": "9-ud-addon-session-detail",
+              "permission": "VIEW_ADDON_SESSION_DETAIL"
+            },
+            {
+              "action": "start_session",
+              "key": "9-ud-addon-start-session",
+              "permission": "START_ADDON_SESSION"
+            },
+            {
+              "action": "change_trainer",
+              "key": "9-ud-addon-change-trainer",
+              "permission": "CHANGE_ADDON_SESSION_TRAINER"
+            }
+          ]
+        },
+        {
+          "id": "addComplementarySession",
+          "name": "Add Complementary Add-On Services",
+          "permissions": [
+            {
+              "action": "create",
+              "key": "9-ud-addon-add-session",
+              "permission": "ADD_COMPLEMENTARY_SESSION"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "memberId",
+      "key": "9-ud-tab-member-id",
+      "name": "Membership ID",
+      "route": "member-id",
+      "permissions": [
+        {
+          "action": "view",
+          "key": "9-ud-tab-member-id",
+          "permission": "MEMBER_ID_TAB"
+        }
+      ]
+    },
+    {
+      "id": "membershipInvoice",
+      "key": "9-ud-tab-buy-membership",
+      "name": "Membership Invoice",
+      "route": "buy-membership",
+      "permissions": [
+        {
+          "action": "view",
+          "key": "9-ud-tab-buy-membership",
+          "permission": "MEMBERSHIP_INVOICE_TAB"
+        },
+        {
+          "action": "upgrade",
+          "key": "9-ud-upgrade-plan",
+          "permission": "UPGRADE_MEMBERSHIP_PLAN"
+        },
+        {
+          "action": "balance_clear",
+          "key": "9-ud-invoice-balance-clear",
+          "permission": "MEMBERSHIP_INVOICE_BALANCE_CLEAR"
+        },
+        {
+          "action": "advance_renew",
+          "key": "9-ud-advance-renew",
+          "permission": "ADVANCE_RENEW_MEMBERSHIP"
+        },
+        {
+          "action": "renew",
+          "key": "9-ud-buy-membership",
+          "permission": "BUY_MEMBERSHIP"
+        }
+      ]
+    },
+    {
+      "id": "addOnService",
+      "key": "9-ud-tab-addon",
+      "name": "Add-On Service",
+      "route": "addon-service",
+      "permissions": [
+        {
+          "action": "view",
+          "key": "9-ud-tab-addon",
+          "permission": "ADDON_SERVICE_TAB"
+        },
+        {
+          "action": "add_addon_service",
+          "key": "9-ud-buy-addon",
+          "permission": "BUY_ADDON_SERVICE"
+        },
+        {
+          "action": "add_session",
+          "key": "9-ud-addon-add-session",
+          "permission": "ADD_COMPLEMENTARY_SESSION"
+        },
+        {
+          "action": "freeze_addon",
+          "key": "9-ud-addon-freeze",
+          "permission": "FREEZE_ADDON"
+        },
+        {
+          "action": "unfreeze_addon",
+          "key": "9-ud-addon-unfreeze",
+          "permission": "UNFREEZE_ADDON"
+        },
+        {
+          "action": "clear_balance",
+          "key": "9-ud-addon-clear-balance",
+          "permission": "CLEAR_ADDON_BALANCE"
+        },
+        {
+          "action": "upgrade",
+          "key": "9-ud-addon-upgrade",
+          "permission": "UPGRADE_ADDON_PLAN"
+        },
+        {
+          "action": "renew",
+          "key": "9-ud-addon-renew",
+          "permission": "RENEW_ADDON"
+        },
+        {
+          "action": "view_invoice",
+          "key": "9-ud-addon-view-invoice",
+          "permission": "ADDON_VIEW_INVOICE"
+        }
+      ]
+    },
+    {
+      "id": "invoice",
+      "key": "9-ud-tab-invoice",
+      "name": "Invoice",
+      "route": "invoice",
+      "permissions": [
+        {
+          "action": "view",
+          "key": "9-ud-tab-invoice",
+          "permission": "INVOICE_TAB"
+        },
+        {
+          "action": "view_receipt",
+          "key": "9-ud-invoice-receipt",
+          "permission": "INVOICE_VIEW_RECEIPT"
+        },
+        {
+          "action": "edit",
+          "key": "9-ud-invoice-edit",
+          "permission": "INVOICE_UPDATE"
+        },
+        {
+          "action": "delete",
+          "key": "9-ud-invoice-delete",
+          "permission": "INVOICE_DELETE"
+        }
+      ]
+    },
+    {
+      "id": "assessment",
+      "key": "9-ud-tab-assessment",
+      "name": "Assessment",
+      "route": "assessment",
+      "permissions": [
+        {
+          "action": "view",
+          "key": "9-ud-tab-assessment",
+          "permission": "ASSESSMENT_TAB"
+        },
+        {
+          "action": "create",
+          "key": "9-ud-assessment-create",
+          "permission": "ASSESSMENT_CREATE"
+        },
+        {
+          "action": "edit",
+          "key": "9-ud-assessment-edit",
+          "permission": "ASSESSMENT_UPDATE"
+        },
+        {
+          "action": "delete",
+          "key": "9-ud-assessment-delete",
+          "permission": "ASSESSMENT_DELETE"
+        }
+      ]
+    },
+    {
+      "id": "gymKit",
+      "key": "9-ud-tab-gym-kit",
+      "name": "Gym Kit",
+      "route": "gym-kit",
+      "permissions": [
+        {
+          "action": "view",
+          "key": "9-ud-tab-gym-kit",
+          "permission": "GYM_KIT_TAB"
+        },
+        {
+          "action": "create",
+          "key": "9-ud-gym-kit-create",
+          "permission": "GYM_KIT_CREATE"
+        },
+        {
+          "action": "edit",
+          "key": "9-ud-gym-kit-edit",
+          "permission": "GYM_KIT_UPDATE"
+        },
+        {
+          "action": "delete",
+          "key": "9-ud-gym-kit-delete",
+          "permission": "GYM_KIT_DELETE"
+        }
+      ]
+    },
+    {
+      "id": "refundHistory",
+      "key": "9-ud-tab-refund",
+      "name": "Refund History",
+      "route": "refund-history",
+      "permissions": [
+        {
+          "action": "view",
+          "key": "9-ud-tab-refund",
+          "permission": "REFUND_HISTORY_TAB"
+        }
+      ]
+    },
+    {
+      "id": "parkingHistory",
+      "key": "9-ud-tab-parking",
+      "name": "Parking History",
+      "route": "parking-history",
+      "permissions": [
+        {
+          "action": "view",
+          "key": "9-ud-tab-parking",
+          "permission": "PARKING_HISTORY_TAB"
+        }
+      ]
+    },
+    {
+      "id": "dietsPlan",
+      "key": "9-ud-tab-diets",
+      "name": "Diet Plan",
+      "route": "diets-plan",
+      "permissions": [
+        {
+          "action": "view",
+          "key": "9-ud-tab-diets",
+          "permission": "DIETS_PLAN_TAB"
+        }
+      ]
+    },
+    {
+      "id": "biometricAccess",
+      "key": "9-ud-tab-biometric",
+      "name": "Biometric Access",
+      "route": "biometric-access",
+      "permissions": [
+        {
+          "action": "view",
+          "key": "9-ud-tab-biometric",
+          "permission": "BIOMETRIC_TAB"
+        },
+        {
+          "action": "create",
+          "key": "9-ud-biometric-create",
+          "permission": "BIOMETRIC_ACCESS_CREATE"
+        },
+        {
+          "action": "edit",
+          "key": "9-ud-biometric-edit",
+          "permission": "BIOMETRIC_ACCESS_UPDATE"
+        },
+        {
+          "action": "delete",
+          "key": "9-ud-biometric-delete",
+          "permission": "BIOMETRIC_ACCESS_DELETE"
+        }
+      ],
+      "subActions": [
+        {
+          "id": "addBiometricAccess",
+          "name": "Add Biometric Access",
+          "route": "add-biometric-access",
+          "permissions": [
+            {
+              "action": "create",
+              "key": "9-ud-biometric-add",
+              "permission": "BIOMETRIC_ACCESS_CREATE"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "feedback",
+      "key": "9-ud-tab-feedback",
+      "name": "Feedback",
+      "route": "user-feedback",
+      "permissions": [
+        {
+          "action": "view",
+          "key": "9-ud-tab-feedback",
+          "permission": "USER_FEEDBACK_TAB"
+        }
+      ]
+    }
+  ],
+  "employeeDetailMenu": [
+    {
+      "id": "attendance",
+      "key": "emp-ud-tab-attendance",
+      "name": "Attendance",
+      "route": "attendance",
+      "permissions": [
+        {
+          "action": "view",
+          "key": "emp-ud-tab-attendance",
+          "permission": "EMP_ATTENDANCE_TAB"
+        }
+      ]
+    },
+    {
+      "id": "employeeId",
+      "key": "emp-ud-tab-id",
+      "name": "Employee ID",
+      "route": "employee-id",
+      "permissions": [
+        {
+          "action": "view",
+          "key": "emp-ud-tab-id",
+          "permission": "EMP_ID_TAB"
+        }
+      ]
+    },
+    {
+      "id": "salary",
+      "key": "emp-ud-tab-salary",
+      "name": "Salary",
+      "route": "salary",
+      "permissions": [
+        {
+          "action": "view",
+          "key": "emp-ud-tab-salary",
+          "permission": "EMP_SALARY_TAB"
+        }
+      ]
+    },
+    {
+      "id": "salesHistory",
+      "key": "emp-ud-tab-sales",
+      "name": "Sales History",
+      "route": "sales-history",
+      "permissions": [
+        {
+          "action": "view",
+          "key": "emp-ud-tab-sales",
+          "permission": "EMP_SALES_HISTORY_TAB"
+        }
+      ]
+    },
+    {
+      "id": "parkingHistory",
+      "key": "emp-ud-tab-parking",
+      "name": "Parking History",
+      "route": "parking-history",
+      "permissions": [
+        {
+          "action": "view",
+          "key": "emp-ud-tab-parking",
+          "permission": "EMP_PARKING_TAB"
+        }
+      ]
+    },
+    {
+      "id": "biometricAccess",
+      "key": "emp-ud-tab-biometric",
+      "name": "Biometric Access",
+      "route": "biometric-access",
+      "permissions": [
+        {
+          "action": "view",
+          "key": "emp-ud-tab-biometric",
+          "permission": "EMP_BIOMETRIC_TAB"
+        },
+        {
+          "action": "create",
+          "key": "emp-ud-biometric-create",
+          "permission": "EMP_BIOMETRIC_CREATE"
+        }
+      ]
+    }
+  ],
+  "trainerDetailMenu": [
+    {
+      "id": "attendance",
+      "key": "trainer-ud-tab-attendance",
+      "name": "Attendance",
+      "route": "attendance",
+      "permissions": [
+        {
+          "action": "view",
+          "key": "trainer-ud-tab-attendance",
+          "permission": "TRAINER_DETAIL_ATTENDANCE_TAB"
+        }
+      ]
+    },
+    {
+      "id": "coachId",
+      "key": "trainer-ud-tab-id",
+      "name": "Coach ID",
+      "route": "coach-id",
+      "permissions": [
+        {
+          "action": "view",
+          "key": "trainer-ud-tab-id",
+          "permission": "TRAINER_COACH_ID_TAB"
+        }
+      ]
+    },
+    {
+      "id": "classes",
+      "key": "trainer-ud-tab-classes",
+      "name": "Classes",
+      "route": "classes",
+      "permissions": [
+        {
+          "action": "view",
+          "key": "trainer-ud-tab-classes",
+          "permission": "TRAINER_CLASSES_TAB"
+        },
+        {
+          "action": "create",
+          "key": "trainer-ud-class-create",
+          "permission": "TRAINER_CLASSES_CREATE"
+        }
+      ]
+    },
+    {
+      "id": "transactions",
+      "key": "trainer-ud-tab-transactions",
+      "name": "Transaction History",
+      "route": "transactions",
+      "permissions": [
+        {
+          "action": "view",
+          "key": "trainer-ud-tab-transactions",
+          "permission": "TRAINER_TRANSACTIONS_TAB"
+        }
+      ]
+    },
+    {
+      "id": "parkingHistory",
+      "key": "trainer-ud-tab-parking",
+      "name": "Parking History",
+      "route": "parking-history",
+      "permissions": [
+        {
+          "action": "view",
+          "key": "trainer-ud-tab-parking",
+          "permission": "TRAINER_PARKING_TAB"
+        }
+      ]
+    },
+    {
+      "id": "biometricAccess",
+      "key": "trainer-ud-tab-biometric",
+      "name": "Biometric Access",
+      "route": "biometric-access",
+      "permissions": [
+        {
+          "action": "view",
+          "key": "trainer-ud-tab-biometric",
+          "permission": "TRAINER_BIOMETRIC_TAB"
+        },
+        {
+          "action": "create",
+          "key": "trainer-ud-biometric-create",
+          "permission": "TRAINER_BIOMETRIC_CREATE"
+        }
+      ]
+    }
+  ],
+  "generalStaffDetailMenu": [
+    {
+      "id": "attendance",
+      "key": "gs-ud-tab-attendance",
+      "name": "Attendance",
+      "route": "attendance",
+      "permissions": [
+        {
+          "action": "view",
+          "key": "gs-ud-tab-attendance",
+          "permission": "GS_ATTENDANCE_TAB"
+        }
+      ]
+    },
+    {
+      "id": "generalStaffId",
+      "key": "gs-ud-tab-id",
+      "name": "General Staff ID",
+      "route": "general-staff-id",
+      "permissions": [
+        {
+          "action": "view",
+          "key": "gs-ud-tab-id",
+          "permission": "GS_ID_TAB"
+        }
+      ]
+    },
+    {
+      "id": "salary",
+      "key": "gs-ud-tab-salary",
+      "name": "Salary",
+      "route": "salary",
+      "permissions": [
+        {
+          "action": "view",
+          "key": "gs-ud-tab-salary",
+          "permission": "GS_SALARY_TAB"
+        }
+      ]
+    },
+    {
+      "id": "biometricAccess",
+      "key": "gs-ud-tab-biometric",
+      "name": "Biometric Access",
+      "route": "biometric-access",
+      "permissions": [
+        {
+          "action": "view",
+          "key": "gs-ud-tab-biometric",
+          "permission": "GS_BIOMETRIC_TAB"
+        },
+        {
+          "action": "create",
+          "key": "gs-ud-biometric-create",
+          "permission": "GS_BIOMETRIC_CREATE"
+        }
+      ]
+    }
+  ],
+  "directorDetailMenu": [
+    {
+      "id": "attendance",
+      "key": "dir-ud-tab-attendance",
+      "name": "Attendance",
+      "route": "attendance",
+      "permissions": [
+        {
+          "action": "view",
+          "key": "dir-ud-tab-attendance",
+          "permission": "DIR_ATTENDANCE_TAB"
+        }
+      ]
+    },
+    {
+      "id": "biometricAccess",
+      "key": "dir-ud-tab-biometric",
+      "name": "Biometric Access",
+      "route": "biometric-access",
+      "permissions": [
+        {
+          "action": "view",
+          "key": "dir-ud-tab-biometric",
+          "permission": "DIR_BIOMETRIC_TAB"
+        },
+        {
+          "action": "create",
+          "key": "dir-ud-biometric-create",
+          "permission": "DIR_BIOMETRIC_CREATE"
+        }
+      ]
+    }
+  ]
+}

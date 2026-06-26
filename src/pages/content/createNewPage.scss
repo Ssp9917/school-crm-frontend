@@ -1,0 +1,265 @@
+@use '../../styles/breakpoints.scss' as *;
+
+.cnp-page {
+  // padding: 24px 28px 40px;
+}
+
+/* Breadcrumb */
+.cnp-breadcrumb {
+  font-size: 13px;
+  margin-bottom: 16px;
+}
+
+.cnp-bc-link {
+  color: #17A2B8;
+  font-weight: 600;
+  text-decoration: none;
+
+  &:hover { text-decoration: underline; }
+}
+
+.cnp-bc-sep {
+  color: var(--placeholder);
+  margin: 0 4px;
+}
+
+.cnp-bc-current {
+  color: var(--sider-text);
+  font-weight: 600;
+}
+
+.cnp-title {
+  font-size: 30px;
+  font-weight: 800;
+  color: var(--sider-text);
+  margin: 0 0 4px 0;
+}
+
+.cnp-type-label {
+  font-size: 14px;
+  color: var(--placeholder);
+  margin: 0 0 20px 0;
+}
+
+/* Form card — same container pattern as add-director-page */
+.cnp-card {
+  background: var(--card-bg);
+  border: 1px solid var(--muted);
+  border-radius: 12px;
+  padding: 28px 28px 24px;
+  max-width: 960px;
+}
+
+/* ── addDirector-style input overrides ── */
+.cnp-form {
+  .ant-select {
+    height: 48px !important;
+    background: var(--transparent) !important;
+    border: 1px solid var(--muted) !important;
+    color: var(--sider-text) !important;
+
+    input {
+      background-color: var(--transparent) !important;
+    }
+  }
+
+  .ant-input,
+  .ant-select-selector {
+    padding-block: 12px;
+    background: var(--transparent) !important;
+    border: 1px solid var(--muted) !important;
+    color: var(--sider-text) !important;
+    box-shadow: none !important;
+  }
+
+  .ant-select .ant-select-selector {
+    background: var(--card-bg) !important;
+  }
+
+  .ant-input::placeholder,
+  textarea.ant-input::placeholder {
+    color: var(--placeholder) !important;
+  }
+
+  /* Ant Design Form.Item label */
+  .ant-form-item-label > label {
+    color: var(--sider-text) !important;
+    font-weight: 600;
+    font-size: 14px;
+  }
+
+  .ant-form-item-explain-error {
+    color: #dc2626;
+    font-size: 13px;
+  }
+}
+
+/* Image gallery field (custom, not a Form.Item) */
+.cnp-gallery-field {
+  margin-bottom: 24px;
+}
+
+.cnp-gallery-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 4px;
+}
+
+.cnp-gallery-label {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--sider-text);
+}
+
+.cnp-gallery-star {
+  color: #dc2626;
+}
+
+.cnp-required {
+  font-size: 13px;
+  font-style: italic;
+  color: var(--placeholder);
+}
+
+.cnp-hint {
+  font-size: 13px;
+  color: var(--placeholder);
+  margin: 2px 0 8px 0;
+}
+
+/* Upload zone */
+.cnp-upload-zone {
+  background: var(--bg);
+  border: 1px solid var(--muted);
+  border-radius: 8px;
+  min-height: 90px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: border-color 0.15s;
+
+  &:hover { border-color: #17A2B8; }
+}
+
+.cnp-upload-btn {
+  background: none;
+  border: none;
+  padding: 0;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: #17A2B8;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: opacity 0.15s;
+
+  &:hover { opacity: 0.75; }
+}
+
+.cnp-upload-plus {
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 1;
+}
+
+.cnp-upload-icon {
+  font-size: 18px;
+}
+
+.cnp-image-previews {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding: 8px;
+}
+
+.cnp-img-thumb {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 6px;
+  border: 1px solid var(--muted);
+}
+
+/* Add-on rows */
+.cnp-addons {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 28px;
+}
+
+.cnp-addon-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 18px;
+  background: rgba(23, 162, 184, 0.07);
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.15s;
+
+  &:hover { background: rgba(23, 162, 184, 0.13); }
+}
+
+.cnp-addon-plus {
+  font-size: 20px;
+  font-weight: 400;
+  color: #17A2B8;
+  line-height: 1;
+}
+
+.cnp-addon-icon {
+  font-size: 18px;
+  color: #17A2B8;
+  display: flex;
+  align-items: center;
+}
+
+.cnp-addon-label {
+  font-size: 14px;
+  font-weight: 600;
+  color: #17A2B8;
+}
+
+/* Action buttons */
+.cnp-actions {
+  display: flex;
+  gap: 12px;
+}
+
+.cnp-cancel-btn {
+  width: 160px;
+  height: 48px;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  background: var(--hover-bg) !important;
+  border: none !important;
+  color: var(--placeholder) !important;
+  border-radius: 8px;
+
+  &:hover { background: var(--muted) !important; }
+}
+
+.cnp-create-btn {
+  flex: 1;
+  height: 48px;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  background: #17A2B8 !important;
+  border: none !important;
+  color: #fff !important;
+  border-radius: 8px;
+
+  &:hover:not(:disabled) { background: #138496 !important; }
+
+  &:disabled {
+    background: var(--hover-bg) !important;
+    color: var(--placeholder) !important;
+  }
+}

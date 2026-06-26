@@ -1,0 +1,60 @@
+@use '../../styles/breakpoints.scss' as *;
+
+.all-inventory-page {
+  background: var(--bg-primary);
+
+
+
+  .content-wrapper {
+    background: var(--bg-secondary);
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow-light);
+  }
+
+  .search-and-add-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+    flex-wrap: wrap;
+    gap: 16px;
+
+    @include mobile {
+      display: grid;
+      grid-template-columns: repeat(2 , 1fr);
+     
+    }
+  }
+
+  .inventory-table-wrapper {
+    @include mobile {
+      overflow-x: auto;
+      border-radius: 6px;
+    }
+
+    .ant-table-content {
+      overflow-x: auto;
+      scrollbar-width: none;
+      -ms-overflow-style: none;
+      &::-webkit-scrollbar { display: none; }
+    }
+
+    .ant-table {
+      .ant-table-thead > tr > th {
+        @include mobile {
+          padding: 10px 8px;
+          font-size: 12px;
+        }
+      }
+
+      .ant-table-tbody > tr > td {
+        @include mobile {
+          padding: 10px 8px;
+          font-size: 12px;
+        }
+      }
+    }
+  }
+
+
+}

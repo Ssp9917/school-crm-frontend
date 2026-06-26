@@ -1,0 +1,94 @@
+@use "../../styles/breakpoints.scss" as *;
+
+.add-trainer-page {
+  .trainer-form {
+    background-color: var(--card-bg);
+    padding: 24px;
+    border-radius: 8px;
+
+    .row {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+      margin-bottom: 16px;
+
+      @include mobile {
+        grid-template-columns: 1fr;
+      }
+
+      @include tablet {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      &.id-images-row {
+        grid-template-columns: repeat(2, 1fr);
+
+        @include mobile {
+          grid-template-columns: 1fr;
+        }
+      }
+    }
+
+    .full-width-field {
+      width: 100%;
+      margin-bottom: 16px;
+
+      .checkbox-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 12px;
+
+        @include mobile {
+          grid-template-columns: 1fr;
+        }
+
+        @include tablet {
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
+    }
+
+    .certificates-section {
+      margin-bottom: 24px;
+
+      .certificate-item {
+        margin-bottom: 16px;
+      }
+    }
+
+    .footer-buttons {
+      display: flex;
+      justify-content: flex-end;
+      gap: 12px;
+      margin-top: 24px;
+      @include mobile {
+        flex-wrap: wrap;
+        .save-btn, .delete-btn, button {
+          flex: 1;
+          min-width: 120px;
+        }
+      }
+
+      .delete-btn {
+        background-color: transparent;
+        border: 1px solid var(--muted);
+        color: var(--sider-text);
+
+        &:hover {
+          border-color: var(--accent);
+          color: var(--accent);
+        }
+      }
+
+      .save-btn {
+        background-color: var(--accent);
+        border: none;
+        color: var(--bg);
+
+        &:hover {
+          opacity: 0.8;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,57 @@
+@use "../../../styles/breakpoints.scss" as *;
+.ant-modal-close-x{
+  span{
+      color: var(--sider-text) !important;
+        font-weight: 200 !important;
+
+    }
+}
+.department-modal-content{
+hr{
+  border-color: var(--muted);
+}
+.department-modal-title {
+  font-weight: 500;
+  font-size: 22px;
+  margin-bottom: 24px;
+}
+
+.department-modal-input-row {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+.department-modal-input {
+  font-size: 18px;
+  border-radius: 8px;
+  height: 48px;
+}
+
+.department-modal-add-btn {
+  height: 48px;
+  width: 48px;
+  border-radius: 12px;
+  font-size: 28px;
+  background: var(--accent);
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.department-modal-section-title {
+  font-weight: 500;
+  font-size: 20px;
+  margin-bottom: 12px;
+}
+
+.department-modal-table {
+  background: #fff;
+  border-radius: 12px;
+}
+
+.department-row {
+  /* Add row-specific styles if needed */
+}
+}

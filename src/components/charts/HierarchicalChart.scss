@@ -1,0 +1,179 @@
+/* ──────────────────────────────────────────────────
+   HierarchicalChart  –  Bar Graph design
+────────────────────────────────────────────────── */
+
+.hc-card {
+  background: var(--card-bg);
+  border: 1px solid var(--muted);
+  border-radius: 16px;
+  padding: 12px 16px 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  transition: box-shadow .2s;
+  &:hover { box-shadow: 0 8px 32px rgba(0,0,0,.14); }
+}
+
+/* ── Header ── */
+.hc-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-bottom: 4px;
+}
+
+.hc-header-left {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.hc-dot-accent {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.hc-title {
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: .6px;
+  text-transform: uppercase;
+  color: var(--sider-text);
+  opacity: .55;
+}
+
+.hc-header-r {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.hc-select {
+  .ant-select-selector {
+    background: var(--hover-bg) !important;
+    border-color: var(--muted) !important;
+    color: var(--sider-text) !important;
+    border-radius: 8px !important;
+    font-size: 12px !important;
+    height: 30px !important;
+    display: flex !important;
+    align-items: center !important;
+  }
+  .ant-select-arrow { color: var(--sider-text) !important; }
+}
+
+.hc-total {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  line-height: 1.2;
+}
+.hc-total-lbl {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: .5px;
+  text-transform: uppercase;
+  color: var(--sider-text);
+  opacity: .4;
+}
+.hc-total-val {
+  font-size: 20px;
+  font-weight: 800;
+  color: var(--sider-text);
+  letter-spacing: -.4px;
+}
+
+/* ── Empty ── */
+.hc-empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  min-height: 200px;
+  color: var(--sider-text);
+}
+
+.hc-empty-svg {
+  width: 110px;
+  height: auto;
+  opacity: .45;
+}
+
+.hc-empty-text {
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: .4px;
+  opacity: .35;
+  text-transform: uppercase;
+}
+
+/* ══════════════════════════════════════════════════
+   Chart wrap
+══════════════════════════════════════════════════ */
+
+.hc-chart-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* ── Amount badge above avatar ── */
+.hc-bar-amount-badge {
+  border: 1px solid transparent;
+  border-radius: 6px;
+  padding: 2px 7px;
+  font-size: 10px;
+  font-weight: 800;
+  color: #fff;
+  white-space: nowrap;
+  text-align: center;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, .25);
+  opacity: 0;
+  animation: hcAmtIn 0.4s ease forwards;
+  letter-spacing: .2px;
+}
+
+@keyframes hcAmtIn {
+  from {
+    opacity: 0;
+    transform: translateY(5px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ── Avatar on top of bar ── */
+.hc-bar-avatar {
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  overflow: hidden;
+  background: #2d3748;
+  border: 2px solid var(--card-bg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 6px rgba(0,0,0,.25);
+  cursor: default;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+.hc-bar-init {
+  font-size: 9px;
+  font-weight: 800;
+  color: #e2e8f0;
+  line-height: 1;
+}
+

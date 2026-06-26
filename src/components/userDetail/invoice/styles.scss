@@ -1,0 +1,16 @@
+.user-invoice-container {
+//   padding: 20px;
+  background: var(--card-bg);
+  border-radius: 12px;
+
+  .section-title {
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    color: var(--sider-text);
+  }
+
+  .invoices-table-wrapper {
+    margin-bottom: 20px;
+  }
+}

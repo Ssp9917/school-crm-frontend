@@ -1,0 +1,109 @@
+@use '../../styles/breakpoints.scss' as *;
+
+.trainer-attendance-page {
+ 
+  background: var(--bg-primary);
+  min-height: 100vh;
+
+  
+
+    .header-section {
+     display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+    flex-wrap: wrap;
+    gap: 10px;
+
+   .left-col{
+      gap: 10px;
+      display: flex;
+        align-items: center;
+    flex-wrap: wrap;
+
+    @include mobile {
+         display: grid;
+         grid-template-columns: repeat(2, 1fr);
+         align-items: center;
+         gap: 8px;
+         width: 100%;
+       }
+    }
+
+    .right-col {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      @include mobile {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        width: 100%;
+        justify-content: space-between;
+      }
+    }
+
+    .add-btn {
+      margin-left: 0%;
+      @include laptop {
+        margin-left: auto;
+      }
+    }
+
+  }
+
+  .attendance-table-wrapper {
+    background: var(--bg-secondary);
+    border-radius: var(--border-radius);
+ 
+    box-shadow: var(--box-shadow-light);
+
+    @include mobile {
+      overflow-x: auto;
+    }
+
+    .ant-table-content {
+      overflow-x: auto;
+      scrollbar-width: none;
+      -ms-overflow-style: none;
+      &::-webkit-scrollbar { display: none; }
+    }
+
+    .ant-table-wrapper {
+      .ant-table {
+        background: transparent;
+      }
+
+      .ant-table-thead > tr > th {
+        background: var(--bg-tertiary);
+        border-bottom: 1px solid var(--border-color);
+        color: var(--text-primary);
+        font-weight: 600;
+      }
+
+      .ant-table-tbody > tr > td {
+        border-bottom: 1px solid var(--border-color);
+        color: var(--text-secondary);
+      }
+
+      .ant-table-tbody > tr:hover > td {
+        background: var(--hover-bg);
+      }
+    }
+  }
+
+  @include mobile {
+   
+    .header-section {
+      flex-direction: column;
+      align-items: stretch;
+
+      .left-col {
+        flex-direction: column;
+      }
+
+      .right-col {
+        justify-content: flex-end;
+      }
+    }
+  }
+}

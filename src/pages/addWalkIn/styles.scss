@@ -1,0 +1,107 @@
+@use '../../styles/breakpoints.scss' as *;
+
+.add-walkin-page {
+  width: 100%;
+
+  .form-card {
+    background: var(--card-bg);
+    border-radius: 8px;
+    border: none;
+    margin-top: 20px;
+
+    .form-title {
+      font-size: 24px;
+      font-weight: 600;
+      color: var(--sider-text);
+      margin-bottom: 24px;
+    }
+
+    :global(.ant-form-item-label > label) {
+      color: var(--sider-text);
+      font-weight: 500;
+    }
+
+    :global(.ant-input),
+    :global(.ant-input-textarea),
+    :global(.ant-select-selector) {
+      background: var(--input-bg) !important;
+      border-color: var(--muted) !important;
+      color: var(--sider-text) !important;
+
+      &::placeholder {
+        color: var(--placeholder) !important;
+      }
+    }
+
+    :global(.ant-select-arrow) {
+      color: var(--sider-text);
+    }
+
+    .image-upload-section {
+      .image-preview-container {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        align-items: flex-start;
+
+        .image-preview {
+          width: 200px;
+          height: 200px;
+          object-fit: cover;
+          border-radius: 8px;
+          border: 2px solid var(--muted);
+        }
+
+        .remove-image-btn {
+          width: 100%;
+          max-width: 200px;
+        }
+      }
+
+      .upload-btn {
+        width: 100%;
+        max-width: 200px;
+        height: 120px;
+        border: 2px dashed var(--muted);
+        background: var(--input-bg);
+        color: var(--sider-text);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        gap: 8px;
+
+        &:hover {
+          border-color: var(--accent);
+          color: var(--accent);
+        }
+      }
+    }
+
+    .action-buttons {
+      margin-top: 32px;
+      padding-top: 24px;
+      border-top: 1px solid var(--muted);
+    }
+  }
+
+  @include mobile {
+    padding: 10px;
+
+    .form-card {
+      .form-title {
+        font-size: 20px;
+      }
+
+      .action-buttons {
+        :global(.ant-col) {
+          flex: 1;
+
+          button {
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+}

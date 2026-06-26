@@ -1,0 +1,232 @@
+@use "../../styles/breakpoints.scss" as *;
+.fitclub-registration-form {
+  max-width: 550px;
+  margin: auto;
+  background: var(--card-bg);
+  font-family: Arial, sans-serif;
+  color: var(--sider-text);
+  page-break-inside: avoid;
+  .header {
+      background-color: var(--muted);
+      
+      padding: 1rem;
+      .logo {
+          font-weight: 900;
+          margin: 0%;
+          width: auto;
+          padding-bottom: 1rem;
+          img{
+              width: 270px;
+              
+            }
+        }
+        .header-content{
+            display: flex;
+            justify-content: space-between;
+width: 100%;
+p{
+    font-size: .8rem;
+        width: 55%;
+        color: var(--sider-text);
+        margin-top: 0;
+        line-height: 20px;
+
+}
+      .header-right {
+        display: flex;
+        gap: 16px;
+        width: 43%;
+        .box {
+        border: 1px solid var(--sider-text);
+          width: 80%;
+            height: 35px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+        
+        .photo-box {
+          border: 1px solid var(--sider-text);
+          width: 150px;
+          height: 110px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+      }
+  }
+}
+.form-field{
+    padding: 1rem;
+    // padding-bottom: 0px;
+}
+.name-label{
+    width: 100%;
+    display: flex;
+    align-items: baseline;
+    margin-bottom: 12px;
+    .label{
+        width: 125px;
+
+    }
+    .compnay-name-label{
+    width: 290px;
+}
+    .value{
+        width: calc(100% - 125px);
+        border-bottom: 1px solid var(--muted);
+        padding-bottom: 4px;
+    }
+}
+
+
+.age-gender-row{
+    display: flex;
+    gap: 16px;
+    justify-content: space-between;
+    margin-bottom: 12px;
+    @include mobile{
+        flex-direction: column;
+        gap: 8px;
+    }
+    .age{
+        display: flex;
+        .label{
+            width: 50px;
+        }
+        .value{
+            width: 60px;
+            border-bottom: 1px solid var(--muted);
+            padding-bottom: 4px;
+        }
+    }
+    .birth{
+        display: flex;
+        .label{
+                width: 100px;
+        }
+        .value{
+            width: 120px;
+            border-bottom: 1px solid var(--muted);
+            padding-bottom: 4px;
+        }
+    }
+    .gender{
+        display: flex;
+        .label{
+            width: 70px;
+        }
+        .value{
+            width: 80px;
+            border-bottom: 1px solid var(--muted);
+            padding-bottom: 4px;
+        }
+    }
+    
+}
+.marital-status-row{
+    display: flex;
+    gap: 16px;
+    justify-content: space-between;
+    margin-bottom: 12px;
+      @include mobile{
+        flex-direction: column;
+        gap: 8px;
+    }
+    .marital-status{
+        display: flex;
+        .label{
+            width: 125px;
+        }
+        .package-label{
+            width: 150px;
+        }
+       
+        .value{
+            width: 100px;
+            border-bottom: 1px solid var(--muted);
+            padding-bottom: 4px;
+        }
+    }
+    .marriage-anniversary{
+        display: flex;
+        .label{
+            width: 190px;
+        }
+        .alter-no{
+            width: 118px;
+        }
+         .package-amount-label{
+            width: 80px;
+        }
+        
+        .value{
+            width: calc(100% - 150px);
+            border-bottom: 1px solid var(--muted);
+            padding-bottom: 4px;
+        }
+        .alter-no-value{
+              width: 142px;
+        }
+        .package-amount-value{
+            width: 150px;
+         
+        }
+    }
+}
+
+.footer{
+    padding: 1rem;
+    padding-top: 0px;
+    h3{
+        margin: 0;
+        padding: 0%;
+        font-weight: 100;
+        text-transform: uppercase;
+    }
+    p{
+        margin: 0%;
+        padding: 0;
+            line-height: 1.25rem;
+            font-size: .7rem;
+    }
+    .authorize-label{
+        width: 100px !important;
+    }
+    .authorize-value{
+        width: 120px !important;
+
+    }
+    .member-s-label{
+        width: 140px !important;
+    }
+    .member-s-value{
+        width: 140px !important;
+    }
+    .fitness-label{
+        width: 125px !important;
+    }
+    .fitness-s-label{
+        width: 110px !important;
+    }
+    .fitness-s-value{
+        width: 140px !important;
+    }
+}
+
+  @media print {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+    background: #fff !important;
+    color: #000 !important;
+
+    * {
+      -webkit-print-color-adjust: exact !important;
+      print-color-adjust: exact !important;
+      color: #000 !important;
+      border-color: #000 !important;
+    }
+  }
+}
+
+

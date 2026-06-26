@@ -1,0 +1,141 @@
+.upload-file-modal {
+  :global(.ant-modal-content) {
+    background: var(--card-bg);
+    border-radius: 12px;
+    padding: 32px;
+  }
+
+  :global(.ant-modal-close) {
+    top: 20px;
+    right: 20px;
+
+    :global(.anticon) {
+      font-size: 18px;
+      color: var(--sider-text);
+    }
+  }
+}
+
+.ufm-title {
+  font-size: 26px;
+  font-weight: 800;
+  background: linear-gradient(90deg, #5b7cf7, #7c5bf7);
+  // -webkit-background-clip: text;
+  // -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin: 0 0 20px 0;
+}
+
+/* Drop zone */
+.ufm-dropzone {
+  background: var(--bg);
+  border: 2px dashed var(--muted);
+  border-radius: 10px;
+  padding: 36px 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 24px;
+  transition: border-color 0.2s, background 0.2s;
+  cursor: pointer;
+
+  &--over {
+    border-color: #17A2B8;
+    background: rgba(23, 162, 184, 0.06);
+  }
+}
+
+.ufm-cloud-icon {
+  font-size: 56px;
+  color: #6b7280;
+}
+
+.ufm-drop-text {
+  font-size: 15px;
+  color: var(--placeholder);
+  margin: 0;
+}
+
+.ufm-browse-btn {
+  background: #1e3a5f !important;
+  border: none !important;
+  color: #fff !important;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  height: 44px;
+  padding: 0 40px;
+  border-radius: 6px;
+  margin-top: 4px;
+
+  &:hover {
+    background: #162d4a !important;
+  }
+}
+
+/* Title field */
+.ufm-field {
+  margin-bottom: 16px;
+}
+
+.ufm-field-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.ufm-label {
+  font-size: 15px;
+  font-weight: 600;
+  // color: #5b7cf7;
+}
+
+.ufm-required {
+  font-size: 13px;
+  font-style: italic;
+  color: var(--placeholder);
+}
+
+.ufm-input {
+  background: var(--bg) !important;
+  border-radius: 8px !important;
+  border: 1px solid var(--muted) !important;
+  font-size: 15px;
+  color: var(--sider-text) !important;
+
+  :global(.ant-input) {
+    background: transparent !important;
+    color: var(--sider-text) !important;
+
+    &::placeholder {
+      color: var(--placeholder) !important;
+    }
+  }
+}
+
+/* Create button */
+.ufm-create-btn {
+  background: var(--hover-bg) !important;
+  border: none !important;
+  color: var(--placeholder) !important;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  height: 52px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+
+  &:not(:disabled) {
+    background: #17A2B8 !important;
+    color: #fff !important;
+
+    &:hover {
+      background: #138496 !important;
+    }
+  }
+}

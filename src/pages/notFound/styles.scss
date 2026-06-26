@@ -1,0 +1,71 @@
+.not-found-page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--bg, #1c1c1c);
+
+  .not-found-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 40px 24px;
+    gap: 16px;
+
+    .error-code {
+      font-size: 120px;
+      font-weight: 900;
+      line-height: 1;
+      color: var(--accent, #82e12f);
+      text-shadow: 0 0 40px rgba(130, 225, 47, 0.3);
+      letter-spacing: -4px;
+    }
+
+    .not-found-gif {
+      width: 280px;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 16px;
+      border: 2px solid var(--accent, #82e12f);
+      box-shadow: 0 0 30px rgba(130, 225, 47, 0.2);
+    }
+
+    .not-found-title {
+      font-size: 22px;
+      font-weight: 700;
+      color: var(--white, #ffffff);
+      margin: 0;
+    }
+
+    .not-found-subtitle {
+      font-size: 14px;
+      color: var(--muted, #888888);
+      margin: 0;
+      max-width: 360px;
+    }
+
+    .go-home-btn {
+      margin-top: 8px;
+      padding: 12px 32px;
+      background: var(--accent, #82e12f);
+      color: #1a1a1a;
+      border: none;
+      border-radius: 8px;
+      font-size: 15px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: opacity 0.2s, transform 0.2s;
+
+      &:hover {
+        opacity: 0.85;
+        transform: translateY(-2px);
+      }
+
+      &:active {
+        transform: translateY(0);
+      }
+    }
+  }
+}

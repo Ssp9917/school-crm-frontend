@@ -1,0 +1,27 @@
+.academic-setup-card {
+  margin: 16px;
+  background-color: var(--bg-card, #ffffff);
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+
+  .setup-header {
+    margin-bottom: 24px;
+    h2 {
+      margin: 0 0 4px 0;
+      color: var(--text-color, #333333);
+      font-size: 24px;
+      font-weight: 600;
+    }
+    p {
+      margin: 0;
+      color: var(--sider-text, #666666);
+      font-size: 14px;
+    }
+  }
+
+  .tab-actions {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 16px;
+  }
+}

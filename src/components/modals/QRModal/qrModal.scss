@@ -1,0 +1,89 @@
+.qr-modal {
+    .ant-modal-close-x{
+        color: var(--sider-text) !important;
+        span{
+            font-weight: 200 !important;
+
+        }
+    }
+  .ant-modal-content {
+    border-radius: 24px;
+    padding: 0 0 32px 0;
+    background: #fff;
+  }
+
+  .qr-modal-title {
+      font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 16px;
+    text-align: center;
+  }
+  .qr-modal-field {
+    margin-bottom: 24px;
+    .qr-modal-label {
+        display: block;
+    font-size: 14px;
+    margin-bottom: 6px;
+    }
+    .ant-select {
+      .ant-select-selector {
+        // height: 48px !important;
+        .qr-modal {
+          .ant-modal-content {
+            border-radius: 24px;
+            padding: 0 0 32px 0;
+            background: var(--card-bg);
+            color: var(--sider-text);
+          }
+        }
+       
+      }
+    }
+  }
+    .qr-modal-preview-block {
+            background: var(--content-bg);
+            border-radius: 16px;
+            padding: 18px 0 24px 0;
+            margin-top: 8px;
+            .qr-modal-preview-title {
+              font-size: 0.8rem;
+              font-weight: 700;
+              text-align: center;
+              margin-bottom: 10px;
+              color: var(--sider-text);
+            }
+            .qr-modal-preview-box {
+              min-height: 120px;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px dashed var(--muted);
+              border-radius: 12px;
+              background: var(--card-bg);
+              margin: 0 24px;
+              padding: 18px 0;
+              .qr-modal-preview-placeholder {
+                color: var(--placeholder);
+                font-size: 1.1rem;
+                text-align: center;
+              }
+            }
+          }
+       .qr-modal-generate-btn {
+              width: 100%;
+    padding-block: 20px;
+
+    border: 1px solid var(--accent);
+    border-radius: 8px;
+    background: var(--accent);
+    color: var(--sider-text);
+    font-size: 16px;
+    cursor: pointer;
+    margin-bottom: 16px;
+            &:hover {
+    border: 1px solid var(--accent) !important;
+background-color: transparent !important;
+              opacity: 0.95;
+            }
+          }
+}

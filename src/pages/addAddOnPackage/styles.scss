@@ -1,0 +1,119 @@
+@use '../../styles/breakpoints.scss' as *;
+
+.add-add-on-package-page {
+  min-height: 100vh;
+  color: var(--sider-text);
+  font-family: 'Inter', sans-serif;
+
+  h2 {
+    font-size: 18px;
+    margin-bottom: 25px;
+    letter-spacing: 0.5px;
+    color: var(--sider-text);
+    font-weight: 600;
+
+    @include mobile {
+      font-size: 16px;
+      margin-bottom: 16px;
+    }
+  }
+
+  .custom-form {
+    margin: 0 auto;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+
+    .ant-form-item-label > label {
+      font-weight: 500;
+      color: var(--sider-text);
+    }
+.ant-select{
+   min-height: 40px;
+}
+.ant-select-multiple{
+  height: auto !important;
+  padding-block: 7px;
+}
+    .ant-input,
+    .ant-select-selector,
+    .ant-input-number {
+      border-radius: 6px;
+      min-height: 40px;
+      background: var(--transparent) !important;
+      border: 1px solid var(--muted) !important;
+      color: var(--sider-text) !important;
+    }
+
+    .ant-select .ant-select-selector {
+      background: var(--card-bg) !important;
+    }
+
+    .ant-input::placeholder {
+      color: var(--placeholder) !important;
+    }
+
+    .upload-box {
+      height: 48px;
+      background: var(--card-bg);
+      border: 1px solid var(--muted);
+      border-radius: 6px;
+      display: flex;
+      align-items: center;
+      padding: 0 14px;
+      justify-content: space-between;
+      color: var(--muted);
+      .upload-icon {
+        font-size: 20px;
+        color: var(--accent);
+      }
+    }
+
+    .row {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 22px;
+      margin-bottom: 0;
+      .ant-form-item {
+        margin-bottom: 24px;
+      }
+
+      @include mobile {
+        gap: 0;
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .footer-buttons {
+      margin-top: 25px;
+      display: flex;
+      gap: 15px;
+
+      @include mobile {
+        flex-wrap: wrap;
+        .save-btn, .delete-btn, button {
+          flex: 1;
+          min-width: 120px;
+        }
+      }
+
+      .delete-btn {
+        background: var(--danger, #d63c4a);
+        color: #fff;
+        border: none;
+        height: 48px;
+        padding: 0 28px;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+      }
+
+      .save-btn {
+        background: var(--accent);
+        color: var(--card-bg);
+        border: none;
+        height: 48px;
+        padding: 0 28px;
+      }
+    }
+  }
+}

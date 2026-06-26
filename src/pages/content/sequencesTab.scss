@@ -1,0 +1,254 @@
+.sq-container {
+  background: var(--bg);
+  padding: 20px 24px;
+  border-radius: 0 0 8px 8px;
+}
+
+/* Purple banner */
+.sq-banner {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  background: rgba(147, 51, 234, 0.08);
+  border: 1px solid rgba(147, 51, 234, 0.18);
+  border-radius: 12px;
+  padding: 16px 20px;
+  margin-bottom: 24px;
+  cursor: pointer;
+  transition: background 0.15s;
+
+  &:hover {
+    background: rgba(147, 51, 234, 0.12);
+  }
+}
+
+.sq-banner-icon {
+  font-size: 18px;
+  color: #9333ea;
+  margin-top: 2px;
+  flex-shrink: 0;
+}
+
+.sq-banner-title {
+  font-size: 13px;
+  font-weight: 700;
+  color: #9333ea;
+  letter-spacing: 0.5px;
+  margin-bottom: 4px;
+}
+
+.sq-banner-sub {
+  font-size: 14px;
+  color: #9333ea;
+  opacity: 0.8;
+  line-height: 1.5;
+}
+
+/* Count + sort row */
+.sq-meta-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.sq-count {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--sider-text);
+  letter-spacing: 0.4px;
+}
+
+.sq-sort {
+  font-size: 13px;
+  color: var(--placeholder);
+  cursor: pointer;
+
+  &:hover {
+    color: var(--sider-text);
+  }
+}
+
+/* Card list */
+.sq-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.sq-card {
+  background: var(--card-bg);
+  border: 1px solid var(--muted);
+  border-radius: 10px;
+  padding: 20px 20px;
+  cursor: pointer;
+  transition: border-color 0.15s;
+
+  &:hover {
+    border-color: #17A2B8;
+
+    .sq-card-title {
+      color: #17A2B8;
+    }
+  }
+}
+
+/* Card header: badge + title */
+.sq-card-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 10px;
+}
+
+.sq-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 5px 12px;
+  border-radius: 6px;
+  font-size: 13px;
+  font-weight: 600;
+  flex-shrink: 0;
+  white-space: nowrap;
+
+  &--manual {
+    background: #1e3a5f;
+    color: #fff;
+  }
+
+  &--automated {
+    background: #25d366;
+    color: #fff;
+  }
+}
+
+.sq-card-title {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--sider-text);
+  letter-spacing: 0.3px;
+  transition: color 0.15s;
+}
+
+.sq-card-desc {
+  font-size: 14px;
+  color: var(--sider-text);
+  line-height: 1.55;
+  margin-bottom: 10px;
+  opacity: 0.85;
+}
+
+/* Meta row: steps | clients | icons */
+.sq-card-meta {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.sq-steps-text {
+  font-size: 14px;
+  color: var(--sider-text);
+}
+
+.sq-meta-sep {
+  color: var(--muted);
+  font-size: 14px;
+}
+
+/* Step flow icons */
+.sq-step-flow {
+  display: inline-flex;
+  align-items: center;
+}
+
+.sq-step-group {
+  display: inline-flex;
+  align-items: center;
+}
+
+.sq-step-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  background: var(--bg);
+  border: 1px solid var(--muted);
+  border-radius: 50%;
+  font-size: 13px;
+  color: #17A2B8;
+}
+
+.sq-step-dash {
+  font-size: 12px;
+  color: var(--placeholder);
+  margin: 0 2px;
+  letter-spacing: -2px;
+}
+
+/* Active status badge */
+.sq-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+  font-weight: 500;
+  color: #22c55e;
+  background: rgba(34, 197, 94, 0.1);
+  border-radius: 20px;
+  padding: 3px 12px 3px 8px;
+}
+
+.sq-status-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #22c55e;
+  flex-shrink: 0;
+}
+
+/* Table cell styles */
+.sq-title-cell {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+}
+
+.sq-title-text {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--sider-text);
+  transition: color 0.15s;
+
+  &:hover {
+    color: #17A2B8;
+  }
+}
+
+.sq-title-desc {
+  font-size: 13px;
+  color: var(--placeholder);
+  max-width: 480px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.sq-steps-cell {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font-size: 14px;
+}
+
+.sq-status-cell {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+  font-weight: 500;
+  color: #22c55e;
+}

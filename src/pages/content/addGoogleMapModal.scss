@@ -1,0 +1,62 @@
+.agm-modal {
+  :global(.ant-modal-content) {
+    background: var(--card-bg);
+    border-radius: 12px;
+    padding: 32px;
+  }
+
+  :global(.ant-modal-close .anticon) {
+    font-size: 18px;
+    color: var(--sider-text);
+  }
+}
+
+.agm-title {
+  font-size: 26px;
+  font-weight: 800;
+  color: var(--sider-text);
+  margin: 0 0 6px 0;
+}
+
+.agm-subtitle {
+  font-size: 14px;
+  color: var(--placeholder);
+  margin: 0 0 20px 0;
+}
+
+.agm-form {
+  .ant-input {
+    padding-block: 12px;
+    background: var(--transparent) !important;
+    border: 1px solid var(--muted) !important;
+    color: var(--sider-text) !important;
+    box-shadow: none !important;
+  }
+
+  .ant-input::placeholder {
+    color: var(--placeholder) !important;
+  }
+
+  .ant-form-item-explain-error {
+    color: #dc2626;
+    font-size: 13px;
+  }
+}
+
+.agm-add-btn {
+  height: 52px;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  border-radius: 8px;
+  border: none !important;
+  background: var(--hover-bg) !important;
+  color: var(--placeholder) !important;
+  margin-top: 4px;
+
+  &:not(:disabled) {
+    background: #17A2B8 !important;
+    color: #fff !important;
+    &:hover { background: #138496 !important; }
+  }
+}

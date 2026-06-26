@@ -1,0 +1,27 @@
+.blacklist-requests-page {
+
+  .header-section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    gap: 16px;
+    flex-wrap: wrap;
+
+    .left-col {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .right-col {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+  }
+
+  .table-wrapper {
+    margin-bottom: 16px;
+  }
+}

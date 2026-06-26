@@ -1,0 +1,89 @@
+@use '../../styles/breakpoints.scss' as *;
+
+.add-on-live-dashboard-page {
+  width: 100%;
+//   padding: 20px;
+
+   .header-section {
+     display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin-bottom: 10px;
+    flex-wrap: wrap;
+    gap: 8px;
+
+  //  .left-col{
+  //     gap: 10px;
+  //     display: flex;
+  //       align-items: center;
+  //   flex-wrap: wrap;
+
+  //   @include mobile {
+  //        display: grid;
+  //        grid-template-columns: repeat(2, 1fr);
+  //        align-items: center;
+  //        gap: 8px;
+  //        width: 100%;
+  //      }
+  //   }
+
+  //   .right-col {
+  //     display: flex;
+  //     align-items: center;
+  //     gap: 10px;
+  //     @include mobile {
+  //       display: grid;
+  //       grid-template-columns: repeat(2, 1fr);
+  //       width: 100%;
+  //       justify-content: space-between;
+  //     }
+  //   }
+
+    .add-btn {
+      margin-left: 0%;
+      @include laptop {
+        margin-left: auto;
+      }
+    }
+
+  }
+
+  .remaining-days-filter,
+  .category-filter,
+  .date-filter {
+    @include mobile {
+      width: 100% !important;
+    }
+  }
+
+  .users-table-wrapper {
+    background: var(--card-bg);
+    border-radius: 8px;
+    overflow: hidden;
+    &.add-on-live-dashboard{
+        .ant-table-cell
+        {
+
+            padding: 10px;
+        }
+    }
+  }
+}
+
+.ant-tag-orange {
+  color: #fa8c16;
+  background: #fff7e6;
+  border-color: #ffd591;
+}
+
+.ant-tag-blue {
+  color: #1890ff;
+  background: #e6f7ff;
+  border-color: #91d5ff;
+}
+
+.ant-tag-volcano {
+  color: #fa541c;
+  background: #fff2e8;
+  border-color: #ffbb96;
+}

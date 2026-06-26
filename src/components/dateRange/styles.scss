@@ -1,0 +1,371 @@
+.date-range-selector {
+  position: relative;
+  display: inline-block;
+
+  .date-range-trigger {
+    padding: 8px 12px;
+    border-radius: 6px;
+    border: 1px solid var(--muted);
+    background: var(--inputBg);
+    color: var(--sider-text);
+    cursor: pointer;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    transition: all 0.3s ease;
+    min-width: 240px;
+    width: 100%;
+    gap: 8px;
+    height: 40px;
+
+    &:hover {
+      border-color: var(--accent);
+      background: var(--hover-bg);
+    }
+
+    &:focus {
+      outline: none;
+      border-color: var(--accent);
+      box-shadow: 0 0 0 2px rgba(130, 225, 47, 0.2);
+    }
+
+    .date-range-icon {
+      font-size: 16px;
+      flex-shrink: 0;
+      color: var(--accent);
+    }
+
+    .date-range-text {
+      font-weight: 400;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      flex-grow: 1;
+      text-align: left;
+      color: var(--sider-text);
+    }
+
+    .date-range-arrow {
+      font-size: 12px;
+      flex-shrink: 0;
+      transition: transform 0.2s ease;
+
+      .date-range-selector.open & {
+        transform: rotate(180deg);
+      }
+    }
+
+    // Mobile styles
+    @media (max-width: 768px) {
+      min-width: auto;
+      padding: 10px 12px;
+      font-size: 13px;
+
+      .date-range-icon {
+        font-size: 14px;
+        margin-right: 4px;
+      }
+
+      .date-range-arrow {
+        font-size: 10px;
+      }
+    }
+  }
+}
+
+/* ── Portaled popup (rendered into document.body) ──────────────────────── */
+/* Lives at the top level so it floats above the layout (sider, header,     */
+/* scrolling content) and is never clipped or hidden behind them.           */
+
+.date-range-overlay {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.3);
+  z-index: 99998;
+}
+
+.date-range-picker-container {
+  position: fixed;
+  z-index: 99999;
+  background: var(--card-bg);
+  border-radius: 8px;
+  box-shadow: var(--boxShadow);
+  border: 1px solid var(--muted);
+  overflow: hidden;
+  color: var(--sider-text);
+
+  &.is-mobile {
+    top: 50% !important;
+    left: 50% !important;
+    transform: translate(-50%, -50%);
+    width: 90vw;
+    max-width: 340px;
+    max-height: 85vh;
+    overflow-y: auto;
+  }
+}
+
+/* ── Custom date-range calendar ────────────────────────────────────────── */
+
+.cdr {
+  display: flex;
+  align-items: stretch;
+
+  // ── Preset ranges sidebar ──
+  .cdr-presets {
+    display: flex;
+    flex-direction: column;
+    min-width: 132px;
+    border-right: 1px solid var(--muted);
+    background: var(--header-bg, var(--card-bg));
+    padding: 6px 0;
+
+    @media (max-width: 768px) {
+      display: none;
+    }
+
+    .cdr-preset {
+      background: transparent;
+      border: none;
+      border-left: 2px solid transparent;
+      color: var(--sider-text);
+      text-align: left;
+      font-size: 13px;
+      padding: 9px 16px;
+      cursor: pointer;
+      transition: background 0.15s ease, color 0.15s ease;
+      white-space: nowrap;
+
+      &:hover {
+        background: var(--hover-bg);
+      }
+
+      &.cdr-preset--selected {
+        background: var(--accent);
+        color: var(--sider-bg);
+        font-weight: 600;
+        border-left-color: var(--accent);
+      }
+    }
+  }
+
+  // ── Main calendar area ──
+  .cdr-main {
+    padding: 12px 14px;
+    flex: 1;
+  }
+
+  // Top date display (start → end)
+  .cdr-display {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 12px;
+
+    .cdr-display-item {
+      flex: 1;
+      text-align: center;
+      border: 1px solid var(--muted);
+      border-radius: 6px;
+      padding: 6px 10px;
+      font-size: 13px;
+      color: var(--sider-text);
+      background: var(--inputBg);
+      transition: border-color 0.15s ease;
+
+      &.cdr-display-item--active {
+        border-color: var(--accent);
+      }
+    }
+
+    .cdr-display-sep {
+      color: var(--muted);
+      font-size: 14px;
+      flex-shrink: 0;
+    }
+  }
+
+  // Month / year navigation
+  .cdr-nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    margin-bottom: 10px;
+
+    .cdr-nav-btn {
+      width: 32px;
+      height: 32px;
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: transparent;
+      border: 1px solid var(--muted);
+      border-radius: 4px;
+      color: var(--sider-text);
+      cursor: pointer;
+      transition: all 0.15s ease;
+
+      &:hover {
+        background: var(--hover-bg);
+        border-color: var(--accent);
+      }
+    }
+
+    .cdr-nav-selects {
+      display: flex;
+      gap: 8px;
+
+      select {
+        background: var(--inputBg);
+        color: var(--sider-text);
+        border: 1px solid var(--muted);
+        border-radius: 4px;
+        padding: 4px 8px;
+        font-size: 13px;
+        cursor: pointer;
+
+        &:focus {
+          outline: none;
+          border-color: var(--accent);
+        }
+
+        option {
+          background: var(--card-bg);
+          color: var(--sider-text);
+        }
+      }
+    }
+  }
+
+  // Month grids
+  .cdr-months {
+    display: flex;
+    gap: 18px;
+
+    @media (max-width: 1024px) {
+      flex-direction: column;
+      gap: 12px;
+    }
+  }
+
+  .cdr-month {
+    .cdr-month-name {
+      text-align: center;
+      font-weight: 600;
+      font-size: 14px;
+      margin-bottom: 8px;
+      color: var(--sider-text);
+    }
+
+    .cdr-weekdays {
+      display: grid;
+      grid-template-columns: repeat(7, 1fr);
+
+      .cdr-weekday {
+        text-align: center;
+        font-size: 12px;
+        opacity: 0.6;
+        padding: 4px 0;
+        color: var(--sider-text);
+      }
+    }
+
+    .cdr-days {
+      display: grid;
+      grid-template-columns: repeat(7, 1fr);
+    }
+  }
+
+  // Individual day cell
+  .cdr-day {
+    position: relative;
+    height: 38px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    color: var(--sider-text);
+    font-size: 14px;
+    padding: 0;
+
+    .cdr-day-num {
+      position: relative;
+      z-index: 1;
+      width: 32px;
+      height: 32px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      transition: background 0.12s ease, color 0.12s ease;
+    }
+
+    &:hover:not(.cdr-day--passive) .cdr-day-num {
+      background: var(--hover-bg);
+    }
+
+    &.cdr-day--passive {
+      color: var(--muted);
+      opacity: 0.5;
+    }
+
+    // In-range tint spans the full cell so adjacent cells form a bar
+    &.cdr-day--in-range {
+      background: rgba(130, 225, 47, 0.18);
+    }
+
+    &.cdr-day--in-range.cdr-day--start {
+      border-top-left-radius: 19px;
+      border-bottom-left-radius: 19px;
+    }
+
+    &.cdr-day--in-range.cdr-day--end {
+      border-top-right-radius: 19px;
+      border-bottom-right-radius: 19px;
+    }
+
+    // Range endpoints
+    &.cdr-day--start .cdr-day-num,
+    &.cdr-day--end .cdr-day-num {
+      background: var(--accent);
+      color: var(--sider-bg);
+      font-weight: 700;
+    }
+
+    // Today marker (small dot) — only when not an endpoint
+    &.cdr-day--today:not(.cdr-day--start):not(.cdr-day--end) .cdr-day-num::after {
+      content: "";
+      position: absolute;
+      bottom: 4px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 4px;
+      height: 4px;
+      border-radius: 50%;
+      background: var(--accent);
+    }
+  }
+}
+
+// Responsive container styles for parent components
+@media (max-width: 768px) {
+  .date-range-selector-container {
+    width: 100%;
+
+    .date-range-selector {
+      width: 100%;
+
+      .date-range-trigger {
+        width: 100%;
+      }
+    }
+  }
+}

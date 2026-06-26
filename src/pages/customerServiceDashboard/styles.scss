@@ -1,0 +1,187 @@
+@use '../../styles/breakpoints.scss' as *;
+
+.csd-page {
+  padding: 0 0 32px;
+
+  .csd-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-bottom: 20px;
+
+    .csd-header-left {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .csd-title {
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--sider-text);
+      margin: 0;
+    }
+    .csd-header-right {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+    .csd-badge-label {
+      font-size: 12px;
+      color: var(--sider-text);
+      padding: 4px 10px;
+      background: var(--hover-bg);
+      border-radius: 6px;
+    }
+  }
+
+  .csd-stats-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+    margin-bottom: 20px;
+
+    @include laptop { grid-template-columns: repeat(2, 1fr); }
+    @include mobile { grid-template-columns: 1fr; }
+  }
+
+  .csd-charts-row {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+
+    @include laptop { grid-template-columns: 1fr 1fr; }
+    @include mobile { grid-template-columns: 1fr; }
+  }
+
+  .csd-chart-card {
+    background: var(--card-bg);
+    border: 1px solid var(--muted);
+    border-radius: 12px;
+    padding: 16px;
+
+    .csd-chart-head {
+      margin-bottom: 12px;
+      .csd-chart-title {
+        font-size: 14px;
+        font-weight: 600;
+        color: var(--sider-text);
+      }
+    }
+  }
+
+  .csd-feedback-dist {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+
+    .csd-fb-row {
+      display: grid;
+      grid-template-columns: 28px 1fr 28px;
+      align-items: center;
+      gap: 8px;
+
+      .csd-fb-label {
+        font-size: 11px;
+        font-weight: 600;
+      }
+      .csd-fb-count {
+        font-size: 11px;
+        color: var(--muted);
+        text-align: right;
+      }
+    }
+
+    .csd-rating-avg {
+      display: flex;
+      align-items: center;
+      margin-top: 8px;
+      padding-top: 8px;
+      border-top: 1px solid var(--muted);
+    }
+  }
+
+  .csd-sla-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    .csd-sla-item {
+      .csd-sla-row {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 4px;
+      }
+      .csd-sla-label {
+        font-size: 12px;
+        color: var(--sider-text);
+      }
+    }
+
+    .csd-comm-summary {
+      display: flex;
+      gap: 16px;
+      margin-top: 8px;
+      padding-top: 8px;
+      border-top: 1px solid var(--muted);
+
+      .csd-comm-item {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        font-size: 12px;
+        color: var(--sider-text);
+      }
+    }
+  }
+
+  .csd-section {
+    background: var(--card-bg);
+    border: 1px solid var(--muted);
+    border-radius: 12px;
+    padding: 16px;
+
+    .csd-section-head {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--sider-text);
+      margin-bottom: 14px;
+    }
+  }
+
+  .csd-bottom-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+
+    @include laptop { grid-template-columns: 1fr; }
+  }
+
+  .csd-mt { margin-top: 16px; }
+
+  .csd-table {
+    .ant-table { background: transparent; color: var(--sider-text); }
+    .ant-table-thead > tr > th {
+      background: var(--hover-bg);
+      color: var(--muted);
+      font-size: 11px;
+      text-transform: uppercase;
+      border-bottom: 1px solid var(--muted);
+      padding: 8px 10px;
+    }
+    .ant-table-tbody > tr > td {
+      border-bottom: 1px solid var(--muted);
+      color: var(--sider-text);
+      font-size: 12px;
+      padding: 7px 10px;
+      background: transparent;
+    }
+    .ant-table-tbody > tr:last-child > td { border-bottom: none; }
+    .ant-table-tbody > tr:hover > td { background: var(--hover-bg) !important; }
+  }
+}

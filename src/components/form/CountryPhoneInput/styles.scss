@@ -1,0 +1,118 @@
+/* Combined country-code + phone control. */
+.country-phone {
+  display: flex;
+  align-items: center;
+  height: 48px;
+  width: 100%;
+  border: 1px solid var(--muted);
+  background: var(--card-bg);
+  border-radius: 6px;
+  overflow: hidden;
+
+  .cc-selected-wrapper {
+    display: inline-flex;
+    align-items: center;
+    height: 100%;
+    padding: 0 10px;
+    gap: 8px;
+    border-right: none;
+  }
+
+  .cc-flag {
+    width: 22px;
+    height: 15px;
+    object-fit: cover;
+    border-radius: 2px;
+    flex-shrink: 0;
+  }
+
+  .cc-flag-placeholder {
+    width: 22px;
+    height: 15px;
+    flex-shrink: 0;
+  }
+}
+
+/* Repeated class boosts specificity so these overrides beat the per-page
+   `.row .ant-select` / `.ant-input` border rules in the various add-* forms
+   without needing per-page CSS. */
+.country-phone.country-phone.country-phone.country-phone {
+  .ant-select,
+  .ant-select:hover,
+  .ant-select.ant-select-focused {
+    height: 100% !important;
+    border: none !important;
+    background: transparent !important;
+    box-shadow: none !important;
+    display: flex;
+    align-items: center;
+    --select-border-size: 0px !important;
+    --select-border-color: transparent !important;
+  }
+
+  .ant-select-selector {
+    height: 100% !important;
+    display: flex !important;
+    align-items: center !important;
+    background: transparent !important;
+    border: none !important;
+    padding: 0 !important;
+    min-width: 0 !important;
+    box-shadow: none !important;
+  }
+
+  .ant-select-selection-item {
+    color: var(--sider-text) !important;
+    font-weight: 500;
+    line-height: normal !important;
+  }
+
+  .ant-select-arrow {
+    color: var(--placeholder) !important;
+    inset-inline-end: 2px !important;
+  }
+
+  .cc-input,
+  .cc-input.ant-input {
+    border: none !important;
+    background: transparent !important;
+    color: var(--sider-text) !important;
+    height: 100% !important;
+    padding: 0 14px !important;
+    flex: 1;
+    font-size: 14px;
+    box-shadow: none !important;
+  }
+
+  .cc-input::placeholder {
+    color: var(--placeholder) !important;
+  }
+
+  .cc-input:focus {
+    box-shadow: none !important;
+  }
+}
+
+/* country code dropdown (renders at body level) */
+.cc-option {
+  display: inline-flex;
+  align-items: center;
+}
+
+.cc-option img {
+  width: 20px;
+  height: 14px;
+  object-fit: cover;
+  margin-right: 8px;
+  vertical-align: middle;
+  border-radius: 2px;
+}
+
+.country-code-dropdown {
+  min-width: 320px !important;
+  max-width: 540px !important;
+}
+
+.country-code-dropdown .ant-select-item-option-content {
+  white-space: normal !important;
+}

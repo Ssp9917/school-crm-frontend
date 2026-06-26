@@ -1,0 +1,371 @@
+@use '../../styles/breakpoints.scss' as *;
+
+.add-role-page {
+  min-height: 100vh;
+  color: var(--sider-text);
+  font-family: 'Inter', sans-serif;
+
+  .title {
+    font-size: 18px;
+    margin-bottom: 25px;
+    letter-spacing: 0.5px;
+  }
+
+  .role-form {
+    .row {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 22px;
+    //   margin-bottom: 30px;
+
+      @include mobile {
+        grid-template-columns: 1fr;
+      }
+
+      .ant-select {
+        height: 48px !important;
+        background: var(--transparent) !important;
+        border: 1px solid var(--muted) !important;
+        color: var(--sider-text) !important;
+        input {
+          background-color: var(--transparent) !important;
+        }
+      }
+
+      .ant-input,
+      .ant-select-selector {
+        // height: 48px !important;
+         padding-block: 12px;
+        background: var(--transparent) !important;
+        border: 1px solid var(--muted) !important;
+        color: var(--sider-text) !important;
+      }
+
+      .ant-select .ant-select-selector {
+        background: var(--card-bg) !important;
+      }
+
+      .ant-input::placeholder {
+        color: var(--placeholder) !important;
+      }
+    }
+
+    .add-level-section {
+      margin-bottom: 30px;
+      background: var(--card-bg);
+      border: 1px solid var(--muted);
+      border-radius: 8px;
+      padding: 20px;
+
+      .section-title {
+        font-size: 15px;
+        font-weight: 600;
+        margin-bottom: 16px;
+        color: var(--sider-text);
+      }
+
+      .add-level-row {
+        display: grid;
+        grid-template-columns: 1fr 1fr auto;
+        gap: 12px;
+        align-items: center;
+
+        @include mobile {
+          grid-template-columns: 1fr;
+        }
+
+        .ant-input,
+        .ant-input-number {
+          // height: 48px !important;
+           padding-block: 12px;
+          background: var(--transparent) !important;
+          border: 1px solid var(--muted) !important;
+          color: var(--sider-text) !important;
+
+          input {
+            background: var(--transparent) !important;
+            color: var(--sider-text) !important;
+          }
+        }
+
+        .ant-input::placeholder {
+          color: var(--placeholder) !important;
+        }
+
+        .add-level-btn {
+          height: 48px;
+          background: var(--accent);
+          color: var(--card-bg);
+          border: none;
+          padding: 0 24px;
+          font-weight: 600;
+          white-space: nowrap;
+
+          @include mobile {
+            width: 100%;
+          }
+
+          &:hover {
+            opacity: 0.9;
+          }
+        }
+      }
+    }
+
+    .permissions-section {
+      margin-bottom: 30px;
+
+      .permissions-section-header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 12px;
+        margin-bottom: 20px;
+
+        .permissions-title {
+          font-size: 16px;
+          font-weight: 600;
+          margin: 0;
+          color: var(--sider-text);
+        }
+
+        .permissions-search {
+          width: 260px;
+
+          @include mobile {
+            width: 100%;
+          }
+
+          &.ant-input-affix-wrapper {
+            background: var(--card-bg) !important;
+            border: 1px solid var(--muted) !important;
+            border-radius: 6px !important;
+            box-shadow: none !important;
+            padding: 8px 12px;
+
+            &:hover,
+            &:focus,
+            &.ant-input-affix-wrapper-focused {
+              border-color: var(--accent) !important;
+              box-shadow: none !important;
+            }
+
+            .ant-input {
+              background: transparent !important;
+              color: var(--sider-text) !important;
+              border: none !important;
+              box-shadow: none !important;
+              padding: 0 !important;
+
+              &::placeholder {
+                color: var(--placeholder) !important;
+              }
+            }
+
+            .anticon {
+              color: var(--placeholder);
+              margin-right: 6px;
+            }
+          }
+        }
+      }
+
+      .permissions-title {
+        font-size: 16px;
+        font-weight: 600;
+        margin-bottom: 20px;
+        color: var(--sider-text);
+      }
+
+      .permission-category {
+        background: var(--card-bg);
+        border: 1px solid var(--muted);
+        border-radius: 8px;
+        padding: 20px;
+        margin-bottom: 16px;
+
+        .category-header {
+          margin-bottom: 16px;
+          padding-bottom: 12px;
+          border-bottom: 1px solid var(--muted);
+
+          .ant-checkbox-wrapper {
+            font-size: 15px;
+            font-weight: 600;
+
+            .category-name {
+              color: var(--sider-text);
+              font-size: 15px;
+            }
+          }
+
+          .ant-checkbox {
+            .ant-checkbox-inner {
+              width: 18px;
+              height: 18px;
+              background: var(--transparent);
+              border: 2px solid var(--muted);
+            }
+
+            &.ant-checkbox-checked .ant-checkbox-inner {
+              background: var(--accent);
+              border-color: var(--accent);
+            }
+
+            &.ant-checkbox-indeterminate .ant-checkbox-inner {
+              background: var(--accent);
+              border-color: var(--accent);
+
+              &::after {
+                background-color: var(--card-bg);
+              }
+            }
+          }
+        }
+
+        .permission-sub-groups {
+          display: flex;
+          flex-direction: column;
+          gap: 16px;
+        }
+
+        .permission-sub-group {
+          border: 1px solid var(--muted);
+          border-radius: 6px;
+          padding: 14px 16px;
+          background: var(--transparent);
+
+          .sub-group-header {
+            margin-bottom: 12px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid var(--muted);
+
+            .ant-checkbox-wrapper {
+              font-size: 14px;
+              font-weight: 600;
+
+              .sub-group-name {
+                color: var(--sider-text);
+                font-size: 14px;
+              }
+            }
+
+            .ant-checkbox {
+              .ant-checkbox-inner {
+                width: 16px;
+                height: 16px;
+                background: var(--transparent);
+                border: 2px solid var(--muted);
+              }
+
+              &.ant-checkbox-checked .ant-checkbox-inner {
+                background: var(--accent);
+                border-color: var(--accent);
+              }
+
+              &.ant-checkbox-indeterminate .ant-checkbox-inner {
+                background: var(--accent);
+                border-color: var(--accent);
+
+                &::after {
+                  background-color: var(--card-bg);
+                }
+              }
+            }
+          }
+        }
+
+        .permission-items {
+          display: grid;
+          grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+          gap: 10px;
+
+          @include mobile {
+            grid-template-columns: 1fr;
+          }
+
+          .ant-checkbox-wrapper {
+            color: var(--sider-text);
+            font-size: 14px;
+            padding: 8px 12px;
+            border-radius: 6px;
+            transition: all 0.2s ease;
+
+            &:hover {
+              background: var(--hover-bg);
+            }
+
+            .ant-checkbox {
+              .ant-checkbox-inner {
+                width: 16px;
+                height: 16px;
+                background: var(--transparent);
+                border: 2px solid var(--muted);
+              }
+
+              &.ant-checkbox-checked .ant-checkbox-inner {
+                background: var(--accent);
+                border-color: var(--accent);
+              }
+            }
+
+            span:not(.ant-checkbox) {
+              padding-left: 8px;
+            }
+
+            .permission-item {
+              display: flex;
+              flex-direction: column;
+              gap: 4px;
+
+              .permission-name {
+                font-weight: 500;
+                color: var(--sider-text);
+              }
+
+              .permission-description {
+                font-size: 12px;
+                color: var(--placeholder);
+                font-weight: 400;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .footer-buttons {
+      margin-top: 25px;
+      display: flex;
+      gap: 15px;
+
+      @include mobile {
+        flex-wrap: wrap;
+        .save-btn, .delete-btn, button {
+          flex: 1;
+          min-width: 120px;
+        }
+      }
+
+      .delete-btn {
+        background: var(--danger, #d63c4a);
+        color: #fff;
+        border: none;
+        height: 48px;
+        padding: 0 28px;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+      }
+
+      .save-btn {
+        background: var(--accent);
+        color: var(--card-bg);
+        border: none;
+        height: 48px;
+        padding: 0 28px;
+      }
+    }
+  }
+}

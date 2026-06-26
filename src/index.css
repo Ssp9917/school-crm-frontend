@@ -1,0 +1,212 @@
+@import './styles/theme.css';
+
+*{
+  box-sizing: border-box;
+
+}
+body{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background: var(--bg);
+  color: var(--sider-text);
+  font-family: Inter, Arial, sans-serif;
+}
+.flex{
+  display: flex;
+  
+}
+.ant-modal-container{
+  background-color: var(--card-bg) !important;
+  color: var(--sider-text) !important;
+}
+.ant-modal-title{
+  color: var(--sider-text) !important;
+}
+/* Ensure form controls follow theme variables */
+.ant-input , .ant-picker , .ant-select{
+  background-color: transparent !important;
+  box-shadow: none !important;
+}
+.ant-input , .ant-picker-input , .ant-select > input{
+  color: var(--placeholder) !important;
+}
+.ant-picker-suffix , .ant-select-suffix{
+  color: var(--placeholder) !important;
+}
+
+/* Placeholder color */
+input::placeholder,
+textarea::placeholder, 
+.ant-input::placeholder {
+  color: var(--placeholder) !important;
+}
+.ant-input-number-outlined{
+  border-color: var(--muted) !important;
+}
+/* Ensure ant form items use theme */
+.ant-form-item-control-input,
+.ant-form-item-control-input-content {
+  color: var(--sider-text) !important;
+}
+.ant-input-number-prefix{
+  color: var(--placeholder) !important;
+}
+.ant-input-number-input{
+color: var(--sider-text) !important;
+}
+.ant-input-number {
+  height: 48px;
+  background-color: transparent !important;
+  &:hover , &:focus{
+    border-color: var(--muted) !important;
+    box-shadow: none !important;
+  }
+  .ant-input-number-actions{
+    background-color: var(--muted) !important;
+    span{
+      color: var(--sider-text) !important;
+      /* border: none !important; */
+      border:transparent !important;
+    }
+  }
+}
+
+/* Buttons keep default tokens but ensure text color matches */
+.ant-btn {
+  color: var(--sider-text) !important;
+}
+
+/* Form label colors follow theme */
+.ant-form-item-label > label,
+.ant-form-item-label > span {
+  color: var(--sider-text) !important;
+  font-weight: 600;
+}
+
+/* Required asterisk color */
+.ant-form-item-required::after {
+  color: var(--accent) !important;
+  margin-left: 4px;
+}
+
+/* Helper / error / extra text color */
+.ant-form-item-explain,
+.ant-form-item-extra {
+  color: var(--muted) !important;
+}
+
+/* Dropdown panel */
+.ant-select-dropdown {
+  background: var(--card-bg) !important;
+}
+
+.ant-select-dropdown .ant-select-item,
+.ant-select-dropdown .ant-select-item-option-content,
+.ant-select-dropdown .ant-select-item-option {
+  /* background: var(--card-bg) !important; */
+  color: var(--sider-text) !important;
+}
+
+/* Hover state */
+.ant-select-dropdown .ant-select-item-option-active:not(.ant-select-item-option-selected),
+.ant-select-dropdown .ant-select-item:hover:not(.ant-select-item-option-selected) {
+  background: var(--hover-bg) !important;
+  color: var(--sider-text) !important;
+}
+
+/* Selected state - highest priority */
+.ant-select-dropdown .ant-select-item.ant-select-item-option-selected,
+.ant-select-dropdown .ant-select-item-option.ant-select-item-option-selected {
+  background: var(--accent) !important;
+  color: white !important;
+  font-weight: 600 !important;
+}
+
+.ant-select-dropdown .ant-select-item-option-selected .ant-select-item-option-content {
+  color: white !important;
+}
+
+.ant-select-dropdown .ant-select-item-option-selected:hover,
+.ant-select-dropdown .ant-select-item.ant-select-item-option-selected:hover {
+  background: var(--accent) !important;
+  color: white !important;
+}
+
+/* Disabled state */
+.ant-select-disabled .ant-select-selector {
+  opacity: 0.6;
+}
+
+/* DatePicker / Calendar theming */
+.ant-picker-input{
+  background-color: var(--transparent);
+}
+
+/* Dropdown calendar panel */
+.ant-picker-dropdown,
+.ant-picker-dropdown .ant-picker-panel,
+.ant-picker-dropdown .ant-picker-panel-container,
+.ant-picker-panel {
+  background: var(--card-bg) !important;
+  color: var(--sider-text) !important;
+  border-color: var(--muted) !important;
+}
+
+.ant-picker-panel .ant-picker-header,
+.ant-picker-panel .ant-picker-footer {
+  background: transparent !important;
+  color: var(--sider-text) !important;
+  border-bottom: 1px solid transparent !important;
+}
+
+.ant-picker-cell,
+.ant-picker-cell-inner {
+  color: var(--sider-text) !important;
+  background: transparent !important;
+}
+
+.ant-picker-cell-in-view:hover {
+  background: rgba(255,255,255,0.02) !important;
+}
+
+.ant-picker-cell-selected .ant-picker-cell-inner,
+.ant-picker-cell-selected .ant-picker-cell-in-view {
+  background: var(--accent) !important;
+  color: #fff !important;
+}
+
+.ant-picker-cell-today .ant-picker-cell-inner {
+  border-color: var(--accent) !important;
+}
+
+.ant-picker-time-panel,
+.ant-time-picker-panel {
+  background: var(--card-bg) !important;
+  color: var(--sider-text) !important;
+  border-color: var(--muted) !important;
+}
+
+/* Range separator and inputs */
+.ant-picker-separator,
+.ant-picker-input > input::placeholder {
+  color: var(--placeholder) !important;
+}
+
+button{
+  box-shadow: none !important;
+}
+
+/* Mobile Sidebar Drawer */
+.mobile-sidebar-drawer .ant-drawer-content-wrapper {
+  background: var(--sider-bg) !important;
+}
+
+.mobile-sidebar-drawer .ant-drawer-body {
+  background: var(--sider-bg) !important;
+  padding: 0 !important;
+}
+
+.mobile-sidebar-drawer .ant-drawer-mask {
+  background-color: rgba(0, 0, 0, 0.6) !important;
+}

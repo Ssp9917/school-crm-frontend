@@ -1,0 +1,73 @@
+.days-form-page {
+  border-radius: 10px;
+  margin: 0 auto;
+  color: var(--sider-text);
+
+  .back-btn {
+    background: transparent !important;
+    color: var(--accent);
+    border: none;
+    font-weight: 500;
+    border: 1px solid var(--muted) !important;
+    margin-bottom: 20px;
+    &:hover {
+      color: #fff;
+      border: 1px solid var(--accent) !important;
+    }
+  }
+
+  .form-section {
+    margin-bottom: 32px;
+    .form-row {
+      display: flex;
+      gap: 24px;
+      margin-bottom: 18px;
+    }
+    .form-item {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+    label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: 500;
+      color: var(--sider-text);
+    }
+    .ant-input {
+      margin-bottom: 0;
+      border-radius: 8px;
+      border: 1px solid var(--muted);
+      background: var(--card-bg);
+      color: var(--sider-text);
+      font-size: 1rem;
+      padding: 8px 12px;
+    }
+    .ant-picker {
+      border-radius: 8px !important;
+      border: 1px solid var(--muted) !important;
+      background: var(--card-bg) !important;
+      color: var(--sider-text) !important;
+      font-size: 1rem;
+      padding: 8px 12px;
+      box-shadow: none !important;
+
+      input {
+        color: var(--sider-text) !important;
+        background: transparent !important;
+      }
+
+      .ant-picker-suffix,
+      .ant-picker-clear {
+        color: var(--sider-text) !important;
+      }
+    }
+  }
+
+  .action-buttons {
+    display: flex;
+    gap: 12px;
+    justify-content: end;
+    margin-top: 16px;
+  }
+}

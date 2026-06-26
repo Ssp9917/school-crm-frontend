@@ -1,0 +1,48 @@
+@use '../../styles/breakpoints.scss' as *;
+
+.add-role-page {
+  min-height: 100vh;
+  color: var(--sider-text);
+  font-family: 'Inter', sans-serif;
+
+  .title {
+    font-size: 18px;
+    margin-bottom: 25px;
+    letter-spacing: 0.5px;
+  }
+
+  .role-form {
+    .row {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 22px;
+      @include mobile {
+        grid-template-columns: 1fr;
+      }
+    }
+    .footer-buttons, .form-actions {
+      @include mobile {
+        flex-wrap: wrap;
+        .save-btn, .delete-btn, button {
+          flex: 1;
+          min-width: 120px;
+        }
+      }
+    }
+    .ant-select {
+      height: 48px !important;
+      background: var(--transparent) !important;
+      border: 1px solid var(--muted) !important;
+      color: var(--sider-text) !important;
+      input {
+        background-color: var(--transparent) !important;
+      }
+    }
+    .ant-input,
+    .ant-select-selector {
+      padding-block: 12px;
+      background: var(--transparent) !important;
+      border: 1px solid var(--muted) !important;
+    }
+  }
+}

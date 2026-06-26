@@ -1,0 +1,124 @@
+/* ─── AntD Modal.confirm Theme Override ──────────────────────────────── */
+
+.ant-modal-confirm {
+  .ant-modal-content {
+    background: var(--card-bg) !important;
+    border: 1px solid var(--muted) !important;
+    border-radius: 10px !important;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4) !important;
+  }
+
+  .ant-modal-confirm-title {
+    color: var(--sider-text) !important;
+  }
+
+  .ant-modal-confirm-content {
+    color: var(--muted) !important;
+  }
+
+  .ant-modal-confirm-btns {
+    .ant-btn {
+      background: var(--hover-bg) !important;
+      border-color: var(--muted) !important;
+      color: var(--sider-text) !important;
+      box-shadow: none !important;
+
+      &:hover {
+        border-color: var(--accent) !important;
+        color: var(--accent) !important;
+      }
+    }
+
+    .ant-btn-primary:not(.ant-btn-dangerous) {
+      background: var(--accent) !important;
+      border-color: var(--accent) !important;
+      color: #000 !important;
+
+      &:hover {
+        opacity: 0.85;
+      }
+    }
+
+    .ant-btn-dangerous:not(.ant-btn-primary) {
+      background: var(--hover-bg) !important;
+      border-color: #ff4d4f !important;
+      color: #ff4d4f !important;
+
+      &:hover {
+        background: rgba(255, 77, 79, 0.12) !important;
+      }
+    }
+
+    .ant-btn-primary.ant-btn-dangerous {
+      background: #ff4d4f !important;
+      border-color: #ff4d4f !important;
+      color: #fff !important;
+
+      &:hover {
+        opacity: 0.85;
+      }
+    }
+  }
+}
+
+/* Print Styles */
+@media print {
+  /* Hide all layout elements */
+  .ant-layout-sider,
+  .ant-layout-header,
+  .no-print,
+  header,
+  nav,
+  aside {
+    display: none !important;
+  }
+
+  /* Reset body and root for print */
+  body {
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  .ant-layout {
+    background: white !important;
+  }
+
+  .ant-layout-content {
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+}
+
+/* ── Shared table header controls (search left, actions right) ──
+   Default layout for all detail-tab tables; matches the attendance tab. */
+.table-controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+  flex-wrap: wrap;
+  gap: 10px;
+
+
+
+  .controls-left {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+}
+
+/* ── DatePicker time panel — match app theme (accent for selected, readable text) ── */
+.ant-picker-time-panel-cell-inner {
+  color: var(--sider-text) !important;
+
+  &:hover {
+    background: var(--hover-bg) !important;
+  }
+}
+
+.ant-picker-time-panel-cell-selected .ant-picker-time-panel-cell-inner {
+  background: var(--accent) !important;
+  color: #fff !important;
+}

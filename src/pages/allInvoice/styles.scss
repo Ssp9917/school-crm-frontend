@@ -1,0 +1,103 @@
+@use '../../styles/breakpoints.scss' as *;
+
+.all-invoices-page {
+//   padding: 24px;
+
+   .header-section {
+     display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+    flex-wrap: wrap;
+    gap: 10px;
+
+   .left-col{
+      gap: 10px;
+      display: flex;
+        align-items: center;
+    flex-wrap: wrap;
+
+    @include mobile {
+         display: grid;
+         grid-template-columns: repeat(2, 1fr);
+         align-items: center;
+         gap: 8px;
+         width: 100%;
+       }
+    }
+
+    .right-col {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      @include mobile {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        width: 100%;
+        justify-content: space-between;
+      }
+    }
+
+    .add-btn {
+      margin-left: 0%;
+      @include laptop {
+        margin-left: auto;
+      }
+    }
+
+  }
+
+  .invoices-table-wrapper {
+    // background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+
+    .ant-table-header {
+      position: sticky !important;
+      top: 0 !important;
+      z-index: 20 !important;
+      background: var(--card-bg) !important;
+
+      th {
+        background: var(--card-bg) !important;
+      }
+    }
+
+    @include mobile {
+      overflow-x: auto;
+      border-radius: 6px;
+    }
+
+    .ant-table-content {
+      overflow-x: auto;
+      scrollbar-width: none;
+      -ms-overflow-style: none;
+      &::-webkit-scrollbar { display: none; }
+    }
+
+    .ant-table-thead > tr > th {
+      @include mobile {
+        padding: 10px 8px;
+        font-size: 12px;
+      }
+    }
+
+    .ant-table-tbody > tr > td {
+      @include mobile {
+        padding: 10px 8px;
+        font-size: 12px;
+      }
+    }
+  }
+
+  .error-state {
+    text-align: center;
+    padding: 40px 20px;
+    color: #ff4d4f;
+
+    p {
+      margin: 0;
+      font-size: 16px;
+    }
+  }
+}

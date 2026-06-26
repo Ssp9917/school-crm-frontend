@@ -1,0 +1,221 @@
+@use '../../styles/breakpoints.scss' as *;
+
+.general-staff-page {
+  min-height: 100vh;
+  color: var(--sider-text);
+  font-family: 'Inter', sans-serif;
+
+  .title {
+    font-size: 18px;
+    margin-bottom: 25px;
+    letter-spacing: 0.5px;
+  }
+
+  .general-staff-form {
+    .row {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 22px;
+
+      @include mobile {
+        grid-template-columns: 1fr;
+      }
+
+      @include tablet {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .ant-select {
+        height: 48px !important;
+        background: var(--transparent) !important;
+        border: 1px solid var(--muted) !important;
+        color: var(--sider-text) !important;
+        input {
+          background-color: var(--transparent) !important;
+        }
+      }
+
+      .ant-input,
+      .ant-select-selector {
+        // height: 48px !important;
+         padding-block: 12px;
+        background: var(--transparent) !important;
+        border: 1px solid var(--muted) !important;
+        color: var(--sider-text) !important;
+      }
+
+      .ant-select .ant-select-selector {
+        background: var(--card-bg) !important;
+      }
+
+      .ant-input::placeholder {
+        color: var(--placeholder) !important;
+      }
+    }
+
+    .upload-box {
+      height: 48px;
+      background: var(--card-bg);
+      border: 1px solid var(--muted);
+      border-radius: 6px;
+      display: flex;
+      align-items: center;
+      padding: 0 14px;
+      justify-content: space-between;
+      color: var(--muted);
+
+      .upload-icon {
+        font-size: 20px;
+        color: var(--accent);
+      }
+    }
+
+    .branch-row {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+
+      @include mobile {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .ant-form-item {
+        width: 60%;
+
+        @include mobile {
+          width: 100%;
+        }
+      }
+
+      .ant-select {
+        height: 48px !important;
+        background: var(--transparent) !important;
+        border: 1px solid var(--muted) !important;
+        color: var(--sider-text) !important;
+        display: flex;
+        align-items: center;
+
+        .ant-select-content {
+          gap: 10px;
+          background-color: transparent !important;
+        }
+
+        .ant-select-content-item {
+          color: var(--sider-text);
+          background-color: var(--card-bg);
+        }
+
+        .ant-select-selection-item-remove {
+          color: var(--sider-text);
+        }
+
+        input {
+          background-color: transparent !important;
+          width: 0 !important;
+          display: none;
+        }
+      }
+
+      .branch-buttons {
+        display: flex;
+        gap: 10px;
+
+        .delete-small {
+          background: var(--card-bg);
+          color: var(--sider-text);
+          border: 1px solid var(--muted);
+          border-radius: 6px;
+          width: 40px;
+          height: 40px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          cursor: pointer;
+          transition: all 0.2s ease;
+
+          &:hover {
+            background: var(--hover-bg);
+          }
+        }
+
+        .add-btn {
+          background: var(--accent);
+          color: #000;
+          border: none;
+          border-radius: 6px;
+          height: 40px;
+          padding: 0 18px;
+          font-weight: 600;
+          cursor: pointer;
+          transition: all 0.2s ease;
+
+          &:hover {
+            opacity: 0.9;
+          }
+        }
+      }
+    }
+
+    .add-role-btn {
+      background: var(--accent);
+      color: var(--card-bg);
+      border: none;
+      border-radius: 4px;
+      font-size: 12px;
+      font-weight: 600;
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+
+      &:hover {
+        background: var(--accent) !important;
+        color: var(--card-bg) !important;
+      }
+    }
+
+    .footer-buttons {
+      margin-top: 25px;
+      display: flex;
+      gap: 15px;
+
+      @include mobile {
+        flex-wrap: wrap;
+        .save-btn, .delete-btn, button {
+          flex: 1;
+          min-width: 120px;
+        }
+      }
+
+      .delete-btn {
+        background: var(--danger, #d63c4a);
+        color: #fff;
+        border: none;
+        height: 48px;
+        padding: 0 28px;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+      }
+
+      .save-btn {
+        background: var(--accent);
+        color: var(--card-bg);
+        border: none;
+        height: 48px;
+        padding: 0 28px;
+      }
+    }
+
+    .id-images-row {
+      grid-column: 1 / -1;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 22px;
+
+      @include mobile {
+        grid-template-columns: 1fr;
+      }
+    }
+  }
+}

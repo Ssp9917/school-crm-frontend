@@ -1,0 +1,114 @@
+@use '../../styles/breakpoints.scss' as *;
+
+.all-biometrics-page {
+  min-height: 100vh;
+  color: var(--sider-text);
+  font-family: 'Inter', sans-serif;
+//   padding: 20px;w
+
+
+   .header-section {
+     display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+    flex-wrap: wrap;
+    gap: 10px;
+
+   .left-col{
+      gap: 10px;
+      display: flex;
+        align-items: center;
+    flex-wrap: wrap;
+
+    @include mobile {
+         display: grid;
+         grid-template-columns: repeat(2, 1fr);
+         align-items: center;
+         gap: 8px;
+         width: 100%;
+       }
+    }
+
+    .right-col {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      @include mobile {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        width: 100%;
+        justify-content: space-between;
+      }
+    }
+
+    .add-btn {
+      margin-left: 0%;
+      @include laptop {
+        margin-left: auto;
+      }
+    }
+
+  }
+
+
+
+  .error-state {
+    text-align: center;
+    padding: 40px 20px;
+    background: var(--card-bg);
+    border-radius: 8px;
+    border: 1px solid var(--muted);
+
+    p {
+      color: var(--danger);
+      font-size: 16px;
+      margin: 0;
+    }
+  }
+
+  .biometrics-table-wrapper {
+    background: var(--card-bg);
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    @include mobile {
+      overflow-x: auto;
+      border-radius: 6px;
+    }
+    .ant-table-content {
+      overflow-x: auto;
+      scrollbar-width: none;
+      -ms-overflow-style: none;
+      &::-webkit-scrollbar { display: none; }
+    }
+    .ant-table {
+      background: var(--card-bg);
+      color: var(--sider-text);
+      border-radius: 0;
+      .ant-table-thead > tr > th {
+        background: var(--card-bg);
+        color: var(--sider-text);
+        border-bottom: 1px solid var(--muted);
+        font-weight: 600;
+        white-space: nowrap;
+        @include mobile {
+          padding: 10px 8px;
+          font-size: 12px;
+        }
+      }
+      .ant-table-tbody > tr > td {
+        border-bottom: 1px solid var(--muted);
+        color: var(--sider-text);
+        white-space: nowrap;
+        background: var(--card-bg);
+        @include mobile {
+          padding: 10px 8px;
+          font-size: 12px;
+        }
+      }
+    }
+  }
+
+
+}

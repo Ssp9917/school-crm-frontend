@@ -1,0 +1,160 @@
+@use '../../styles/breakpoints.scss' as *;
+
+.add-biometric-page {
+  min-height: 100vh;
+  color: var(--sider-text);
+  font-family: 'Inter', sans-serif;
+
+  .title {
+    font-size: 18px;
+    margin-bottom: 25px;
+    letter-spacing: 0.5px;
+  }
+
+  .add-biometric-form {
+    .row {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+      row-gap: 0px;
+      
+      .ant-select{
+        align-items: center;
+        height: 48px !important;
+        background: var(--transparent) !important;
+        border: 1px solid var(--muted) !important;
+        color: var(--sider-text) !important;
+        input{
+          background-color: var(--transparent) !important;
+        }
+      }
+      
+      .ant-input,
+      .ant-select-selector {
+        padding-block: 12px;
+        background: var(--transparent) !important;
+        border: 1px solid var(--muted) !important;
+        color: var(--sider-text) !important;
+        
+        &:-webkit-autofill,
+        &:-webkit-autofill:hover,
+        &:-webkit-autofill:focus,
+        &:-webkit-autofill:active {
+          -webkit-box-shadow: 0 0 0 30px transparent inset !important;
+          -webkit-text-fill-color: var(--sider-text) !important;
+          background-color: transparent !important;
+          transition: background-color 5000s ease-in-out 0s !important;
+        }
+      }
+      
+      .ant-select .ant-select-selector {
+        background: var(--card-bg) !important;
+      }
+      
+      .ant-input::placeholder {
+        color: var(--placeholder) !important;
+      }
+
+      .ant-input-affix-wrapper {
+        background: var(--transparent) !important;
+        border: 1px solid var(--muted) !important;
+        padding-block: 0px;
+        
+        input {
+          background: var(--transparent) !important;
+          color: var(--sider-text) !important;
+          border: none !important;
+          width: 100%;
+          
+          &:-webkit-autofill,
+          &:-webkit-autofill:hover,
+          &:-webkit-autofill:focus,
+          &:-webkit-autofill:active {
+            -webkit-box-shadow: 0 0 0 30px transparent inset !important;
+            -webkit-text-fill-color: var(--sider-text) !important;
+            background-color: transparent !important;
+            transition: background-color 5000s ease-in-out 0s !important;
+          }
+        }
+        
+        .ant-input-suffix {
+          .anticon {
+            color: var(--sider-text) !important;
+            
+            &:hover {
+              color: var(--accent) !important;
+            }
+          }
+        }
+        
+        &:hover, &:focus, &:focus-within {
+          border-color: var(--accent) !important;
+          box-shadow: none !important;
+        }
+      }
+    }
+    
+    .footer-buttons {
+      margin-top: 25px;
+      display: flex;
+      gap: 15px;
+      justify-content: flex-end;
+      
+      .save-btn {
+        background: var(--accent);
+        border: 1px solid var(--accent);
+        color: white;
+        font-weight: 500;
+        height: 40px;
+        min-width: 120px;
+        
+        &:hover {
+          background: transparent !important;
+          color: var(--accent) !important;
+          border: 1px solid var(--accent) !important;
+        }
+      }
+      
+      .delete-btn {
+        background: var(--transparent) !important;
+        border: 1px solid var(--danger) !important;
+        color: var(--danger) !important;
+        font-weight: 500;
+        height: 40px;
+        min-width: 120px;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        
+        &:hover {
+          background: var(--transparent) !important;
+          border-color: var(--danger) !important;
+          color: var(--danger) !important;
+        }
+        
+        &:focus {
+          background: var(--transparent) !important;
+          border-color: var(--danger) !important;
+          color: var(--danger) !important;
+        }
+      }
+    }
+  }
+
+  @include mobile {
+    .add-biometric-form {
+      .row {
+        grid-template-columns: 1fr;
+        gap: 16px;
+      }
+    }
+  }
+
+  @include tablet {
+    .add-biometric-form {
+      .row {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+  }
+}

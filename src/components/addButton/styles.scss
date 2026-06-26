@@ -1,0 +1,36 @@
+@use '../../styles/breakpoints.scss' as *;
+
+.common-add-btn {
+  background: var(--accent) !important;
+  border: 1px solid var(--accent) !important;
+  color: white !important;
+  font-weight: 500;
+  height: 40px;
+  // min-width: 160px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  border-radius: 6px;
+  font-size: 14px;
+  
+  &:hover {
+    background: transparent !important;
+    color: var(--accent) !important;
+    border: 1px solid var(--accent) !important;
+  }
+  
+  &:focus {
+    background: var(--accent) !important;
+    color: white !important;
+    border: 1px solid var(--accent) !important;
+  }
+  
+  .anticon {
+    font-size: 14px;
+  }
+
+  @include mobile {
+    min-width: 140px;
+    font-size: 13px;
+  }
+}

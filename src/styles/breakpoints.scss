@@ -1,0 +1,77 @@
+// Media Query Breakpoints - SCSS Mixins
+
+// Breakpoint values
+$breakpoint-xs: 0;
+$breakpoint-sm: 576px;
+$breakpoint-md: 768px;
+$breakpoint-lg: 992px;
+$breakpoint-xl: 1200px;
+$breakpoint-xxl: 1400px;
+
+// Responsive mixins
+@mixin phone {
+  @media (max-width: #{$breakpoint-sm - 1}) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media (max-width: #{$breakpoint-xl - 1}) {
+    @content;
+  }
+}
+
+@mixin mobile {
+  @media (max-width: #{$breakpoint-md - 1}) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media (max-width: 9999px) {
+    @content;
+  }
+}
+
+@mixin laptop {
+  @media (max-width: #{$breakpoint-xl - 1}) {
+    @content;
+  }
+}
+
+@mixin large-desktop {
+  @media (max-width: #{$breakpoint-xxl - 1}) {
+    @content;
+  }
+}
+
+@mixin xl-desktop {
+  @media (max-width: 1599px) {
+    @content;
+  }
+}
+
+// Custom breakpoint
+@mixin respond-to($breakpoint) {
+  @media (max-width: #{$breakpoint}) {
+    @content;
+  }
+}
+
+// Usage examples:
+// .element {
+//   width: 100%;
+//   
+//   @include phone {
+//     font-size: 14px;
+//   }
+//   
+//   @include tablet {
+//     font-size: 16px;
+//   }
+//   
+//   @include desktop {
+//     width: 50%;
+//   }
+// }
+

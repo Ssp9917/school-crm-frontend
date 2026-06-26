@@ -1,0 +1,163 @@
+@use '../../styles/breakpoints.scss' as *;
+
+/* Page-specific styles for ConvertLead */
+.page-convert-lead {
+	// Empty placeholder for page wrapper
+  .ant-card-body{
+	padding: 0% !important;
+  }
+}
+
+.section-title{
+	margin-top: 0%;
+}
+
+	.section-title {
+		color: var(--sider-text);
+		margin-bottom: 4px;
+		font-weight: 600;
+
+	}
+	.save-btn.ant-btn-primary {
+		border-radius: 0 !important;
+		border: none !important;
+		background: var(--accent) !important;
+		color: var(--sider-text) !important;
+	}
+
+.page-convert-lead .reset-btn {
+	border-radius: 0 !important;
+	border-color: var(--muted) !important;
+	color: var(--sider-text) !important;
+	background: transparent !important;
+}
+
+
+/* Divider styling: tighter spacing and theme-aware color */
+.page-convert-lead .ant-divider {
+	margin: 8px 0 !important;
+	margin-bottom: 28px	!important;
+	border-color: var(--muted) !important;
+}
+
+.page-convert-lead .ant-divider::before,
+.page-convert-lead .ant-divider::after {
+	border-top-color: var(--muted) !important;
+}
+
+/* country code option styling */
+.cc-option img {
+	width: 20px;
+	height: 14px;
+	object-fit: cover;
+	margin-right: 8px;
+	vertical-align: middle;
+	border-radius: 2px;
+}
+
+.cc-option {
+	display: inline-flex;
+	align-items: center;
+}
+
+/* dropdown sizing and no-text-cut */
+.country-code-dropdown {
+	min-width: 320px !important;
+	max-width: 540px !important;
+}
+
+.country-code-dropdown .ant-select-item-option-content {
+	white-space: normal !important;
+}
+
+.cc-selected img {
+	display: inline-block;
+}
+
+/* combined country+phone control */
+.country-phone {
+	display: inline-flex;
+	align-items: center;
+	border: 1px solid var(--muted);
+	background: var(--card-bg);
+	border-radius: 4px;
+	overflow: hidden;
+	width: 100%;
+}
+
+.country-phone .cc-selected-wrapper {
+	display: inline-flex;
+	align-items: center;
+	padding: 0px 8px;
+	gap: 8px;
+	border-right: 1px solid rgba(255,255,255,0.03);
+}
+
+.country-phone .cc-flag {
+	width: 20px;
+	height: 14px;
+	object-fit: cover;
+	border-radius: 2px;
+}
+
+.country-phone .cc-flag-placeholder {
+	width: 20px;
+	height: 14px;
+	background: rgba(255,255,255,0.1);
+	border-radius: 2px;
+}
+
+.country-phone .cc-dial {
+	font-size: 14px;
+	color: var(--sider-text);
+	font-weight: 500;
+	min-width: 42px;
+	text-align: center;
+}
+
+.country-phone input.ant-input {
+	border: none !important;
+	outline: none !important;
+	box-shadow: none !important;
+	background: transparent !important;
+	color: var(--sider-text) !important;
+	padding-left: 12px;
+	flex: 1;
+}
+
+/* strip the inner select's own border — only the wrapper border should show (same as add user).
+   antd v6 draws the border via CSS variables, so reset those too */
+.country-phone .ant-select,
+.country-phone .ant-select:hover,
+.country-phone .ant-select.ant-select-focused {
+	--select-border-size: 0px !important;
+	--select-border-color: transparent !important;
+	border: none !important;
+	box-shadow: none !important;
+	background: transparent !important;
+}
+
+.country-phone .ant-select .ant-select-selector {
+	background: transparent !important;
+	border: none !important;
+	box-shadow: none !important;
+	padding: 0 !important;
+	min-width: 0 !important;
+}
+
+.loading-container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	min-height: 400px;
+}
+
+.error-container {
+	text-align: center;
+	padding: 40px;
+
+	.ant-alert {
+		max-width: 600px;
+		margin: 0 auto;
+	}
+}

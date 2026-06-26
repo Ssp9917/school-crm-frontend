@@ -1,0 +1,158 @@
+.fu-wrap {
+  display: flex;
+  flex-direction: column;
+}
+
+/* ── Banner ── */
+.fu-banner {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 10px 0px;
+  background: var(--card-bg);
+  // border-bottom: 1px solid var(--muted);
+}
+
+/* Each filter pill */
+.fu-filter-item {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  padding: 8px 14px;
+  border-radius: 7px;
+  cursor: pointer;
+  transition: background 0.15s;
+  white-space: nowrap;
+  flex-shrink: 0;
+
+  .fu-filter-icon {
+    font-size: 15px;
+    color: var(--placeholder);
+    flex-shrink: 0;
+  }
+
+  .fu-filter-label {
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--sider-text);
+    white-space: nowrap;
+  }
+
+  .fu-filter-count {
+    font-weight: 400;
+    color: var(--placeholder);
+  }
+
+  &:hover {
+    background: var(--hover-bg);
+  }
+
+  /* Active state — stretches to fill remaining space */
+  &--active {
+    flex: 1;
+    background: rgba(23, 162, 184, 0.12);
+    border: 1px solid rgba(23, 162, 184, 0.3);
+
+    .fu-filter-icon { color: #17A2B8; }
+
+    .fu-filter-label {
+      color: #17A2B8;
+      font-weight: 600;
+    }
+
+    .fu-filter-count { color: #17A2B8; }
+  }
+
+  /* Overdue/red variant */
+  &--red {
+    .fu-filter-icon { color: var(--placeholder); }
+    .fu-filter-label { color: var(--sider-text); }
+
+    &.fu-filter-item--active {
+      background: rgba(231, 76, 60, 0.1);
+      border: 1px solid rgba(231, 76, 60, 0.3);
+
+      .fu-filter-icon { color: #e74c3c; }
+      .fu-filter-label { color: #e74c3c; }
+      .fu-filter-count { color: #e74c3c; }
+    }
+  }
+}
+
+/* ── Table column title ── */
+.fu-col-title {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.fu-followup-text {
+  font-size: 14px;
+  color: var(--placeholder);
+}
+
+.fu-name {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--sider-text);
+  cursor: pointer;
+
+  &:hover {
+    color: #17A2B8;
+  }
+}
+
+/* ── Details row ── */
+.fu-details-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: nowrap;
+  overflow: hidden;
+}
+
+.fu-assignee-badge {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  background: #4a5568;
+  border-radius: 4px;
+  padding: 3px 8px;
+  font-size: 13px;
+  color: #fff;
+  flex-shrink: 0;
+  max-width: 100px;
+  overflow: hidden;
+
+  span:first-child {
+    font-size: 11px;
+    flex-shrink: 0;
+  }
+}
+
+.fu-assignee-name {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.fu-badge {
+  border-radius: 4px;
+  padding: 3px 10px;
+  font-size: 13px;
+  font-weight: 500;
+  white-space: nowrap;
+  flex-shrink: 0;
+  max-width: 110px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.fu-notes-text {
+  font-size: 13px;
+  color: var(--placeholder);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  max-width: 400px;
+}

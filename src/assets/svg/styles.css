@@ -1,0 +1,38 @@
+/* 😀 Good Smile */
+.smile-icon path {
+  fill: white; /* default */
+  transition: fill 0.3s ease;
+}
+.smile-icon:hover path {
+  fill: green; /* hover */
+}
+.emoji.selected .smile-icon path {
+  fill: green; /* selected */
+  /* hover/selected zoom */
+}
+
+/* 😐 Neutral */
+.emoji-icon-neutral path {
+  fill: white; /* default */
+  transition: fill 0.3s ease;
+}
+.emoji-icon-neutral:hover path {
+  fill: orange; /* hover */
+}
+.emoji.selected .emoji-icon-neutral path {
+  fill: orange; /* selected */
+  /* hover/selected zoom */
+}
+
+/* 😞 Bad */
+.emoji-icon-bad path {
+  fill: white; /* default */
+  transition: fill 0.3s ease;
+}
+.emoji-icon-bad:hover path {
+  fill: red; /* hover */
+}
+.emoji.selected .emoji-icon-bad path {
+  fill: red; /* selected */
+  /* hover/selected zoom */
+}
