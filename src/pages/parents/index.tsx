@@ -1,10 +1,11 @@
 import { useState, useMemo } from "react";
-import { Table, Button, Modal, Form, Input, Select, Switch, message, Popconfirm, Space, Card, Tag } from "antd";
+import { Button, Modal, Form, Input, Select, Switch, message, Popconfirm, Space, Card, Tag } from "antd";
 import { PlusOutlined, EditOutlined, DeleteOutlined, UserOutlined } from "@ant-design/icons";
 import { useGetParentsQuery, useAddParentMutation, useUpdateParentMutation, useDeleteParentMutation } from "../../services/parent";
 import { useGetStudentsQuery } from "../../services/student";
 import { useGetBranchesQuery } from "../../services/branches";
 import SearchBar from "../../components/searchBar";
+import CommonTable from "../../components/commonTable";
 import "./styles.scss";
 
 const Parents = () => {
@@ -159,11 +160,11 @@ const Parents = () => {
   const total = (parentsData as any)?.total || 0;
 
   return (
-    <Card className="parents-management-card">
-      <div className="parents-header">
+    <Card className="parents-management-card" style={{ borderRadius: "12px", background: "var(--card-bg)", borderColor: "var(--muted)", color: "var(--sider-text)" }}>
+      <div className="parents-header" style={{ marginBottom: "20px", display: "flex", justifyContent: "space-between", alignItems: "center" }}>
         <div className="title-section">
-          <h2>Parents Directory</h2>
-          <p>Register and manage students' parent profiles</p>
+          <h2 style={{ color: "var(--sider-text)", margin: 0 }}>Parents Directory</h2>
+          <p style={{ color: "var(--placeholder)", margin: 0 }}>Register and manage students' parent profiles</p>
         </div>
         <Button type="primary" icon={<PlusOutlined />} onClick={() => { setEditingParent(null); form.resetFields(); setModalVisible(true); }}>
           Add Parent
@@ -174,7 +175,7 @@ const Parents = () => {
         <SearchBar value={searchText} onChange={(val) => { setSearchText(val); setPage(1); }} placeholder="Search parents..." />
       </div>
 
-      <Table dataSource={parentList} columns={columns} rowKey="_id" loading={isLoading} pagination={{
+      <CommonTable dataSource={parentList} columns={columns} rowKey="_id" loading={isLoading} pagination={{
         current: page,
         pageSize: limit,
         total,

@@ -4,6 +4,7 @@ import { useNavigate, useLocation } from "react-router-dom";
 import { logo, whiteLogo } from "../../assets";
 import { useTheme } from "../../context/ThemeContext";
 import { useSiderMenuQuery } from "../../services/permissions";
+import { useGetTenantByIdQuery } from "../../services/tenants";
 import * as AntIcons from "@ant-design/icons";
 import permissionsSchema from "../../../permissions-schema.json";
 import "./sider.scss";
@@ -108,6 +109,13 @@ const SiderComponent = ({ collapsed }: SiderComponentProps) => {
 
   const { data: siderData } = useSiderMenuQuery(undefined);
 
+  const user = JSON.parse(localStorage.getItem("user") || "{}");
+  const tenantId = user?.tenantId;
+  const { data: tenantData } = useGetTenantByIdQuery(tenantId, {
+    skip: !tenantId,
+  });
+  const customLogo = tenantData?.data?.logo;
+
   const menuData = useMemo((): MenuItem[] => {
     let menus: MenuItem[] = (siderData as any)?.menu || [];
 
@@ -201,7 +209,7 @@ const SiderComponent = ({ collapsed }: SiderComponentProps) => {
     <div className="aside">
       <div className="logo-wrapper">
         {!collapsed && (
-          <img src={theme === "light" ? logo : whiteLogo} alt="logo" className="logo-img" />
+          <img src={customLogo || (theme === "light" ? logo : whiteLogo)} alt="logo" className="logo-img" style={{ maxHeight: "40px", objectFit: "contain" }} />
         )}
       </div>
 

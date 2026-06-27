@@ -80,6 +80,11 @@ const AllMembershipUsersRoute = "/all-membership-users"
 const AllSessionsRoute = "/all-sessions"
 const AllAcademicSetupRoute = "/academic-setup"
 const AllParentsRoute = "/parents"
+const AllTenantsRoute = "/tenants"
+const StudentAttendanceRoute = "/student-attendance"
+const ExamsPageRoute = "/exams"
+const PayrollPageRoute = "/payroll"
+const SchoolProfileRoute = "/school-profile"
 
 
 // Employee Detail Routes
@@ -197,4 +202,9 @@ TrainerDetailRoute, TrainerDetailAttendanceRoute, TrainerDetailCoachIdRoute, Tra
   SalesDashboardRoute,
   AllAcademicSetupRoute,
   AllParentsRoute,
+  AllTenantsRoute,
+  StudentAttendanceRoute,
+  ExamsPageRoute,
+  PayrollPageRoute,
+  SchoolProfileRoute,
  }

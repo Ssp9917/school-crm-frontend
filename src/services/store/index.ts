@@ -32,6 +32,10 @@ import { sectionApi } from '../section'
 import { subjectApi } from '../subject'
 import { studentApi } from '../student'
 import { parentApi } from '../parent'
+import { tenantsApi } from '../tenants'
+import { studentAttendanceApi } from '../studentAttendance'
+import { examsApi } from '../exams'
+import { payrollApi } from '../payroll'
 
 const listenerMiddleware = createListenerMiddleware();
 
@@ -82,6 +86,10 @@ export const store = configureStore({
     [subjectApi.reducerPath]: subjectApi.reducer,
     [studentApi.reducerPath]: studentApi.reducer,
     [parentApi.reducerPath]: parentApi.reducer,
+    [tenantsApi.reducerPath]: tenantsApi.reducer,
+    [studentAttendanceApi.reducerPath]: studentAttendanceApi.reducer,
+    [examsApi.reducerPath]: examsApi.reducer,
+    [payrollApi.reducerPath]: payrollApi.reducer,
     branch: branchReducer,
   },
   // Adding the api middleware enables caching, invalidation, polling,
@@ -118,6 +126,10 @@ export const store = configureStore({
     subjectApi.middleware,
     studentApi.middleware,
     parentApi.middleware,
+    tenantsApi.middleware,
+    studentAttendanceApi.middleware,
+    examsApi.middleware,
+    payrollApi.middleware,
   ),
 })
 

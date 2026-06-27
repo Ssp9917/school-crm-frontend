@@ -1,10 +1,11 @@
 import { useState, useMemo } from "react";
-import { Tabs, Table, Button, Modal, Form, Input, Select, Switch, message, Popconfirm, Space, Card } from "antd";
+import { Tabs, Button, Modal, Form, Input, Select, Switch, message, Popconfirm, Space, Card } from "antd";
 import { PlusOutlined, EditOutlined, DeleteOutlined, BookOutlined, AppstoreOutlined, TeamOutlined } from "@ant-design/icons";
 import { useGetClassesQuery, useAddClassMutation, useUpdateClassMutation, useDeleteClassMutation } from "../../services/class";
 import { useGetSectionsQuery, useAddSectionMutation, useUpdateSectionMutation, useDeleteSectionMutation } from "../../services/section";
 import { useGetSubjectsQuery, useAddSubjectMutation, useUpdateSubjectMutation, useDeleteSubjectMutation } from "../../services/subject";
 import { useGetTrainersQuery } from "../../services/trainer";
+import CommonTable from "../../components/commonTable";
 import "./styles.scss";
 
 const { TabPane } = Tabs;
@@ -284,10 +285,10 @@ const AcademicSetup = () => {
   }, [classesData]);
 
   return (
-    <Card className="academic-setup-card">
-      <div className="setup-header">
-        <h2>Academic Setup</h2>
-        <p>Manage Classes, Sections, and Subjects allocations</p>
+    <Card className="academic-setup-card" style={{ borderRadius: "12px", background: "var(--card-bg)", borderColor: "var(--muted)", color: "var(--sider-text)" }}>
+      <div className="setup-header" style={{ marginBottom: "20px" }}>
+        <h2 style={{ color: "var(--sider-text)" }}>Academic Setup</h2>
+        <p style={{ color: "var(--placeholder)" }}>Manage Classes, Sections, and Subjects allocations</p>
       </div>
 
       <Tabs activeKey={activeTab} onChange={setActiveTab} type="card">
@@ -297,7 +298,7 @@ const AcademicSetup = () => {
               Add Class
             </Button>
           </div>
-          <Table dataSource={(classesData as any)?.data || []} columns={classColumns} rowKey="_id" loading={isLoadingClasses} pagination={{ pageSize: 10 }} />
+          <CommonTable dataSource={(classesData as any)?.data || []} columns={classColumns} rowKey="_id" loading={isLoadingClasses} pagination={{ pageSize: 10 }} />
         </TabPane>
 
         <TabPane tab={<span><AppstoreOutlined /> Sections</span>} key="sections">
@@ -306,7 +307,7 @@ const AcademicSetup = () => {
               Add Section
             </Button>
           </div>
-          <Table dataSource={(sectionsData as any)?.data || []} columns={sectionColumns} rowKey="_id" loading={isLoadingSections} pagination={{ pageSize: 10 }} />
+          <CommonTable dataSource={(sectionsData as any)?.data || []} columns={sectionColumns} rowKey="_id" loading={isLoadingSections} pagination={{ pageSize: 10 }} />
         </TabPane>
 
         <TabPane tab={<span><BookOutlined /> Subjects</span>} key="subjects">
@@ -315,7 +316,7 @@ const AcademicSetup = () => {
               Add Subject
             </Button>
           </div>
-          <Table dataSource={(subjectsData as any)?.data || []} columns={subjectColumns} rowKey="_id" loading={isLoadingSubjects} pagination={{ pageSize: 10 }} />
+          <CommonTable dataSource={(subjectsData as any)?.data || []} columns={subjectColumns} rowKey="_id" loading={isLoadingSubjects} pagination={{ pageSize: 10 }} />
         </TabPane>
       </Tabs>
 

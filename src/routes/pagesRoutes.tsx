@@ -1,13 +1,18 @@
 import AllFeedbacks from "../pages/allFeedbacks";
 import AllDepartments from "../pages/allDepartments";
 import AddDepartment from "../pages/addDepartment";
-import { AllFeedbacksRoute, EditRoleRoute, userFeedbackRoute, AllDepartmentsRoute, AddDepartmentRoute, BlacklistRequestsRoute, SuperAdminDashboardRoute, FranchiseDashboardRoute, ClubManagerDashboardRoute, CustomerServiceDashboardRoute, SalesDashboardRoute, AllAcademicSetupRoute, AllParentsRoute } from "./routepath";
+import { AllFeedbacksRoute, EditRoleRoute, userFeedbackRoute, AllDepartmentsRoute, AddDepartmentRoute, BlacklistRequestsRoute, SuperAdminDashboardRoute, FranchiseDashboardRoute, ClubManagerDashboardRoute, CustomerServiceDashboardRoute, SalesDashboardRoute, AllAcademicSetupRoute, AllParentsRoute, AllTenantsRoute, StudentAttendanceRoute, ExamsPageRoute, PayrollPageRoute, SchoolProfileRoute } from "./routepath";
 import AddCoupon from "../pages/addCoupon";
 import { AddCouponRoute } from "./routepath";
 import AllCoupons from "../pages/allCoupons";
 import { AllCouponsRoute } from "./routepath";
 import AcademicSetup from "../pages/academicSetup";
 import Parents from "../pages/parents";
+import SchoolOnboarding from "../pages/tenants";
+import StudentAttendance from "../pages/studentAttendance";
+import ExamsPage from "../pages/exams";
+import PayrollPage from "../pages/payroll";
+import SchoolProfile from "../pages/schoolProfile";
  
 
 import {
@@ -374,6 +379,11 @@ export const router = createBrowserRouter([
       { path: SalesDashboardRoute,             element: <SalesDashboard /> },
       { path: AllAcademicSetupRoute,           element: <AcademicSetup /> },
       { path: AllParentsRoute,                 element: <Parents /> },
+      { path: AllTenantsRoute,                 element: <SchoolOnboarding /> },
+      { path: StudentAttendanceRoute,          element: <StudentAttendance /> },
+      { path: ExamsPageRoute,                  element: <ExamsPage /> },
+      { path: PayrollPageRoute,                element: <PayrollPage /> },
+      { path: SchoolProfileRoute,              element: <SchoolProfile /> },
 
     ]
     
