@@ -24,9 +24,9 @@ const revenueData = [
 ];
 
 const ptVsMembershipData = [
-  { name: 'Membership', value: 62, color: '#6366f1' },
-  { name: 'PT Revenue',  value: 28, color: '#10b981' },
-  { name: 'Add-Ons',    value: 10, color: '#f59e0b' },
+  { name: 'Tuition Fee', value: 62, color: '#6366f1' },
+  { name: 'Admission Fee',  value: 28, color: '#10b981' },
+  { name: 'Books & Uniforms',    value: 10, color: '#f59e0b' },
 ];
 
 const newVsRenewalData = [
@@ -35,10 +35,10 @@ const newVsRenewalData = [
 ];
 
 const teamPerformanceData = [
-  { key: '1', name: 'Rahul M.',   role: 'Sales',   target: 150000, achieved: 142000, sessions: '-' },
-  { key: '2', name: 'Priya S.',   role: 'Sales',   target: 150000, achieved: 128000, sessions: '-' },
-  { key: '3', name: 'Kiran J.',   role: 'Trainer', target: 80,     achieved: 72,     sessions: '72 / 80' },
-  { key: '4', name: 'Amit R.',    role: 'Trainer', target: 80,     achieved: 65,     sessions: '65 / 80' },
+  { key: '1', name: 'Rahul M.',   role: 'Admissions',   target: 150000, achieved: 142000, sessions: '-' },
+  { key: '2', name: 'Priya S.',   role: 'Admissions',   target: 150000, achieved: 128000, sessions: '-' },
+  { key: '3', name: 'Kiran J.',   role: 'Teacher', target: 80,     achieved: 72,     sessions: '72 / 80' },
+  { key: '4', name: 'Amit R.',    role: 'Teacher', target: 80,     achieved: 65,     sessions: '65 / 80' },
 ];
 
 const bookingSourceData = [
@@ -61,15 +61,15 @@ const fmt = (v: number) =>
 const teamColumns = [
   { title: 'Name',     dataIndex: 'name',     key: 'name' },
   { title: 'Role',     dataIndex: 'role',     key: 'role',
-    render: (r: string) => <Tag color={r === 'Sales' ? 'blue' : 'green'}>{r}</Tag> },
+    render: (r: string) => <Tag color={r === 'Admissions' ? 'blue' : 'green'}>{r}</Tag> },
   { title: 'Target',   dataIndex: 'target',   key: 'target',
-    render: (v: number, r: any) => r.role === 'Trainer' ? `${v} sessions` : fmt(v) },
+    render: (v: number, r: any) => r.role === 'Teacher' ? `${v} classes` : fmt(v) },
   { title: 'Achieved', dataIndex: 'achieved', key: 'achieved',
     render: (v: number, r: any) => {
       const pct = Math.round((v / r.target) * 100);
       return (
         <span style={{ color: pct >= 90 ? '#22c55e' : pct >= 70 ? '#f59e0b' : '#ef4444', fontWeight: 600 }}>
-          {r.role === 'Trainer' ? `${v} sessions` : fmt(v)} ({pct}%)
+          {r.role === 'Teacher' ? `${v} classes` : fmt(v)} ({pct}%)
         </span>
       );
     }},
@@ -108,9 +108,9 @@ const FranchiseDashboard = () => {
             onChange={setFranchise}
             style={{ width: 180 }}
             options={[
-              { label: 'Bellator Bandra',  value: 'bellator_bandra' },
-              { label: 'Bellator Thane',   value: 'bellator_thane' },
-              { label: 'Bellator Pune',    value: 'bellator_pune' },
+              { label: 'Bandra Campus',  value: 'bellator_bandra' },
+              { label: 'Thane Campus',   value: 'bellator_thane' },
+              { label: 'Pune Campus',    value: 'bellator_pune' },
             ]}
           />
           <Select
@@ -128,10 +128,10 @@ const FranchiseDashboard = () => {
 
       {/* ── KPI Cards ── */}
       <div className="frd-stats-grid">
-        <StatCard title="Club Revenue"     value="₹7.1L"  icon={<DollarOutlined />}     color="#6366f1" trend={{ value: 9,  up: true  }} subtitle="This month" />
-        <StatCard title="New Customers"    value="84"     icon={<UserAddOutlined />}     color="#10b981" trend={{ value: 14, up: true  }} subtitle="vs last month" />
-        <StatCard title="Renewals"         value="196"    icon={<TeamOutlined />}        color="#f59e0b" trend={{ value: 4,  up: false }} subtitle="This month" />
-        <StatCard title="Conversion Rate"  value="68%"    icon={<PercentageOutlined />}  color="#ec4899" trend={{ value: 3,  up: true  }} subtitle="Walk-in to member" />
+        <StatCard title="Campus Revenue"     value="₹7.1L"  icon={<DollarOutlined />}     color="#6366f1" trend={{ value: 9,  up: true  }} subtitle="This month" />
+        <StatCard title="New Admissions"    value="84"     icon={<UserAddOutlined />}     color="#10b981" trend={{ value: 14, up: true  }} subtitle="vs last month" />
+        <StatCard title="Renewals / Re-enroll" value="196"    icon={<TeamOutlined />}        color="#f59e0b" trend={{ value: 4,  up: false }} subtitle="This month" />
+        <StatCard title="Admission Rate"  value="68%"    icon={<PercentageOutlined />}  color="#ec4899" trend={{ value: 3,  up: true  }} subtitle="Inquiry to Student" />
       </div>
 
       {/* ── Revenue + Split Charts ── */}

@@ -43,10 +43,10 @@ const followUpsData = [
 ];
 
 const clientTypeData = [
-  { type: 'New',     count: 52, color: '#6366f1' },
-  { type: 'Renewal', count: 38, color: '#10b981' },
+  { type: 'New Admission',     count: 52, color: '#6366f1' },
+  { type: 'Re-enrollment', count: 38, color: '#10b981' },
   { type: 'Referral',count: 24, color: '#f59e0b' },
-  { type: 'Re-join', count: 12, color: '#ec4899' },
+  { type: 'Transfer-in', count: 12, color: '#ec4899' },
 ];
 
 const lbColumns = [
@@ -102,15 +102,15 @@ const SalesDashboard = () => (
     {/* ── KPI Cards ── */}
     <div className="sld-stats-grid">
       <StatCard title="Monthly Target"   value="₹7.5L"  icon={<DollarOutlined />}     color="#6366f1" subtitle="June target" />
-      <StatCard title="Sales Closed"     value="₹5.5L"  icon={<RiseOutlined />}        color="#22c55e" trend={{ value: 11, up: true }} subtitle="74% of target" />
+      <StatCard title="Admissions Closed" value="₹5.5L"  icon={<RiseOutlined />}        color="#22c55e" trend={{ value: 11, up: true }} subtitle="74% of target" />
       <StatCard title="Incentive Earned" value="₹52K"   icon={<FireOutlined />}        color="#f59e0b" trend={{ value: 8,  up: true }} subtitle="This month" />
-      <StatCard title="Conversion Rate"  value="18.6%"  icon={<PercentageOutlined />}  color="#ec4899" trend={{ value: 2,  up: true }} subtitle="Leads to member" />
+      <StatCard title="Conversion Rate"  value="18.6%"  icon={<PercentageOutlined />}  color="#ec4899" trend={{ value: 2,  up: true }} subtitle="Leads to Student" />
     </div>
 
     {/* ── Target Progress ── */}
     <div className="sld-target-card">
       <div className="sld-target-info">
-        <span className="sld-target-label">Monthly Sales Progress</span>
+        <span className="sld-target-label">Monthly Admission Target Progress</span>
         <span className="sld-target-val">₹5.5L / ₹7.5L</span>
       </div>
       <Progress percent={74} strokeColor={{ '0%': '#6366f1', '100%': '#22c55e' }} trailColor="var(--hover-bg)" showInfo={false} strokeWidth={10} />
@@ -150,7 +150,7 @@ const SalesDashboard = () => (
       {/* Memberships Sold */}
       <div className="sld-chart-card sld-chart-wide">
         <div className="sld-chart-head">
-          <span className="sld-chart-title">Memberships Sold — June (Weekly)</span>
+          <span className="sld-chart-title">Admissions Confirmed — June (Weekly)</span>
           <CalendarOutlined style={{ color: 'var(--muted)' }} />
         </div>
         <ResponsiveContainer width="100%" height={180}>
@@ -171,7 +171,7 @@ const SalesDashboard = () => (
       {/* Client Type */}
       <div className="sld-chart-card">
         <div className="sld-chart-head">
-          <span className="sld-chart-title">Client Breakdown</span>
+          <span className="sld-chart-title">Registration Breakdown</span>
         </div>
         <div className="sld-client-type">
           {clientTypeData.map(c => (
@@ -200,7 +200,7 @@ const SalesDashboard = () => (
       <div className="sld-section">
         <div className="sld-section-head">
           <TrophyOutlined style={{ color: '#f59e0b' }} />
-          <span>Real-Time Sales Leaderboard</span>
+          <span>Real-Time Admissions Leaderboard</span>
           <span className="sld-live-dot" />
           <span style={{ fontSize: 11, color: '#22c55e' }}>LIVE</span>
         </div>

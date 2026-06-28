@@ -16,20 +16,20 @@ const { RangePicker } = DatePicker;
 /* ─── Mock Data ──────────────────────────────────────────────── */
 
 const revenueTrendData = [
-  { month: 'Jan', Membership: 420000, PT: 185000, AddOns: 62000 },
-  { month: 'Feb', Membership: 380000, PT: 210000, AddOns: 74000 },
-  { month: 'Mar', Membership: 510000, PT: 198000, AddOns: 88000 },
-  { month: 'Apr', Membership: 475000, PT: 225000, AddOns: 95000 },
-  { month: 'May', Membership: 560000, PT: 240000, AddOns: 110000 },
-  { month: 'Jun', Membership: 620000, PT: 270000, AddOns: 128000 },
+  { month: 'Jan', TuitionFee: 420000, AdmissionFee: 185000, UniformsAndBooks: 62000 },
+  { month: 'Feb', TuitionFee: 380000, AdmissionFee: 210000, UniformsAndBooks: 74000 },
+  { month: 'Mar', TuitionFee: 510000, AdmissionFee: 198000, UniformsAndBooks: 88000 },
+  { month: 'Apr', TuitionFee: 475000, AdmissionFee: 225000, UniformsAndBooks: 95000 },
+  { month: 'May', TuitionFee: 560000, AdmissionFee: 240000, UniformsAndBooks: 110000 },
+  { month: 'Jun', TuitionFee: 620000, AdmissionFee: 270000, UniformsAndBooks: 128000 },
 ];
 
 const clubLeaderboardData = [
-  { key: '1', club: 'Bellator Andheri', revenue: 820000, checkins: 1240, reviews: 4.8, type: 'Company' },
-  { key: '2', club: 'Bellator Bandra',  revenue: 710000, checkins: 1080, reviews: 4.6, type: 'Franchise' },
-  { key: '3', club: 'Bellator Powai',   revenue: 680000, checkins: 990,  reviews: 4.7, type: 'Company' },
-  { key: '4', club: 'Bellator Thane',   revenue: 540000, checkins: 820,  reviews: 4.5, type: 'Franchise' },
-  { key: '5', club: 'Bellator Pune',    revenue: 490000, checkins: 760,  reviews: 4.4, type: 'Franchise' },
+  { key: '1', club: 'Andheri Campus', revenue: 820000, checkins: 1240, reviews: 4.8, type: 'Direct' },
+  { key: '2', club: 'Bandra Campus',  revenue: 710000, checkins: 1080, reviews: 4.6, type: 'Franchise' },
+  { key: '3', club: 'Powai Campus',   revenue: 680000, checkins: 990,  reviews: 4.7, type: 'Direct' },
+  { key: '4', club: 'Thane Campus',   revenue: 540000, checkins: 820,  reviews: 4.5, type: 'Franchise' },
+  { key: '5', club: 'Pune Campus',    revenue: 490000, checkins: 760,  reviews: 4.4, type: 'Franchise' },
 ];
 
 const salesLeaderboardData = [
@@ -41,11 +41,11 @@ const salesLeaderboardData = [
 ];
 
 const revenueBreakdown = [
-  { name: 'Membership', value: 620000, color: '#6366f1' },
-  { name: 'PT',         value: 270000, color: '#10b981' },
-  { name: 'Add-Ons',    value: 128000, color: '#f59e0b' },
-  { name: 'EMS',        value: 55000,  color: '#ec4899' },
-  { name: 'Massage',    value: 38000,  color: '#8b5cf6' },
+  { name: 'Tuition Fee', value: 620000, color: '#6366f1' },
+  { name: 'Admission Fee', value: 270000, color: '#10b981' },
+  { name: 'Uniforms & Books', value: 128000, color: '#f59e0b' },
+  { name: 'Extracurriculars', value: 55000,  color: '#ec4899' },
+  { name: 'Transport',    value: 38000,  color: '#8b5cf6' },
 ];
 
 const crmData = [
@@ -78,11 +78,11 @@ const CustomTooltip = ({ active, payload, label }: any) => {
 
 const clubColumns = [
   { title: '#',       key: 'idx',     width: 40,  render: (_: any, __: any, i: number) => i + 1 },
-  { title: 'Club',    dataIndex: 'club',    key: 'club' },
+  { title: 'Campus',    dataIndex: 'club',    key: 'club' },
   { title: 'Type',    dataIndex: 'type',    key: 'type',
-    render: (t: string) => <Tag color={t === 'Company' ? 'blue' : 'purple'}>{t}</Tag> },
+    render: (t: string) => <Tag color={t === 'Direct' ? 'blue' : 'purple'}>{t}</Tag> },
   { title: 'Revenue', dataIndex: 'revenue', key: 'revenue', render: fmt },
-  { title: 'Check-ins', dataIndex: 'checkins', key: 'checkins' },
+  { title: 'Attendance', dataIndex: 'checkins', key: 'checkins' },
   { title: 'Rating',  dataIndex: 'reviews', key: 'reviews',
     render: (v: number) => <span style={{ color: '#f59e0b' }}>★ {v}</span> },
 ];
@@ -121,8 +121,8 @@ const SuperAdminDashboard = () => {
             onChange={setClubType}
             style={{ width: 160 }}
             options={[
-              { label: 'All Clubs',    value: 'all' },
-              { label: 'Company Only', value: 'company' },
+              { label: 'All Campuses',    value: 'all' },
+              { label: 'Direct Only', value: 'company' },
               { label: 'Franchise',    value: 'franchise' },
             ]}
           />
@@ -142,9 +142,9 @@ const SuperAdminDashboard = () => {
       {/* ── KPI Cards ── */}
       <div className="sad-stats-grid">
         <StatCard title="Total Revenue"    value="₹11.1L"  icon={<DollarOutlined />}  color="#6366f1" trend={{ value: 12, up: true }}  subtitle="This Month" />
-        <StatCard title="Check-ins Today"  value="3,842"   icon={<LoginOutlined />}   color="#10b981" trend={{ value: 8,  up: true }}  subtitle="Across all clubs" />
-        <StatCard title="Active Members"   value="12,480"  icon={<TeamOutlined />}    color="#f59e0b" trend={{ value: 3,  up: true }}  subtitle="Total active" />
-        <StatCard title="New Joins"        value="284"     icon={<UserAddOutlined />} color="#ec4899" trend={{ value: 5,  up: false }} subtitle="This month" />
+        <StatCard title="Attendance Today"  value="3,842"   icon={<LoginOutlined />}   color="#10b981" trend={{ value: 8,  up: true }}  subtitle="Across all campuses" />
+        <StatCard title="Active Students"   value="12,480"  icon={<TeamOutlined />}    color="#f59e0b" trend={{ value: 3,  up: true }}  subtitle="Total active" />
+        <StatCard title="New Admissions"        value="284"     icon={<UserAddOutlined />} color="#ec4899" trend={{ value: 5,  up: false }} subtitle="This month" />
       </div>
 
       {/* ── Revenue Trend + Breakdown ── */}
@@ -180,9 +180,9 @@ const SuperAdminDashboard = () => {
               <YAxis tickFormatter={fmt} tick={{ fill: 'var(--sider-text)', fontSize: 10, opacity: 0.45 }} axisLine={false} tickLine={false} width={50} />
               <Tooltip content={<CustomTooltip />} />
               <Legend iconType="circle" iconSize={8} wrapperStyle={{ fontSize: 11, color: 'var(--sider-text)' }} />
-              <Area type="monotone" dataKey="Membership" stroke="#6366f1" strokeWidth={2} fill="url(#gM)" dot={false} />
-              <Area type="monotone" dataKey="PT"         stroke="#10b981" strokeWidth={2} fill="url(#gP)" dot={false} />
-              <Area type="monotone" dataKey="AddOns"     stroke="#f59e0b" strokeWidth={2} fill="url(#gA)" dot={false} />
+              <Area type="monotone" dataKey="TuitionFee" stroke="#6366f1" strokeWidth={2} fill="url(#gM)" dot={false} />
+              <Area type="monotone" dataKey="AdmissionFee"         stroke="#10b981" strokeWidth={2} fill="url(#gP)" dot={false} />
+              <Area type="monotone" dataKey="UniformsAndBooks"     stroke="#f59e0b" strokeWidth={2} fill="url(#gA)" dot={false} />
             </AreaChart>
           </ResponsiveContainer>
         </div>
@@ -209,7 +209,7 @@ const SuperAdminDashboard = () => {
       <div className="sad-section">
         <div className="sad-section-head">
           <TrophyOutlined style={{ color: '#f59e0b' }} />
-          <span>Club Performance Leaderboard</span>
+          <span>Campus Performance Leaderboard</span>
         </div>
         <Table
           columns={clubColumns}
@@ -266,18 +266,18 @@ const SuperAdminDashboard = () => {
             </div>
           </div>
 
-          {/* PT Utilization */}
+          {/* Teacher Utilization */}
           <div className="sad-section">
             <div className="sad-section-head">
               <ShopOutlined style={{ color: '#ec4899' }} />
-              <span>PT Utilization</span>
+              <span>Teacher Utilization</span>
             </div>
             <div className="sad-util-list">
               {[
-                { label: 'Andheri', pct: 88, color: '#6366f1' },
-                { label: 'Bandra',  pct: 74, color: '#10b981' },
-                { label: 'Powai',   pct: 65, color: '#f59e0b' },
-                { label: 'Thane',   pct: 52, color: '#ec4899' },
+                { label: 'Andheri Campus', pct: 88, color: '#6366f1' },
+                { label: 'Bandra Campus',  pct: 74, color: '#10b981' },
+                { label: 'Powai Campus',   pct: 65, color: '#f59e0b' },
+                { label: 'Thane Campus',   pct: 52, color: '#ec4899' },
               ].map(u => (
                 <div key={u.label} className="sad-util-item">
                   <span className="sad-util-label">{u.label}</span>

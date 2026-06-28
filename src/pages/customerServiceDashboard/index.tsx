@@ -10,19 +10,19 @@ import './styles.scss';
 /* ─── Mock Data ───────────────────────────────────────────────── */
 
 const ticketsData = [
-  { key: '1', id: 'TKT-001', member: 'Arjun Sharma', issue: 'Trainer not assigned',     priority: 'high',   status: 'open',     time: '2h ago' },
-  { key: '2', id: 'TKT-002', member: 'Sneha Patil',  issue: 'Locker not accessible',    priority: 'medium', status: 'open',     time: '3h ago' },
-  { key: '3', id: 'TKT-003', member: 'Rohit Verma',  issue: 'Wrong billing',            priority: 'high',   status: 'escalated',time: '5h ago' },
-  { key: '4', id: 'TKT-004', member: 'Kavita Joshi', issue: 'AC not working',            priority: 'low',    status: 'resolved', time: '1h ago' },
-  { key: '5', id: 'TKT-005', member: 'Manoj Singh',  issue: 'Membership freeze request', priority: 'medium', status: 'open',     time: '6h ago' },
+  { key: '1', id: 'TKT-001', member: 'Arjun Sharma', issue: 'Teacher not assigned',     priority: 'high',   status: 'open',     time: '2h ago' },
+  { key: '2', id: 'TKT-002', member: 'Sneha Patil',  issue: 'ID Card not printed',      priority: 'medium', status: 'open',     time: '3h ago' },
+  { key: '3', id: 'TKT-003', member: 'Rohit Verma',  issue: 'Wrong billing in fee receipt', priority: 'high',   status: 'escalated',time: '5h ago' },
+  { key: '4', id: 'TKT-004', member: 'Kavita Joshi', issue: 'Classroom AC not working',  priority: 'low',    status: 'resolved', time: '1h ago' },
+  { key: '5', id: 'TKT-005', member: 'Manoj Singh',  issue: 'Fee installment request', priority: 'medium', status: 'open',     time: '6h ago' },
 ];
 
 const bookingsData = [
-  { key: '1', member: 'Priya Shah',    service: 'Massage - 60min', trainer: 'Rahul M.',  time: '11:00 AM', status: 'confirmed' },
-  { key: '2', member: 'Vikram Nair',   service: 'EMS Session',     trainer: 'Pooja N.',  time: '12:30 PM', status: 'pending'   },
-  { key: '3', member: 'Divya Kumar',   service: 'PT Session',      trainer: 'Kiran J.',  time: '02:00 PM', status: 'confirmed' },
-  { key: '4', member: 'Suresh Rao',    service: 'Group Pilates',   trainer: 'Amit S.',   time: '04:00 PM', status: 'confirmed' },
-  { key: '5', member: 'Anita Gupta',   service: 'Massage - 30min', trainer: 'Rahul M.',  time: '05:00 PM', status: 'pending'   },
+  { key: '1', member: 'Priya Shah',    service: 'Computer Lab Slot', trainer: 'Rahul M.',  time: '11:00 AM', status: 'confirmed' },
+  { key: '2', member: 'Vikram Nair',   service: 'Exam Re-evaluation', trainer: 'Pooja N.',  time: '12:30 PM', status: 'pending'   },
+  { key: '3', member: 'Divya Kumar',   service: 'Parent-Teacher Meet',trainer: 'Kiran J.',  time: '02:00 PM', status: 'confirmed' },
+  { key: '4', member: 'Suresh Rao',    service: 'Sports Class Practice', trainer: 'Amit S.',   time: '04:00 PM', status: 'confirmed' },
+  { key: '5', member: 'Anita Gupta',   service: 'Lab Work Slot',     trainer: 'Rahul M.',  time: '05:00 PM', status: 'pending'   },
 ];
 
 const trainerAssignment = [
@@ -48,7 +48,7 @@ const feedbackDist = [
 
 const ticketColumns = [
   { title: 'ID',      dataIndex: 'id',       key: 'id',       width: 90  },
-  { title: 'Member',  dataIndex: 'member',   key: 'member'               },
+  { title: 'Student / Parent',  dataIndex: 'member',   key: 'member'               },
   { title: 'Issue',   dataIndex: 'issue',    key: 'issue'                },
   { title: 'Priority',dataIndex: 'priority', key: 'priority',
     render: (p: string) => <Tag color={p === 'high' ? 'red' : p === 'medium' ? 'orange' : 'default'}>{p.toUpperCase()}</Tag> },
@@ -61,17 +61,17 @@ const ticketColumns = [
 ];
 
 const bookingColumns = [
-  { title: 'Member',  dataIndex: 'member',  key: 'member'  },
+  { title: 'Student',  dataIndex: 'member',  key: 'member'  },
   { title: 'Service', dataIndex: 'service', key: 'service' },
-  { title: 'Trainer', dataIndex: 'trainer', key: 'trainer' },
+  { title: 'Teacher', dataIndex: 'trainer', key: 'trainer' },
   { title: 'Time',    dataIndex: 'time',    key: 'time'    },
   { title: 'Status',  dataIndex: 'status',  key: 'status',
     render: (s: string) => <Tag color={s === 'confirmed' ? 'green' : 'gold'}>{s}</Tag> },
 ];
 
 const trainerColumns = [
-  { title: 'Trainer',   dataIndex: 'trainer',  key: 'trainer' },
-  { title: 'Assigned',  dataIndex: 'assigned', key: 'assigned' },
+  { title: 'Teacher',   dataIndex: 'trainer',  key: 'trainer' },
+  { title: 'Classes Assigned',  dataIndex: 'assigned', key: 'assigned' },
   { title: 'Pending',   dataIndex: 'pending',  key: 'pending',
     render: (v: number) => <span style={{ color: v > 0 ? '#f59e0b' : 'var(--muted)' }}>{v}</span> },
   { title: 'Status',    dataIndex: 'status',   key: 'status',
@@ -128,7 +128,7 @@ const CustomerServiceDashboard = () => (
       {/* Feedback Distribution */}
       <div className="csd-chart-card">
         <div className="csd-chart-head">
-          <span className="csd-chart-title">Member Feedback Distribution</span>
+          <span className="csd-chart-title">Student / Parent Feedback</span>
         </div>
         <div className="csd-feedback-dist">
           {feedbackDist.map(f => (
@@ -201,7 +201,7 @@ const CustomerServiceDashboard = () => (
       <div className="csd-section">
         <div className="csd-section-head">
           <CalendarOutlined style={{ color: '#6366f1' }} />
-          <span>Upcoming Bookings Today</span>
+          <span>Upcoming Appointments Today</span>
         </div>
         <Table columns={bookingColumns} dataSource={bookingsData} pagination={false} size="small" className="csd-table" />
       </div>
@@ -210,7 +210,7 @@ const CustomerServiceDashboard = () => (
       <div className="csd-section">
         <div className="csd-section-head">
           <CustomerServiceOutlined style={{ color: '#10b981' }} />
-          <span>Trainer Assignment Status</span>
+          <span>Teacher Workload & Assignment</span>
         </div>
         <Table columns={trainerColumns} dataSource={trainerAssignment} pagination={false} size="small" className="csd-table" />
       </div>

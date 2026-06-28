@@ -83,13 +83,13 @@ function Dashboard() {
       <div className="revenue-charts-section">
         <div className="charts-grid">
           <HierarchicalChart
-            title="Sales Today Revenue"
+            title="Fee Today Collection"
             amount={todayData.totalSales.toLocaleString('en-IN')}
             data={todayData.employees}
             type="sales"
           />
           <HierarchicalChart
-            title="Trainers Today Revenue"
+            title="Teachers Today Revenue"
             amount={todayData.totalTrainers.toLocaleString('en-IN')}
             data={todayData.trainers}
             type="trainers"
@@ -98,7 +98,7 @@ function Dashboard() {
 
         <div className="charts-grid">
           <HierarchicalChart
-            title="Sales Revenue"
+            title="Monthly Fee Collection"
             amount={monthlyData.totalSales.toLocaleString('en-IN')}
             period={selectedRange}
             data={monthlyData.employees}
@@ -106,7 +106,7 @@ function Dashboard() {
             onPeriodChange={(value: string) => setSelectedRange(value)}
           />
           <HierarchicalChart
-            title="Trainers Revenue"
+            title="Teachers Monthly Revenue"
             amount={monthlyData.totalTrainers.toLocaleString('en-IN')}
             period={selectedRange}
             data={monthlyData.trainers}
