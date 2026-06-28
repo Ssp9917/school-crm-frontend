@@ -18,6 +18,7 @@ import { useNavigate } from "react-router-dom";
 interface TeacherFormValues {
   teacherName:        string;
   teacherEmail:       string;
+  password?:          string;
   teacherPhoneNumber: string;
   countryCode?:       string;
   yearsOfExperience:  string | number;
@@ -112,6 +113,7 @@ const AddTrainer = () => {
       idNumber:       values.idNumber,
       idFront:        values.idFront,
       idBack:         values.idBack,
+      password:       values.password,
       certificates:   values.certificates ? values.certificates.map(c => ({ name: c.title })) : [],
     };
 
@@ -153,6 +155,10 @@ const AddTrainer = () => {
 
             <Form.Item label="Teacher Email" name="teacherEmail" rules={[{ type: 'email', required: true, message: 'Please enter valid email' }]}>
               <Input placeholder="Enter teacher email" />
+            </Form.Item>
+
+            <Form.Item label="Portal Password (Optional)" name="password" tooltip="Leave blank to auto-generate and email the password.">
+              <Input.Password placeholder="Enter password" />
             </Form.Item>
 
             <CountryPhoneInput form={form} name="teacherPhoneNumber" label="Teacher Phone Number" />

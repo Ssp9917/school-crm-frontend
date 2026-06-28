@@ -1,7 +1,7 @@
 import AllFeedbacks from "../pages/allFeedbacks";
 import AllDepartments from "../pages/allDepartments";
 import AddDepartment from "../pages/addDepartment";
-import { AllFeedbacksRoute, EditRoleRoute, userFeedbackRoute, AllDepartmentsRoute, AddDepartmentRoute, BlacklistRequestsRoute, SuperAdminDashboardRoute, FranchiseDashboardRoute, ClubManagerDashboardRoute, CustomerServiceDashboardRoute, SalesDashboardRoute, AllAcademicSetupRoute, AllParentsRoute, AllTenantsRoute, StudentAttendanceRoute, ExamsPageRoute, PayrollPageRoute, SchoolProfileRoute } from "./routepath";
+import { AllFeedbacksRoute, EditRoleRoute, userFeedbackRoute, AllDepartmentsRoute, AddDepartmentRoute, BlacklistRequestsRoute, SuperAdminDashboardRoute, FranchiseDashboardRoute, ClubManagerDashboardRoute, CustomerServiceDashboardRoute, SalesDashboardRoute, AllAcademicSetupRoute, AllParentsRoute, AllTenantsRoute, StudentAttendanceRoute, ExamsPageRoute, PayrollPageRoute, SchoolProfileRoute, SaaSPlansRoute } from "./routepath";
 import AddCoupon from "../pages/addCoupon";
 import { AddCouponRoute } from "./routepath";
 import AllCoupons from "../pages/allCoupons";
@@ -13,6 +13,7 @@ import StudentAttendance from "../pages/studentAttendance";
 import ExamsPage from "../pages/exams";
 import PayrollPage from "../pages/payroll";
 import SchoolProfile from "../pages/schoolProfile";
+import SaaSPlans from "../pages/saasPlans";
  
 
 import {
@@ -384,7 +385,7 @@ export const router = createBrowserRouter([
       { path: ExamsPageRoute,                  element: <ExamsPage /> },
       { path: PayrollPageRoute,                element: <PayrollPage /> },
       { path: SchoolProfileRoute,              element: <SchoolProfile /> },
-
+      { path: SaaSPlansRoute,                  element: <SaaSPlans /> },
     ]
     
   },

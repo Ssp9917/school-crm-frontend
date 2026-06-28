@@ -59,6 +59,11 @@ function transformSalesData(apiData: any, revenueKey: string): SalesData {
 
 /* ─── Component ──────────────────────────────────────────────────────── */
 
+import { Typography, Card, Row, Col, Statistic } from 'antd';
+import { BookOutlined, CalendarOutlined, TeamOutlined } from '@ant-design/icons';
+
+const { Title } = Typography;
+
 function Dashboard() {
   const branchId         = useSelector((state: any) => state.branch.selectedBranch);
   const selectedBranchId = typeof branchId === 'object' ? (branchId?._id || branchId?.id) : branchId;
@@ -77,6 +82,76 @@ function Dashboard() {
 
   const todayData:   SalesData = transformSalesData(salesTodayData,  'todaySales');
   const monthlyData: SalesData = transformSalesData(salesMonthlyData, 'thisMonthSales');
+
+  const [user, setUser] = useState<any>(null);
+
+  useState(() => {
+    try {
+      const storedUser = JSON.parse(localStorage.getItem('user') || '{}');
+      setUser(storedUser);
+    } catch (e) {
+      console.error(e);
+    }
+  });
+
+  const userType = user?.userType?.toUpperCase() || '';
+  const roleName = user?.roleId?.name?.toUpperCase() || '';
+
+  const isTeacher = userType === 'TEACHER' || roleName === 'TEACHER';
+  const isStudent = userType === 'USER' || roleName === 'STUDENT';
+  const isParent  = userType === 'PARENT' || roleName === 'PARENT';
+
+  if (isTeacher) {
+    return (
+      <div className="dashboard-wrapper" style={{ padding: '24px' }}>
+        <Title level={2}>Teacher Portal</Title>
+        <p>Welcome back, {user?.name}!</p>
+        <Row gutter={16} style={{ marginTop: '24px' }}>
+          <Col span={8}>
+            <Card>
+              <Statistic title="Classes Today" value={4} prefix={<BookOutlined />} />
+            </Card>
+          </Col>
+          <Col span={8}>
+            <Card>
+              <Statistic title="Students Present" value={85} suffix="%" prefix={<TeamOutlined />} />
+            </Card>
+          </Col>
+          <Col span={8}>
+            <Card>
+              <Statistic title="Upcoming Exams" value={1} prefix={<CalendarOutlined />} />
+            </Card>
+          </Col>
+        </Row>
+      </div>
+    );
+  }
+
+  if (isStudent || isParent) {
+    return (
+      <div className="dashboard-wrapper" style={{ padding: '24px' }}>
+        <Title level={2}>{isParent ? 'Parent Portal' : 'Student Portal'}</Title>
+        <p>Welcome back, {user?.name}!</p>
+        <Row gutter={16} style={{ marginTop: '24px' }}>
+          <Col span={8}>
+            <Card>
+              <Statistic title="My Attendance" value={92} suffix="%" prefix={<CalendarOutlined />} />
+            </Card>
+          </Col>
+          <Col span={8}>
+            <Card>
+              <Statistic title="Assignments Due" value={3} prefix={<BookOutlined />} />
+            </Card>
+          </Col>
+          <Col span={8}>
+            <Card>
+              <Statistic title="Upcoming Exams" value={2} prefix={<CalendarOutlined />} />
+            </Card>
+          </Col>
+        </Row>
+      </div>
+    );
+  }
 
   return (
     <div className="dashboard-wrapper">

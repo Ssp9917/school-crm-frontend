@@ -459,6 +459,12 @@ const AddUser = () => {
               </Col>
 
               <Col xs={24} sm={12} md={8}>
+                <Form.Item label="Portal Password (Optional)" name="password" tooltip="Leave blank to auto-generate and email the password.">
+                  <Input.Password placeholder="Enter password" />
+                </Form.Item>
+              </Col>
+
+              <Col xs={24} sm={12} md={8}>
                 <Form.Item name="alternativePhoneNumber" label="Alternative Phone" rules={[{ validator: getPhoneValidator(selectedCountry) }]}>
                   <Input placeholder="Enter alternative phone" />
                 </Form.Item>

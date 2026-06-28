@@ -6,12 +6,16 @@ type BaseQueryApi     = Parameters<BaseQueryFn>[1];
 type ExtraOptions     = Parameters<BaseQueryFn>[2];
 
 export const dynamicBaseQuery: BaseQueryFn<BaseQueryArgs, unknown, FetchBaseQueryError, object, FetchBaseQueryMeta> = async (args, WebApi: BaseQueryApi, extraOptions: ExtraOptions) => {
+  const user = JSON.parse(localStorage.getItem("user") || "{}");
+  const tenantId = user?.tenantId;
+
   const rawBaseQuery = fetchBaseQuery({
     // Set per environment via VITE_API_BASE_URL (see deploy-dev.sh / deploy-prod.sh).
     // Falls back to the dev API when the var is not provided.
     baseUrl: import.meta.env.VITE_API_BASE_URL,
     headers: {
       Authorization: `Bearer ${localStorage.getItem("token")}`,
+      ...(tenantId && { "x-tenant-id": tenantId }),
     },
   });
   const result = await rawBaseQuery(args, WebApi, extraOptions);

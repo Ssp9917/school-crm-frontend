@@ -85,6 +85,7 @@ const StudentAttendanceRoute = "/student-attendance"
 const ExamsPageRoute = "/exams"
 const PayrollPageRoute = "/payroll"
 const SchoolProfileRoute = "/school-profile"
+const SaaSPlansRoute = "/saas-plans"
 
 
 // Employee Detail Routes
@@ -207,4 +208,5 @@ TrainerDetailRoute, TrainerDetailAttendanceRoute, TrainerDetailCoachIdRoute, Tra
   ExamsPageRoute,
   PayrollPageRoute,
   SchoolProfileRoute,
+  SaaSPlansRoute,
  }
