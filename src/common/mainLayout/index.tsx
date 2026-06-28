@@ -2,11 +2,17 @@ import React from 'react';
 import { Layout, Drawer } from 'antd';
 import SiderComponent from '../../components/sider';
 import MainHeader from '../../components/mainHeader'; 
-import { Outlet } from 'react-router-dom';
+import { Outlet, Navigate } from 'react-router-dom';
 
 const { Sider, Content } = Layout;
 
 const MainLayout = () => {
+  const token = localStorage.getItem('token');
+
+  if (!token) {
+    return <Navigate to="/login" replace />;
+  }
+
   const [collapsed, setCollapsed] = React.useState(false);
   const [mobileDrawerOpen, setMobileDrawerOpen] = React.useState(false);
   const [isMobile, setIsMobile] = React.useState(window.innerWidth <= 768);
